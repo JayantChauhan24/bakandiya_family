@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAKANDIYA FAMILY | FOUNDER: JAYANT CHAUHAN</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#143d2b',
+              primary: '#1b4332',
+              medium: '#2d6a4f',
+              light: '#d8f3dc',
+              accent: '#b7e4c7',
+              bg: '#f8faf9',
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Yantramanav', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .whatsapp-btn { background-color: #25D366; }
+    .whatsapp-btn:hover { background-color: #1eb956; }
+  </style>
+</head>
+
+<body class="bg-brand-bg text-gray-800 font-sans min-h-screen flex flex-col antialiased">
+
+  <!-- LIVE STATUS BAR -->
+  <div id="connection-status-bar" class="bg-amber-600 text-white px-4 py-2 text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+    <i class="fa-solid fa-circle-notch fa-spin"></i>
+    <span id="connection-status-msg">CONNECTING TO CLOUD FIRESTORE...</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-brand-dark text-white border-b-4 border-emerald-500 sticky top-0 z-40 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-3">
+      
+      <!-- LOGO & FOUNDER -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="bg-brand-medium text-white w-12 h-12 rounded-lg flex items-center justify-center font-extrabold text-2xl border border-emerald-400">
+          <i class="fa-solid fa-people-roof"></i>
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase">BAKANDIYA FAMILY</h1>
+          <p class="text-xs sm:text-sm font-semibold text-emerald-300 uppercase tracking-widest">
+            FOUNDER: JAYANT CHAUHAN | बकंडिया परिवार
+          </p>
+        </div>
+      </a>
+
+      <!-- ACTIONS -->
+      <div class="flex items-center gap-2">
+        <a href="#publish-section" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow">
+          <i class="fa-solid fa-bullhorn"></i>
+          <span>PUBLISH NEWS</span>
+        </a>
+        <button id="admin-header-btn" onclick="openAdminModal()" class="bg-gray-800 hover:bg-gray-700 text-emerald-300 border border-emerald-500 font-bold py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-lock"></i>
+          <span id="admin-status-text">ADMIN LOGIN</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- NAVIGATION MENU -->
+    <nav class="bg-brand-primary text-emerald-100 text-xs sm:text-sm font-bold uppercase tracking-wider overflow-x-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex space-x-6 py-2.5 whitespace-nowrap">
+        <a href="#latest-news" class="hover:text-white transition">LATEST VILLAGE NEWS</a>
+        <a href="#events-section" class="hover:text-white transition">VILLAGE EVENTS</a>
+        <a href="#notices-section" class="hover:text-white transition">IMPORTANT NOTICES ABOUT BAKANDIYA FAMILY</a>
+        <a href="#most-important" class="hover:text-white transition">MOST IMPORTANT NEWS</a>
+        <a href="#less-important" class="hover:text-white transition">LESS IMPORTANT NEWS</a>
+        <a href="#donations-section" class="hover:text-white transition">TEMPLE DONATIONS</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-b from-brand-primary to-brand-dark text-white py-8 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-block bg-emerald-800/80 border border-emerald-400 text-emerald-200 text-[11px] uppercase px-3 py-1 rounded-full font-bold mb-2 tracking-widest">
+        COMMUNITY INFORMATION NETWORK
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-black uppercase mb-1">BAKANDIYA FAMILY COMMUNITY PORTAL</h2>
+      <p class="text-xs sm:text-sm text-gray-200 font-medium">
+        FOUNDER: JAYANT CHAUHAN. Real-time updates, verified temple donations, and community announcements.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+    <!-- LEFT 2 COLUMNS: NEWS FEEDS & PUBLIC PUBLISHING -->
+    <div class="lg:col-span-2 space-y-10">
+
+      <!-- ========================================================= -->
+      <!-- SECTION: PUBLIC NEWS PUBLISHING (NO LOGIN REQUIRED)      -->
+      <!-- ========================================================= -->
+      <section id="publish-section" class="bg-white rounded-xl shadow-md border-2 border-brand-light p-6 sm:p-7">
+        <div class="flex items-center gap-3 border-b-2 border-brand-primary pb-3 mb-5">
+          <i class="fa-solid fa-pen-to-square text-brand-primary text-2xl"></i>
+          <div>
+            <h2 class="text-lg sm:text-xl font-black text-brand-dark uppercase tracking-wide">
+              PUBLIC NEWS PUBLISHING
+            </h2>
+            <p class="text-xs text-gray-500 font-medium">
+              NO ACCOUNT REQUIRED • NO PERSONAL INFORMATION REQUESTED • PUBLISHES DIRECTLY TO FIRESTORE
+            </p>
+          </div>
+        </div>
+
+        <form id="public-news-form" class="space-y-4">
+          <!-- NEWS TITLE -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
+              NEWS TITLE <span class="text-red-500">*</span>
+            </label>
+            <input type="text" id="news-title" required minlength="3" maxlength="150" placeholder="Enter news headline (3 - 150 characters)..."
+              class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium" />
+          </div>
+
+          <!-- NEWS CATEGORY -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
+              NEWS CATEGORY <span class="text-red-500">*</span>
+            </label>
+            <select id="news-category" required class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium bg-white">
+              <option value="LATEST VILLAGE NEWS">LATEST VILLAGE NEWS</option>
+              <option value="MOST IMPORTANT NEWS">MOST IMPORTANT NEWS</option>
+              <option value="LESS IMPORTANT NEWS">LESS IMPORTANT NEWS</option>
+            </select>
+          </div>
+
+          <!-- NEWS DESCRIPTION -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
+              NEWS DESCRIPTION <span class="text-red-500">*</span>
+            </label>
+            <textarea id="news-description" rows="4" required minlength="5" maxlength="3000" placeholder="Write the full news description in English or Hindi (5 - 3,000 characters)..."
+              class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium"></textarea>
+          </div>
+
+          <!-- OPTIONAL IMAGE (100% FREE FIRESTORE STORAGE) -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
+              OPTIONAL PHOTO (AUTO-COMPRESSED • 100% FREE SPARK STORAGE)
+            </label>
+            <input type="file" id="news-image" accept="image/*"
+              class="w-full text-xs text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark cursor-pointer" />
+          </div>
+
+          <!-- PUBLISH NEWS BUTTON -->
+          <div class="pt-2">
+            <button type="submit" id="publish-submit-btn" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-black py-3 px-6 rounded-lg uppercase tracking-wider text-sm transition flex items-center justify-center gap-2 shadow">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span id="publish-btn-text">PUBLISH NEWS BUTTON</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- SECTION: LATEST VILLAGE NEWS                              -->
+      <!-- ========================================================= -->
+      <section id="latest-news">
+        <div class="flex items-center justify-between border-b-2 border-brand-primary pb-2 mb-4">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-newspaper text-brand-primary text-xl"></i>
+            <h2 class="text-lg sm:text-xl font-black text-brand-dark uppercase tracking-wider">
+              LATEST VILLAGE NEWS
+            </h2>
+          </div>
+          <span class="text-[10px] bg-emerald-100 text-brand-dark font-extrabold px-2.5 py-1 rounded uppercase">FIRESTORE LIVE</span>
+        </div>
+
+        <div id="latest-news-list" class="space-y-4">
+          <div class="text-center py-6 text-gray-400 font-medium text-xs">
+            <i class="fa-solid fa-spinner fa-spin text-xl mb-2 text-brand-primary"></i>
+            <p>SYNCING LIVE VILLAGE NEWS FROM CLOUD FIRESTORE...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- SECTION: MOST IMPORTANT NEWS                              -->
+      <!-- ========================================================= -->
+      <section id="most-important">
+        <div class="flex items-center justify-between border-b-2 border-red-600 pb-2 mb-4">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-triangle-exclamation text-red-600 text-xl"></i>
+            <h2 class="text-lg sm:text-xl font-black text-red-700 uppercase tracking-wider">
+              MOST IMPORTANT NEWS
+            </h2>
+          </div>
+          <span class="text-[10px] bg-red-100 text-red-800 font-extrabold px-2.5 py-1 rounded uppercase">HIGH PRIORITY</span>
+        </div>
+
+        <div id="most-important-list" class="space-y-4">
+          <div class="text-center py-6 text-gray-400 text-xs font-medium uppercase">No high priority news recorded.</div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- SECTION: LESS IMPORTANT NEWS                              -->
+      <!-- ========================================================= -->
+      <section id="less-important">
+        <div class="flex items-center justify-between border-b-2 border-gray-400 pb-2 mb-4">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-clipboard-list text-gray-600 text-xl"></i>
+            <h2 class="text-lg sm:text-xl font-black text-gray-700 uppercase tracking-wider">
+              LESS IMPORTANT NEWS
+            </h2>
+          </div>
+          <span class="text-[10px] bg-gray-200 text-gray-700 font-extrabold px-2.5 py-1 rounded uppercase">COMMUNITY NOTES</span>
+        </div>
+
+        <div id="less-important-list" class="space-y-4">
+          <div class="text-center py-6 text-gray-400 text-xs font-medium uppercase">No routine notes recorded.</div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- RIGHT 1 COLUMN: NOTICES, EVENTS, DONATIONS -->
+    <div class="space-y-8">
+
+      <!-- ========================================================= -->
+      <!-- SECTION: IMPORTANT NOTICES ABOUT BAKANDIYA FAMILY         -->
+      <!-- ========================================================= -->
+      <section id="notices-section" class="bg-white rounded-xl shadow border-t-4 border-amber-600 p-5">
+        <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-bullhorn text-amber-600 text-lg"></i>
+            <h2 class="text-xs sm:text-sm font-black text-gray-900 uppercase tracking-wider">
+              IMPORTANT NOTICES ABOUT BAKANDIYA FAMILY
+            </h2>
+          </div>
+          <button id="admin-add-notice-btn" onclick="openNoticeModal()" class="hidden text-[11px] bg-amber-600 hover:bg-amber-700 text-white px-2 py-1 rounded font-bold uppercase">
+            <i class="fa-solid fa-plus"></i> ADD
+          </button>
+        </div>
+
+        <div id="notices-list" class="space-y-3">
+          <div class="text-center py-4 text-gray-400 text-xs">Syncing notices from Firestore...</div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- SECTION: VILLAGE EVENTS                                   -->
+      <!-- ========================================================= -->
+      <section id="events-section" class="bg-white rounded-xl shadow border-t-4 border-emerald-600 p-5">
+        <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-calendar-check text-emerald-700 text-lg"></i>
+            <h2 class="text-xs sm:text-sm font-black text-gray-900 uppercase tracking-wider">
+              VILLAGE EVENTS
+            </h2>
+          </div>
+          <button id="admin-add-event-btn" onclick="openEventModal()" class="hidden text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-2 py-1 rounded font-bold uppercase">
+            <i class="fa-solid fa-plus"></i> ADD
+          </button>
+        </div>
+
+        <div id="events-list" class="space-y-3">
+          <div class="text-center py-4 text-gray-400 text-xs">Syncing events from Firestore...</div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- SECTION: TEMPLE DONATIONS                                 -->
+      <!-- ========================================================= -->
+      <section id="donations-section" class="bg-white rounded-xl shadow border-t-4 border-brand-primary p-5">
+        <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-3">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-hands-praying text-brand-primary text-lg"></i>
+            <h2 class="text-xs sm:text-sm font-black text-gray-900 uppercase tracking-wider">
+              TEMPLE DONATIONS
+            </h2>
+          </div>
+          <button id="admin-add-donation-btn" onclick="openDonationModal()" class="hidden text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-2 py-1 rounded font-bold uppercase">
+            <i class="fa-solid fa-plus"></i> RECORD
+          </button>
+        </div>
+
+        <p class="text-[11px] text-gray-600 mb-4 bg-brand-light/50 p-2.5 rounded border border-brand-accent">
+          <i class="fa-solid fa-shield-halved text-brand-medium mr-1"></i>
+          Verified temple contributions are published openly. Bank account numbers and private UPI keys are hidden.
+        </p>
+
+        <div id="donations-list" class="space-y-3">
+          <div class="text-center py-4 text-gray-400 text-xs">Syncing verified donations...</div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- MODALS: AUTH & MANAGEMENT                                 -->
+  <!-- ========================================================= -->
+
+  <!-- ADMIN AUTH MODAL -->
+  <div id="admin-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
+      <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div id="admin-login-view">
+        <div class="text-center mb-5">
+          <i class="fa-solid fa-shield-halved text-3xl text-brand-primary mb-2"></i>
+          <h3 class="text-lg font-black uppercase text-brand-dark">ADMIN AUTHENTICATION</h3>
+          <p class="text-xs text-gray-500 uppercase">FIREBASE AUTH EMAIL/PASSWORD</p>
+        </div>
+
+        <form id="admin-login-form" class="space-y-3">
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">ADMIN EMAIL</label>
+            <input type="email" id="admin-email" required class="w-full px-3 py-2 border rounded-lg text-sm" placeholder="admin@example.com" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">ADMIN PASSWORD</label>
+            <input type="password" id="admin-password" required class="w-full px-3 py-2 border rounded-lg text-sm" placeholder="••••••••" />
+          </div>
+          <button type="submit" id="admin-login-submit" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2.5 rounded-lg uppercase text-xs">
+            LOG IN AS ADMIN
+          </button>
+        </form>
+      </div>
+
+      <div id="admin-panel-view" class="hidden space-y-4">
+        <div class="border-b pb-3 flex justify-between items-center">
+          <div>
+            <span class="text-[10px] bg-green-100 text-green-800 font-black px-2 py-0.5 rounded uppercase">LOGGED IN</span>
+            <p id="admin-user-email" class="text-xs text-gray-700 font-mono mt-1 font-semibold truncate max-w-[180px]"></p>
+          </div>
+          <button onclick="adminLogout()" class="text-xs bg-red-100 hover:bg-red-200 text-red-700 px-2.5 py-1 rounded font-bold uppercase">
+            LOGOUT
+          </button>
+        </div>
+        <div class="space-y-2">
+          <button onclick="openNoticeModal()" class="w-full py-2 px-3 bg-amber-50 hover:bg-amber-100 border border-amber-300 rounded text-left font-bold text-xs uppercase flex items-center justify-between text-amber-900">
+            <span><i class="fa-solid fa-plus-circle mr-2"></i> POST IMPORTANT NOTICE</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+          <button onclick="openEventModal()" class="w-full py-2 px-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded text-left font-bold text-xs uppercase flex items-center justify-between text-emerald-900">
+            <span><i class="fa-solid fa-calendar-plus mr-2"></i> POST VILLAGE EVENT</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+          <button onclick="openDonationModal()" class="w-full py-2 px-3 bg-brand-light hover:bg-emerald-200 border border-brand-accent rounded text-left font-bold text-xs uppercase flex items-center justify-between text-brand-dark">
+            <span><i class="fa-solid fa-hand-holding-dollar mr-2"></i> RECORD TEMPLE DONATION</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTICE MODAL -->
+  <div id="notice-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeNoticeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
+      <h3 class="text-base font-black uppercase text-amber-800 mb-3">POST IMPORTANT NOTICE</h3>
+      <form id="notice-form" class="space-y-3">
+        <input type="text" id="notice-title" required minlength="3" maxlength="150" placeholder="NOTICE TITLE (3 - 150 CHARS)" class="w-full px-3 py-2 border rounded-lg text-sm uppercase font-semibold" />
+        <textarea id="notice-content" rows="4" required minlength="5" maxlength="2000" placeholder="Full notice details (5 - 2,000 chars)..." class="w-full px-3 py-2 border rounded-lg text-sm"></textarea>
+        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 rounded-lg uppercase text-xs">SAVE TO FIRESTORE</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- EVENT MODAL -->
+  <div id="event-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeEventModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
+      <h3 class="text-base font-black uppercase text-brand-dark mb-3">POST VILLAGE EVENT</h3>
+      <form id="event-form" class="space-y-3">
+        <input type="text" id="event-title" required minlength="3" maxlength="150" placeholder="EVENT NAME (3 - 150 CHARS)" class="w-full px-3 py-2 border rounded-lg text-sm uppercase font-semibold" />
+        <input type="date" id="event-date" required class="w-full px-3 py-2 border rounded-lg text-sm" />
+        <input type="text" id="event-location" required minlength="2" maxlength="100" placeholder="LOCATION / VENUE (2 - 100 CHARS)" class="w-full px-3 py-2 border rounded-lg text-sm uppercase" />
+        <textarea id="event-desc" rows="3" required minlength="5" maxlength="2000" placeholder="Event description (5 - 2,000 chars)..." class="w-full px-3 py-2 border rounded-lg text-sm"></textarea>
+        <button type="submit" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2 rounded-lg uppercase text-xs">SAVE TO FIRESTORE</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- DONATION MODAL -->
+  <div id="donation-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeDonationModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
+      <h3 class="text-base font-black uppercase text-brand-dark mb-3">RECORD TEMPLE DONATION</h3>
+      <form id="donation-form" class="space-y-3">
+        <input type="text" id="donation-donor" maxlength="100" placeholder="DONOR NAME (OR ANONYMOUS)" class="w-full px-3 py-2 border rounded-lg text-sm uppercase font-semibold" />
+        <input type="number" min="1" max="10000000" id="donation-amount" required placeholder="DONATION AMOUNT IN INR (₹)" class="w-full px-3 py-2 border rounded-lg text-sm font-bold text-emerald-800" />
+        <input type="date" id="donation-date" required class="w-full px-3 py-2 border rounded-lg text-sm" />
+        <div>
+          <label class="block text-[11px] font-bold uppercase text-gray-700 mb-1">PAYMENT SCREENSHOT PROOF (AUTO-COMPRESSED)</label>
+          <input type="file" id="donation-file" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark" />
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="checkbox" id="donation-verified" checked class="w-4 h-4 text-brand-primary rounded" />
+          <label for="donation-verified" class="text-xs font-bold uppercase text-gray-800">MARK AS VERIFIED RECORD</label>
+        </div>
+        <button type="submit" id="donation-submit-btn" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2.5 rounded-lg uppercase text-xs">
+          UPLOAD & RECORD DONATION
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- IMAGE VIEWER MODAL -->
+  <div id="image-viewer-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden" onclick="closeImageViewer()">
+    <div class="relative max-w-2xl w-full" onclick="event.stopPropagation()">
+      <button onclick="closeImageViewer()" class="absolute -top-9 right-0 text-white text-xl hover:text-gray-300">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="image-viewer-target" src="" alt="Proof Preview" class="w-full max-h-[80vh] object-contain rounded-lg bg-black/40" />
+      <p id="image-viewer-caption" class="text-center text-white text-xs mt-2 font-bold uppercase"></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark text-white border-t border-emerald-800 mt-16 py-8 px-4 text-center">
+    <div class="max-w-7xl mx-auto space-y-3">
+      <div class="font-black text-xl uppercase tracking-widest text-emerald-400">
+        BAKANDIYA FAMILY | बकंडिया परिवार
+      </div>
+      <p class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-300">
+        FOUNDER: JAYANT CHAUHAN
+      </p>
+      <p class="text-[11px] text-gray-400">
+        &copy; 2026 BAKANDIYA FAMILY. REAL-TIME GOOGLE CLOUD FIRESTORE ACTIVE (100% FREE SPARK TIER).
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- SINGLE APPLICATION MODULE (NO STORAGE DEPENDENCY)         -->
+  <!-- ========================================================= -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { 
+      getFirestore, collection, addDoc, doc, updateDoc, deleteDoc, 
+      query, orderBy, where, serverTimestamp, onSnapshot 
+    } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+    import { 
+      getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged 
+    } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+
+    // Master Admin UID
+    const ADMIN_UID = "27R0TzvPhId35rwxGqLxvy0vFcw2";
+
+    // Actual Firebase Project Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyAvEaDzEhtquMEkmDzpgK9mxCTsGZoVXkg",
+      authDomain: "bakandiya-family.firebaseapp.com",
+      projectId: "bakandiya-family",
+      storageBucket: "bakandiya-family.firebasestorage.app",
+      messagingSenderId: "396036820641",
+      appId: "1:396036820641:web:ee8539694dbc1b6468aae0",
+      measurementId: "G-D7LTNK1168"
+    };
+
+    let app, db, auth;
+    let activeAdminUser = null;
+
+    try {
+      app = initializeApp(firebaseConfig);
+      db = getFirestore(app);
+      auth = getAuth(app);
+    } catch (err) {
+      console.error("Firebase Initialization Failure:", err);
+      const statusBar = document.getElementById('connection-status-bar');
+      const statusMsg = document.getElementById('connection-status-msg');
+      statusBar.className = "bg-red-700 text-white px-4 py-2 text-center text-xs font-bold uppercase tracking-wider";
+      statusMsg.textContent = "INITIALIZATION ERROR: " + err.message;
+    }
+
+    // 100% Free Client-Side Image Compressor -> Base64 Converter
+    // Converts photos to ultra-light WebP Base64 string (< 100 KB)
+    async function fileToBase64(file, maxWidth = 800, quality = 0.6) {
+      if (!file) return "";
+      return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = (event) => {
+          const img = new Image();
+          img.src = event.target.result;
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            let width = img.width;
+            let height = img.height;
+
+            if (width > maxWidth) {
+              height = Math.round((height * maxWidth) / width);
+              width = maxWidth;
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+
+            // Export as lightweight WebP Data URL
+            const base64Data = canvas.toDataURL('image/webp', quality);
+            resolve(base64Data);
+          };
+          img.onerror = () => resolve("");
+        };
+        reader.onerror = () => resolve("");
+      });
+    }
+
+    // Window Modal Bindings for HTML onclick attributes
+    window.openAdminModal = () => document.getElementById('admin-modal').classList.remove('hidden');
+    window.closeAdminModal = () => document.getElementById('admin-modal').classList.add('hidden');
+    window.openNoticeModal = () => { document.getElementById('notice-modal').classList.remove('hidden'); window.closeAdminModal(); };
+    window.closeNoticeModal = () => document.getElementById('notice-modal').classList.add('hidden');
+    window.openEventModal = () => { document.getElementById('event-modal').classList.remove('hidden'); window.closeAdminModal(); };
+    window.closeEventModal = () => document.getElementById('event-modal').classList.add('hidden');
+    window.openDonationModal = () => { document.getElementById('donation-modal').classList.remove('hidden'); window.closeAdminModal(); };
+    window.closeDonationModal = () => document.getElementById('donation-modal').classList.add('hidden');
+    window.openImageViewer = (url, caption) => {
+      document.getElementById('image-viewer-target').src = url;
+      document.getElementById('image-viewer-caption').textContent = caption || '';
+      document.getElementById('image-viewer-modal').classList.remove('hidden');
+    };
+    window.closeImageViewer = () => document.getElementById('image-viewer-modal').classList.add('hidden');
+
+    function getWhatsAppLink(title, tag) {
+      const pageUrl = window.location.href.split('#')[0];
+      const message = `*BAKANDIYA FAMILY (${tag})*\n\n📌 *${title}*\n\n🔗 View live update: ${pageUrl}\n\n*FOUNDER: JAYANT CHAUHAN*`;
+      return `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
+    }
+
+    const statusBar = document.getElementById('connection-status-bar');
+    const statusMsg = document.getElementById('connection-status-msg');
+
+    // -------------------------------------------------------------
+    // AUTHENTICATION & STRICT ADMIN UID BINDING
+    // -------------------------------------------------------------
+    onAuthStateChanged(auth, (user) => {
+      const loginView = document.getElementById('admin-login-view');
+      const panelView = document.getElementById('admin-panel-view');
+      const userEmail = document.getElementById('admin-user-email');
+      const statusText = document.getElementById('admin-status-text');
+      const noticeBtn = document.getElementById('admin-add-notice-btn');
+      const eventBtn = document.getElementById('admin-add-event-btn');
+      const donationBtn = document.getElementById('admin-add-donation-btn');
+
+      if (user && user.uid === ADMIN_UID) {
+        activeAdminUser = user;
+        loginView.classList.add('hidden');
+        panelView.classList.remove('hidden');
+        userEmail.textContent = user.email;
+        statusText.textContent = "ADMIN ACTIVE";
+        noticeBtn.classList.remove('hidden');
+        eventBtn.classList.remove('hidden');
+        donationBtn.classList.remove('hidden');
+      } else {
+        activeAdminUser = null;
+        loginView.classList.remove('hidden');
+        panelView.classList.add('hidden');
+        statusText.textContent = "ADMIN LOGIN";
+        noticeBtn.classList.add('hidden');
+        eventBtn.classList.add('hidden');
+        donationBtn.classList.add('hidden');
+
+        if (user && user.uid !== ADMIN_UID) {
+          alert("Unauthorized Account: Only UID " + ADMIN_UID + " has administrator privileges.");
+          signOut(auth);
+        }
+      }
+
+      document.querySelectorAll('.admin-ctrl').forEach(el => el.classList.toggle('hidden', !activeAdminUser));
+      listenToDonations();
+    });
+
+    document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('admin-email').value;
+      const pass = document.getElementById('admin-password').value;
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, pass);
+        if (userCredential.user.uid === ADMIN_UID) {
+          alert("Admin authenticated successfully!");
+        } else {
+          alert("Unauthorized: This user account does not have administrator privileges.");
+          await signOut(auth);
+        }
+      } catch (err) {
+        alert("Admin login failed: " + err.message);
+      }
+    });
+
+    window.adminLogout = async () => {
+      await signOut(auth);
+      alert("Logged out successfully.");
+    };
+
+    // -------------------------------------------------------------
+    // 1. PUBLIC NEWS PUBLISHING (100% FREE FIRESTORE PHOTO STORAGE)
+    // -------------------------------------------------------------
+    const newsForm = document.getElementById('public-news-form');
+    newsForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = document.getElementById('news-title').value.trim();
+      const category = document.getElementById('news-category').value;
+      const description = document.getElementById('news-description').value.trim();
+      const imageFileInput = document.getElementById('news-image').files[0];
+      const submitBtn = document.getElementById('publish-submit-btn');
+      const submitText = document.getElementById('publish-btn-text');
+
+      if (title.length < 3 || title.length > 150) {
+        alert("Title must be between 3 and 150 characters.");
+        return;
+      }
+      if (description.length < 5 || description.length > 3000) {
+        alert("Description must be between 5 and 3,000 characters.");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitText.textContent = "COMPRESSING PHOTO & SAVING...";
+
+      try {
+        let imageUrl = "";
+
+        // Compress and convert image to lightweight Base64 string directly
+        if (imageFileInput) {
+          imageUrl = await fileToBase64(imageFileInput, 800, 0.6);
+        }
+
+        // Direct write matching the exact 6 keys permitted in firestore.rules
+        await addDoc(collection(db, "news"), {
+          title,
+          category,
+          description,
+          imageUrl: imageUrl || "",
+          createdAt: serverTimestamp(),
+          formattedDate: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
+        });
+
+        newsForm.reset();
+        alert("News published permanently to Cloud Firestore (100% Free)!");
+      } catch (err) {
+        console.error("News write error:", err);
+        alert("Permission Denied / Firestore Write Error: " + err.message);
+      } finally {
+        submitBtn.disabled = false;
+        submitText.textContent = "PUBLISH NEWS BUTTON";
+      }
+    });
+
+    // -------------------------------------------------------------
+    // 2. LIVE NEWS LISTENER
+    // -------------------------------------------------------------
+    let isFirstHandshake = true;
+    const newsQuery = query(collection(db, "news"), orderBy("createdAt", "desc"));
+    
+    onSnapshot(newsQuery, (snapshot) => {
+      if (isFirstHandshake) {
+        isFirstHandshake = false;
+        statusBar.className = "bg-emerald-700 text-white px-4 py-1.5 text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2";
+        statusMsg.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-300"></i> LIVE FIRESTORE CONNECTION VERIFIED (SPARK PLAN ACTIVE)`;
+      }
+
+      const latestContainer = document.getElementById('latest-news-list');
+      const mostContainer = document.getElementById('most-important-list');
+      const lessContainer = document.getElementById('less-important-list');
+
+      latestContainer.innerHTML = "";
+      mostContainer.innerHTML = "";
+      lessContainer.innerHTML = "";
+
+      let cLatest = 0, cMost = 0, cLess = 0;
+
+      snapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        const id = docSnap.id;
+        
+        const cardLatest = renderNewsCard(id, data, 'latest');
+        latestContainer.appendChild(cardLatest);
+        cLatest++;
+
+        if (data.category === "MOST IMPORTANT NEWS") {
+          const cardMost = renderNewsCard(id, data, 'most');
+          mostContainer.appendChild(cardMost);
+          cMost++;
+        } else if (data.category === "LESS IMPORTANT NEWS") {
+          const cardLess = renderNewsCard(id, data, 'less');
+          lessContainer.appendChild(cardLess);
+          cLess++;
+        }
+      });
+
+      if (cLatest === 0) latestContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase">NO VILLAGE NEWS PUBLISHED YET.</p>`;
+      if (cMost === 0) mostContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase">NO MOST IMPORTANT NEWS RECORDED.</p>`;
+      if (cLess === 0) lessContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase">NO ROUTINE NOTES RECORDED.</p>`;
+
+      attachNewsAdminHandlers();
+    }, (error) => {
+      console.error("Firestore News Listener Error:", error);
+      statusBar.className = "bg-red-700 text-white px-4 py-2 text-center text-xs font-bold uppercase tracking-wider";
+      statusMsg.innerHTML = `<i class="fa-solid fa-circle-xmark mr-2"></i> FIRESTORE PERMISSION DENIED ON NEWS: ${error.message}`;
+    });
+
+    function renderNewsCard(id, data, sectionKey) {
+      const card = document.createElement('article');
+      card.className = "bg-white rounded-xl shadow border border-gray-200 overflow-hidden";
+      card.id = `${sectionKey}-post-${id}`;
+      
+      const isMost = data.category === "MOST IMPORTANT NEWS";
+      const catBadge = isMost ? "bg-red-100 text-red-800" : (data.category === "LESS IMPORTANT NEWS" ? "bg-gray-100 text-gray-800" : "bg-emerald-100 text-emerald-800");
+      const waLink = getWhatsAppLink(data.title, data.category);
+
+      let imgHtml = '';
+      if (data.imageUrl) {
+        imgHtml = `
+          <div class="w-full h-52 bg-gray-100 cursor-pointer overflow-hidden news-img-trigger">
+            <img src="${data.imageUrl}" alt="News Image" class="w-full h-full object-cover hover:scale-105 transition duration-300" loading="lazy" />
+          </div>
+        `;
+      }
+
+      card.innerHTML = `
+        ${imgHtml}
+        <div class="p-5">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded ${catBadge}">${data.category}</span>
+            <span class="text-[11px] text-gray-400 font-medium">${data.formattedDate || 'Recently'}</span>
+          </div>
+          <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase mb-2 post-title-text"></h3>
+          <p class="text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line mb-4 post-desc-text"></p>
+          <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+            <a href="${waLink}" target="_blank" class="whatsapp-btn text-white text-xs font-bold uppercase py-1.5 px-3 rounded flex items-center gap-1.5 shadow">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+              <span>SHARE ON WHATSAPP</span>
+            </a>
+            <div class="admin-ctrl ${activeAdminUser ? '' : 'hidden'}">
+              <button data-del-news="${id}" class="text-xs bg-red-100 hover:bg-red-200 text-red-700 px-2.5 py-1 rounded font-bold uppercase">
+                DELETE
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+
+      card.querySelector('.post-title-text').textContent = data.title;
+      card.querySelector('.post-desc-text').textContent = data.description;
+
+      if (data.imageUrl) {
+        card.querySelector('.news-img-trigger').onclick = () => window.openImageViewer(data.imageUrl, data.title);
+      }
+
+      return card;
+    }
+
+    function attachNewsAdminHandlers() {
+      document.querySelectorAll('[data-del-news]').forEach(btn => {
+        btn.onclick = async () => {
+          if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) {
+            return alert("Unauthorized. Only administrator (UID: " + ADMIN_UID + ") can delete news.");
+          }
+          if (confirm("ADMIN ACTION: Permanently delete this news article from Firestore?")) {
+            try {
+              await deleteDoc(doc(db, "news", btn.getAttribute('data-del-news')));
+            } catch (err) {
+              alert("Permission Denied: " + err.message);
+            }
+          }
+        };
+      });
+    }
+
+    // -------------------------------------------------------------
+    // 3. IMPORTANT NOTICES (ADMIN CONTROLLED)
+    // -------------------------------------------------------------
+    document.getElementById('notice-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) {
+        return alert("Admin authentication required.");
+      }
+
+      const title = document.getElementById('notice-title').value.trim();
+      const content = document.getElementById('notice-content').value.trim();
+
+      if (title.length < 3 || title.length > 150) return alert("Title must be 3-150 characters.");
+      if (content.length < 5 || content.length > 2000) return alert("Content must be 5-2000 characters.");
+
+      try {
+        await addDoc(collection(db, "notices"), {
+          title,
+          content,
+          createdAt: serverTimestamp(),
+          date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
+        });
+        document.getElementById('notice-form').reset();
+        window.closeNoticeModal();
+      } catch (err) {
+        alert("Notice save error: " + err.message);
+      }
+    });
+
+    onSnapshot(query(collection(db, "notices"), orderBy("createdAt", "desc")), (snap) => {
+      const list = document.getElementById('notices-list');
+      list.innerHTML = "";
+      if (snap.empty) {
+        list.innerHTML = `<p class="text-xs text-gray-400 text-center py-2 uppercase">NO ACTIVE NOTICES</p>`;
+        return;
+      }
+      snap.forEach(dSnap => {
+        const item = dSnap.data();
+        const id = dSnap.id;
+        const wa = getWhatsAppLink(item.title, 'Notice');
+        const div = document.createElement('div');
+        div.className = "p-3 bg-amber-50/80 border-l-4 border-amber-600 rounded-r space-y-1.5";
+        div.innerHTML = `
+          <div class="flex justify-between items-center">
+            <h4 class="text-xs font-black uppercase text-amber-950 notice-title-text"></h4>
+            <span class="text-[10px] text-gray-500 font-bold">${item.date || ''}</span>
+          </div>
+          <p class="text-xs text-gray-800 leading-normal notice-content-text"></p>
+          <div class="flex justify-between items-center pt-1">
+            <a href="${wa}" target="_blank" class="text-[11px] text-emerald-800 font-bold uppercase flex items-center gap-1">
+              <i class="fa-brands fa-whatsapp text-emerald-600"></i> SHARE
+            </a>
+            <button data-del-notice="${id}" class="admin-ctrl ${activeAdminUser ? '' : 'hidden'} text-[11px] text-red-600 font-bold uppercase hover:underline">
+              DELETE
+            </button>
+          </div>
+        `;
+        div.querySelector('.notice-title-text').textContent = item.title;
+        div.querySelector('.notice-content-text').textContent = item.content;
+        list.appendChild(div);
+      });
+
+      document.querySelectorAll('[data-del-notice]').forEach(btn => {
+        btn.onclick = async () => {
+          if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) return;
+          if (confirm("Delete this notice permanently?")) {
+            await deleteDoc(doc(db, "notices", btn.getAttribute('data-del-notice')));
+          }
+        };
+      });
+    }, (err) => console.error("Notices listener error:", err));
+
+    // -------------------------------------------------------------
+    // 4. VILLAGE EVENTS (ADMIN CONTROLLED)
+    // -------------------------------------------------------------
+    document.getElementById('event-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) {
+        return alert("Admin authentication required.");
+      }
+
+      const title = document.getElementById('event-title').value.trim();
+      const eventDate = document.getElementById('event-date').value;
+      const location = document.getElementById('event-location').value.trim();
+      const description = document.getElementById('event-desc').value.trim();
+
+      if (title.length < 3 || title.length > 150) return alert("Title must be 3-150 characters.");
+      if (location.length < 2 || location.length > 100) return alert("Location must be 2-100 characters.");
+      if (description.length < 5 || description.length > 2000) return alert("Description must be 5-2000 characters.");
+
+      try {
+        await addDoc(collection(db, "events"), {
+          title,
+          eventDate: String(eventDate).slice(0, 20),
+          location,
+          description,
+          createdAt: serverTimestamp()
+        });
+        document.getElementById('event-form').reset();
+        window.closeEventModal();
+      } catch (err) {
+        alert("Event save error: " + err.message);
+      }
+    });
+
+    onSnapshot(query(collection(db, "events"), orderBy("createdAt", "desc")), (snap) => {
+      const list = document.getElementById('events-list');
+      list.innerHTML = "";
+      if (snap.empty) {
+        list.innerHTML = `<p class="text-xs text-gray-400 text-center py-2 uppercase">NO UPCOMING EVENTS</p>`;
+        return;
+      }
+      snap.forEach(dSnap => {
+        const item = dSnap.data();
+        const id = dSnap.id;
+        const wa = getWhatsAppLink(`${item.title} at ${item.location} on ${item.eventDate}`, 'Event');
+        const div = document.createElement('div');
+        div.className = "p-3 bg-emerald-50/80 border-l-4 border-emerald-600 rounded-r space-y-1.5";
+        div.innerHTML = `
+          <div class="flex justify-between items-center">
+            <h4 class="text-xs font-black uppercase text-emerald-950 event-title-text"></h4>
+            <span class="text-[10px] bg-emerald-200 text-emerald-900 font-bold px-1.5 py-0.5 rounded uppercase">${item.eventDate}</span>
+          </div>
+          <p class="text-[11px] text-gray-600 uppercase font-semibold"><i class="fa-solid fa-location-dot text-emerald-700 mr-1"></i><span class="event-loc-text"></span></p>
+          <p class="text-xs text-gray-800 leading-normal event-desc-text"></p>
+          <div class="flex justify-between items-center pt-1">
+            <a href="${wa}" target="_blank" class="text-[11px] text-emerald-800 font-bold uppercase flex items-center gap-1">
+              <i class="fa-brands fa-whatsapp text-emerald-600"></i> SHARE
+            </a>
+            <button data-del-event="${id}" class="admin-ctrl ${activeAdminUser ? '' : 'hidden'} text-[11px] text-red-600 font-bold uppercase hover:underline">
+              DELETE
+            </button>
+          </div>
+        `;
+        div.querySelector('.event-title-text').textContent = item.title;
+        div.querySelector('.event-loc-text').textContent = item.location;
+        div.querySelector('.event-desc-text').textContent = item.description;
+        list.appendChild(div);
+      });
+
+      document.querySelectorAll('[data-del-event]').forEach(btn => {
+        btn.onclick = async () => {
+          if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) return;
+          if (confirm("Delete this event permanently?")) {
+            await deleteDoc(doc(db, "events", btn.getAttribute('data-del-event')));
+          }
+        };
+      });
+    }, (err) => console.error("Events listener error:", err));
+
+    // -------------------------------------------------------------
+    // 5. TEMPLE DONATIONS (100% FREE FIRESTORE SCREENSHOT PROOF)
+    // -------------------------------------------------------------
+    document.getElementById('donation-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) {
+        return alert("Admin authentication required.");
+      }
+      
+      const donor = document.getElementById('donation-donor').value.trim() || "Anonymous Devotee";
+      const amount = Number(document.getElementById('donation-amount').value);
+      const date = document.getElementById('donation-date').value;
+      const verified = document.getElementById('donation-verified').checked;
+      const fileInput = document.getElementById('donation-file').files[0];
+      const submitBtn = document.getElementById('donation-submit-btn');
+
+      if (!fileInput) return alert("Please select payment screenshot proof.");
+      if (amount <= 0 || amount > 10000000) return alert("Please enter a valid donation amount.");
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "COMPRESSING RECEIPT & SAVING...";
+
+      try {
+        // Compress and convert screenshot to lightweight Base64 string directly
+        const screenshotUrl = await fileToBase64(fileInput, 800, 0.6);
+
+        await addDoc(collection(db, "donations"), {
+          donor: donor.slice(0, 100),
+          amount,
+          date: String(date).slice(0, 30),
+          verified: Boolean(verified),
+          screenshotUrl: screenshotUrl || "",
+          createdAt: serverTimestamp()
+        });
+
+        document.getElementById('donation-form').reset();
+        window.closeDonationModal();
+        alert("Temple donation record saved permanently (100% Free)!");
+      } catch (err) {
+        alert("Donation upload failed: " + err.message);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "UPLOAD & RECORD DONATION";
+      }
+    });
+
+    let unsubscribeDonations = null;
+
+    function listenToDonations() {
+      if (unsubscribeDonations) unsubscribeDonations();
+
+      // Public users query ONLY verified donations. Admin queries all donations.
+      const donationQuery = (activeAdminUser && activeAdminUser.uid === ADMIN_UID)
+        ? query(collection(db, "donations"), orderBy("createdAt", "desc"))
+        : query(collection(db, "donations"), where("verified", "==", true));
+
+      unsubscribeDonations = onSnapshot(donationQuery, (snap) => {
+        const list = document.getElementById('donations-list');
+        list.innerHTML = "";
+
+        if (snap.empty) {
+          list.innerHTML = `<p class="text-xs text-gray-400 text-center py-2 uppercase">NO VERIFIED DONATION RECORDS</p>`;
+          return;
+        }
+
+        const records = [];
+        snap.forEach(dSnap => records.push({ id: dSnap.id, ...dSnap.data() }));
+
+        // Client-side sort prevents composite index requirement on Spark free tier
+        if (!activeAdminUser) {
+          records.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+        }
+
+        records.forEach(record => {
+          const div = document.createElement('div');
+          div.className = "p-3 bg-gray-50 border border-gray-200 rounded-lg space-y-2";
+          div.innerHTML = `
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-black uppercase text-gray-900 donor-name-text"></span>
+              <span class="text-xs font-black text-emerald-800">₹${Number(record.amount).toLocaleString('en-IN')}</span>
+            </div>
+            <div class="flex justify-between items-center text-[10px] text-gray-500 font-semibold">
+              <span><i class="fa-regular fa-calendar mr-1"></i>${record.date}</span>
+              <span class="px-2 py-0.5 rounded uppercase font-bold ${record.verified ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                ${record.verified ? 'VERIFIED RECORD' : 'PENDING APPROVAL'}
+              </span>
+            </div>
+            <div class="flex justify-between items-center pt-1 border-t border-gray-200">
+              <button class="view-proof-btn text-[11px] text-brand-medium font-bold uppercase hover:underline flex items-center gap-1">
+                <i class="fa-solid fa-receipt"></i> VIEW PROOF
+              </button>
+              <div class="admin-ctrl ${activeAdminUser ? '' : 'hidden'} flex items-center gap-2">
+                <button data-verify-id="${record.id}" data-current="${record.verified}" class="text-[11px] text-emerald-800 font-bold uppercase hover:underline">
+                  ${record.verified ? 'UNVERIFY' : 'VERIFY'}
+                </button>
+                <button data-del-donation="${record.id}" class="text-[11px] text-red-600 font-bold uppercase hover:underline">
+                  DELETE
+                </button>
+              </div>
+            </div>
+          `;
+
+          div.querySelector('.donor-name-text').textContent = record.donor;
+          div.querySelector('.view-proof-btn').onclick = () => window.openImageViewer(record.screenshotUrl, `Payment Proof - ${record.donor}`);
+          list.appendChild(div);
+        });
+
+        document.querySelectorAll('[data-verify-id]').forEach(btn => {
+          btn.onclick = async () => {
+            if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) return;
+            const id = btn.getAttribute('data-verify-id');
+            const cur = btn.getAttribute('data-current') === 'true';
+            await updateDoc(doc(db, "donations", id), { verified: !cur });
+          };
+        });
+
+        document.querySelectorAll('[data-del-donation]').forEach(btn => {
+          btn.onclick = async () => {
+            if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) return;
+            if (confirm("Permanently delete this donation record?")) {
+              await deleteDoc(doc(db, "donations", btn.getAttribute('data-del-donation')));
+            }
+          };
+        });
+      }, (err) => console.error("Donations listener error:", err));
+    }
+  </script>
+</body>
+</html>
