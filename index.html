@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BAKANDIYA FAMILY | FOUNDER: JAYANT CHAUHAN</title>
+  <title>BAKANDIYA FAMILY | बकंडिया परिवार</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Poppins & Yantramanav -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Yantramanav:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -20,12 +20,15 @@
         extend: {
           colors: {
             brand: {
-              dark: '#143d2b',
-              primary: '#1b4332',
-              medium: '#2d6a4f',
-              light: '#d8f3dc',
-              accent: '#b7e4c7',
-              bg: '#f8faf9',
+              darkest: '#071d13',
+              dark: '#0c2e1f',
+              primary: '#12432d',
+              medium: '#1e6b48',
+              accent: '#10b981',
+              light: '#d1fae5',
+              gold: '#f59e0b',
+              goldLight: '#fef3c7',
+              bg: '#f4f7f5',
             }
           },
           fontFamily: {
@@ -37,44 +40,82 @@
   </script>
 
   <style>
-    .whatsapp-btn { background-color: #25D366; }
-    .whatsapp-btn:hover { background-color: #1eb956; }
+    /* 3D Modern Tactile Elevation */
+    .card-3d {
+      background: #ffffff;
+      border: 1px solid rgba(16, 185, 129, 0.15);
+      box-shadow: 0 10px 25px -5px rgba(7, 29, 19, 0.08), 0 8px 10px -6px rgba(7, 29, 19, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-3d:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(7, 29, 19, 0.15), 0 10px 15px -5px rgba(16, 185, 129, 0.1);
+    }
+    .btn-3d {
+      box-shadow: 0 4px 0 rgba(7, 29, 19, 0.3), 0 8px 15px rgba(16, 185, 129, 0.2);
+      transition: all 0.15s ease;
+    }
+    .btn-3d:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 rgba(7, 29, 19, 0.3);
+    }
+    .badge-3d {
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
+    .whatsapp-btn {
+      background-color: #25D366;
+      box-shadow: 0 4px 0 #1b9c4b;
+    }
+    .whatsapp-btn:hover { background-color: #22bf5b; }
+    .whatsapp-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #1b9c4b; }
   </style>
 </head>
 
-<body class="bg-brand-bg text-gray-800 font-sans min-h-screen flex flex-col antialiased">
+<body class="bg-brand-bg text-gray-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-accent selection:text-white">
 
-  <!-- LIVE STATUS BAR -->
-  <div id="connection-status-bar" class="bg-amber-600 text-white px-4 py-2 text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2">
-    <i class="fa-solid fa-circle-notch fa-spin"></i>
+  <!-- TOP LIVE STATUS BAR -->
+  <div id="connection-status-bar" class="bg-brand-darkest text-emerald-300 border-b border-emerald-900/60 px-4 py-1.5 text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-inner">
+    <i class="fa-solid fa-circle-notch fa-spin text-emerald-400"></i>
     <span id="connection-status-msg">CONNECTING TO CLOUD FIRESTORE...</span>
   </div>
 
   <!-- HEADER -->
-  <header class="bg-brand-dark text-white border-b-4 border-emerald-500 sticky top-0 z-40 shadow-lg">
+  <header class="bg-gradient-to-r from-brand-darkest via-brand-dark to-brand-primary text-white border-b-4 border-emerald-500 sticky top-0 z-40 shadow-xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-3">
       
-      <!-- LOGO & FOUNDER -->
-      <a href="#" class="flex items-center gap-3">
-        <div class="bg-brand-medium text-white w-12 h-12 rounded-lg flex items-center justify-center font-extrabold text-2xl border border-emerald-400">
+      <!-- LOGO & BRAND TITLE -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-brand-primary flex items-center justify-center font-black text-2xl text-white shadow-lg border-2 border-emerald-300 transform group-hover:scale-105 transition">
           <i class="fa-solid fa-people-roof"></i>
         </div>
         <div>
-          <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase">BAKANDIYA FAMILY</h1>
-          <p class="text-xs sm:text-sm font-semibold text-emerald-300 uppercase tracking-widest">
-            FOUNDER: JAYANT CHAUHAN | बकंडिया परिवार
+          <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase text-white drop-shadow">
+            BAKANDIYA FAMILY
+          </h1>
+          <p class="text-[11px] sm:text-xs font-bold text-emerald-300 uppercase tracking-widest">
+            बकंडिया परिवार • COMMUNITY NETWORK
           </p>
         </div>
       </a>
 
-      <!-- ACTIONS -->
-      <div class="flex items-center gap-2">
-        <a href="#publish-section" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2 shadow">
+      <!-- RIGHT SIDE: PUBLISH, MEMBER LOGIN & ADMIN LOGIN -->
+      <div class="flex items-center flex-wrap gap-2">
+        
+        <!-- PUBLISH NEWS SHORTCUT -->
+        <a href="#publish-section" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 btn-3d shadow">
           <i class="fa-solid fa-bullhorn"></i>
           <span>PUBLISH NEWS</span>
         </a>
-        <button id="admin-header-btn" onclick="openAdminModal()" class="bg-gray-800 hover:bg-gray-700 text-emerald-300 border border-emerald-500 font-bold py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
-          <i class="fa-solid fa-lock"></i>
+
+        <!-- REQUIREMENT 1: MEMBER LOGIN WITH PHONE/OTP -->
+        <button id="member-header-btn" onclick="openMemberModal()" class="bg-gradient-to-r from-teal-700 to-emerald-800 hover:from-teal-600 hover:to-emerald-700 text-white border border-emerald-400/50 font-bold py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md transition">
+          <i class="fa-solid fa-mobile-screen-button text-emerald-300"></i>
+          <span id="member-btn-label">MEMBER LOGIN</span>
+        </button>
+
+        <!-- ADMIN LOGIN -->
+        <button id="admin-header-btn" onclick="openAdminModal()" class="bg-gray-900/90 hover:bg-black text-emerald-300 border border-emerald-500/60 font-bold py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md transition">
+          <i class="fa-solid fa-shield-halved"></i>
           <span id="admin-status-text">ADMIN LOGIN</span>
         </button>
       </div>
@@ -82,11 +123,14 @@
     </div>
 
     <!-- NAVIGATION MENU -->
-    <nav class="bg-brand-primary text-emerald-100 text-xs sm:text-sm font-bold uppercase tracking-wider overflow-x-auto">
+    <nav class="bg-brand-darkest/90 border-t border-emerald-900/50 text-emerald-100 text-xs sm:text-sm font-bold uppercase tracking-wider overflow-x-auto shadow-inner">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 flex space-x-6 py-2.5 whitespace-nowrap">
+        <a href="#about-us-section" class="text-amber-300 hover:text-white transition flex items-center gap-1">
+          <i class="fa-solid fa-address-card"></i> ABOUT US
+        </a>
         <a href="#latest-news" class="hover:text-white transition">LATEST VILLAGE NEWS</a>
         <a href="#events-section" class="hover:text-white transition">VILLAGE EVENTS</a>
-        <a href="#notices-section" class="hover:text-white transition">IMPORTANT NOTICES ABOUT BAKANDIYA FAMILY</a>
+        <a href="#notices-section" class="hover:text-white transition">IMPORTANT NOTICES</a>
         <a href="#most-important" class="hover:text-white transition">MOST IMPORTANT NEWS</a>
         <a href="#less-important" class="hover:text-white transition">LESS IMPORTANT NEWS</a>
         <a href="#donations-section" class="hover:text-white transition">TEMPLE DONATIONS</a>
@@ -94,49 +138,166 @@
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="bg-gradient-to-b from-brand-primary to-brand-dark text-white py-8 px-4 text-center">
-    <div class="max-w-4xl mx-auto">
-      <span class="inline-block bg-emerald-800/80 border border-emerald-400 text-emerald-200 text-[11px] uppercase px-3 py-1 rounded-full font-bold mb-2 tracking-widest">
-        COMMUNITY INFORMATION NETWORK
+  <!-- HERO SECTION WITH REQUIREMENT 8: FIVE FOUNDERS -->
+  <section class="bg-gradient-to-b from-brand-dark via-brand-primary to-brand-darkest text-white py-10 px-4 text-center relative overflow-hidden shadow-2xl">
+    <div class="max-w-5xl mx-auto relative z-10 space-y-4">
+      
+      <span class="inline-block bg-emerald-950/80 border border-emerald-400 text-emerald-300 text-[11px] sm:text-xs uppercase px-4 py-1.5 rounded-full font-black tracking-widest shadow-md">
+        ★ OFFICIAL COMMUNITY PORTAL OF BAKANDIYA FAMILY ★
       </span>
-      <h2 class="text-2xl sm:text-3xl font-black uppercase mb-1">BAKANDIYA FAMILY COMMUNITY PORTAL</h2>
-      <p class="text-xs sm:text-sm text-gray-200 font-medium">
-        FOUNDER: JAYANT CHAUHAN. Real-time updates, verified temple donations, and community announcements.
-      </p>
+
+      <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tight text-white drop-shadow-md">
+        BAKANDIYA FAMILY COMMUNITY PORTAL
+      </h2>
+
+      <!-- REQUIREMENT 8: FIVE FOUNDER NAMES DISPLAY -->
+      <div class="pt-2">
+        <p class="text-xs font-black uppercase text-amber-300 tracking-widest mb-2 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-award"></i> FOUNDERS OF BAKANDIYA FAMILY <i class="fa-solid fa-award"></i>
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+            1. Anoop Kumar Chauhan
+          </span>
+          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+            2. Peeyush Chauhan
+          </span>
+          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+            3. Rahul Chauhan (Muttiah Ji)
+          </span>
+          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+            4. Mohit Chauhan (Eng.)
+          </span>
+          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+            5. Vikas Chauhan (Kapasiya)
+          </span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- MAIN CONTAINER -->
+  <!-- ========================================================= -->
+  <!-- REQUIREMENT 5: ABOUT US SECTION (3 CONTACTS WITH PHONES)  -->
+  <!-- ========================================================= -->
+  <section id="about-us-section" class="max-w-7xl mx-auto px-4 sm:px-6 pt-8">
+    <div class="card-3d rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-white via-emerald-50/40 to-white border-2 border-emerald-200">
+      
+      <div class="flex flex-wrap items-center justify-between border-b-2 border-brand-primary/20 pb-4 mb-6 gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-primary text-white flex items-center justify-center text-xl shadow">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+          <div>
+            <h2 class="text-xl sm:text-2xl font-black text-brand-dark uppercase tracking-wider">
+              ABOUT US | हमारे बारे में
+            </h2>
+            <p class="text-xs text-gray-500 font-medium">
+              CORE COMMITTEE & CONTACT INFORMATION • संपर्क सूत्र
+            </p>
+          </div>
+        </div>
+        <span class="text-xs bg-amber-100 text-amber-900 font-black px-3 py-1 rounded-full border border-amber-300 uppercase tracking-wider">
+          OFFICIAL CONTACTS
+        </span>
+      </div>
+
+      <!-- 3 DEDICATED CONTACT CARDS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <!-- 1. JAYANT CHAUHAN -->
+        <div class="card-3d bg-white p-5 rounded-xl border border-emerald-200/80 flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2 py-0.5 rounded uppercase">MEMBER 1</span>
+            <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase mt-1">1. JAYANT CHAUHAN</h3>
+            <p class="text-xs text-emerald-800 font-bold mt-0.5 flex items-center gap-1.5">
+              <i class="fa-solid fa-phone"></i> +91 9634093751
+            </p>
+          </div>
+          <div class="flex items-center gap-2 pt-2 border-t border-gray-100">
+            <a href="tel:9634093751" class="flex-1 text-center bg-brand-primary hover:bg-brand-medium text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+              <i class="fa-solid fa-phone-flip mr-1"></i> CALL
+            </a>
+            <a href="https://wa.me/919634093751" target="_blank" class="flex-1 text-center whatsapp-btn text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+              <i class="fa-brands fa-whatsapp mr-1"></i> WHATSAPP
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. ANOOP KUMAR CHAUHAN -->
+        <div class="card-3d bg-white p-5 rounded-xl border border-emerald-200/80 flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2 py-0.5 rounded uppercase">MEMBER 2</span>
+            <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase mt-1">2. ANOOP KUMAR CHAUHAN</h3>
+            <p class="text-xs text-emerald-800 font-bold mt-0.5 flex items-center gap-1.5">
+              <i class="fa-solid fa-phone"></i> +91 9719911284
+            </p>
+          </div>
+          <div class="flex items-center gap-2 pt-2 border-t border-gray-100">
+            <a href="tel:9719911284" class="flex-1 text-center bg-brand-primary hover:bg-brand-medium text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+              <i class="fa-solid fa-phone-flip mr-1"></i> CALL
+            </a>
+            <a href="https://wa.me/919719911284" target="_blank" class="flex-1 text-center whatsapp-btn text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+              <i class="fa-brands fa-whatsapp mr-1"></i> WHATSAPP
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. PEEYUSH CHAUHAN -->
+        <div class="card-3d bg-white p-5 rounded-xl border border-emerald-200/80 flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2 py-0.5 rounded uppercase">MEMBER 3</span>
+            <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase mt-1">3. PEEYUSH CHAUHAN</h3>
+            <p class="text-xs text-emerald-800 font-bold mt-0.5 flex items-center gap-1.5">
+              <i class="fa-solid fa-phone"></i> +91 9136807774
+            </p>
+          </div>
+          <div class="flex items-center gap-2 pt-2 border-t border-gray-100">
+            <a href="tel:9136807774" class="flex-1 text-center bg-brand-primary hover:bg-brand-medium text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+              <i class="fa-solid fa-phone-flip mr-1"></i> CALL
+            </a>
+            <a href="https://wa.me/919136807774" target="_blank" class="flex-1 text-center whatsapp-btn text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+              <i class="fa-brands fa-whatsapp mr-1"></i> WHATSAPP
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN TWO-COLUMN CONTAINER -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
     <!-- LEFT 2 COLUMNS: NEWS FEEDS & PUBLIC PUBLISHING -->
     <div class="lg:col-span-2 space-y-10">
 
       <!-- ========================================================= -->
-      <!-- SECTION: PUBLIC NEWS PUBLISHING (NO LOGIN REQUIRED)      -->
+      <!-- REQUIREMENT 2: PUBLIC NEWS (DESCRIPTION NOT MANDATORY)    -->
       <!-- ========================================================= -->
-      <section id="publish-section" class="bg-white rounded-xl shadow-md border-2 border-brand-light p-6 sm:p-7">
+      <section id="publish-section" class="card-3d rounded-2xl p-6 sm:p-7 border-2 border-brand-light">
         <div class="flex items-center gap-3 border-b-2 border-brand-primary pb-3 mb-5">
-          <i class="fa-solid fa-pen-to-square text-brand-primary text-2xl"></i>
+          <div class="w-10 h-10 rounded-lg bg-emerald-100 text-brand-primary flex items-center justify-center text-xl">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
           <div>
             <h2 class="text-lg sm:text-xl font-black text-brand-dark uppercase tracking-wide">
               PUBLIC NEWS PUBLISHING
             </h2>
             <p class="text-xs text-gray-500 font-medium">
-              NO ACCOUNT REQUIRED • NO PERSONAL INFORMATION REQUESTED • PUBLISHES DIRECTLY TO FIRESTORE
+              NO ACCOUNT REQUIRED • NO PERSONAL INFO ASKED • PUBLISHES IMMEDIATELY
             </p>
           </div>
         </div>
 
         <form id="public-news-form" class="space-y-4">
-          <!-- NEWS TITLE -->
+          <!-- NEWS TITLE (MANDATORY) -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
               NEWS TITLE <span class="text-red-500">*</span>
             </label>
             <input type="text" id="news-title" required minlength="3" maxlength="150" placeholder="Enter news headline (3 - 150 characters)..."
-              class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium" />
+              class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner" />
           </div>
 
           <!-- NEWS CATEGORY -->
@@ -144,34 +305,39 @@
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
               NEWS CATEGORY <span class="text-red-500">*</span>
             </label>
-            <select id="news-category" required class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium bg-white">
+            <select id="news-category" required class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium bg-white shadow-inner">
               <option value="LATEST VILLAGE NEWS">LATEST VILLAGE NEWS</option>
               <option value="MOST IMPORTANT NEWS">MOST IMPORTANT NEWS</option>
               <option value="LESS IMPORTANT NEWS">LESS IMPORTANT NEWS</option>
             </select>
           </div>
 
-          <!-- NEWS DESCRIPTION -->
+          <!-- REQUIREMENT 2: NEWS DESCRIPTION (NOT MANDATORY / OPTIONAL) -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
-              NEWS DESCRIPTION <span class="text-red-500">*</span>
-            </label>
-            <textarea id="news-description" rows="4" required minlength="5" maxlength="3000" placeholder="Write the full news description in English or Hindi (5 - 3,000 characters)..."
-              class="w-full px-3.5 py-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium"></textarea>
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700">
+                NEWS DESCRIPTION
+              </label>
+              <span class="text-[11px] font-bold text-gray-400 uppercase bg-gray-100 px-2 py-0.5 rounded">
+                OPTIONAL (वैकल्पिक - लिखना जरूरी नहीं)
+              </span>
+            </div>
+            <textarea id="news-description" rows="3" maxlength="3000" placeholder="Write news details if you wish (अगर आप लिखना चाहें तो लिखें, वरना खाली छोड़ सकते हैं)..."
+              class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner"></textarea>
           </div>
 
-          <!-- OPTIONAL IMAGE (100% FREE FIRESTORE STORAGE) -->
+          <!-- OPTIONAL PHOTO -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
-              OPTIONAL PHOTO (AUTO-COMPRESSED • 100% FREE SPARK STORAGE)
+              OPTIONAL PHOTO (AUTO-COMPRESSED • FREE STORAGE)
             </label>
             <input type="file" id="news-image" accept="image/*"
-              class="w-full text-xs text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark cursor-pointer" />
+              class="w-full text-xs text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark cursor-pointer" />
           </div>
 
           <!-- PUBLISH NEWS BUTTON -->
           <div class="pt-2">
-            <button type="submit" id="publish-submit-btn" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-black py-3 px-6 rounded-lg uppercase tracking-wider text-sm transition flex items-center justify-center gap-2 shadow">
+            <button type="submit" id="publish-submit-btn" class="w-full bg-gradient-to-r from-brand-primary to-brand-medium hover:from-brand-medium hover:to-brand-primary text-white font-black py-3 px-6 rounded-xl uppercase tracking-wider text-sm btn-3d flex items-center justify-center gap-2">
               <i class="fa-solid fa-paper-plane"></i>
               <span id="publish-btn-text">PUBLISH NEWS BUTTON</span>
             </button>
@@ -190,7 +356,9 @@
               LATEST VILLAGE NEWS
             </h2>
           </div>
-          <span class="text-[10px] bg-emerald-100 text-brand-dark font-extrabold px-2.5 py-1 rounded uppercase">FIRESTORE LIVE</span>
+          <span class="text-[10px] bg-emerald-100 text-brand-dark font-extrabold px-2.5 py-1 rounded-full uppercase badge-3d">
+            FIRESTORE LIVE
+          </span>
         </div>
 
         <div id="latest-news-list" class="space-y-4">
@@ -212,7 +380,9 @@
               MOST IMPORTANT NEWS
             </h2>
           </div>
-          <span class="text-[10px] bg-red-100 text-red-800 font-extrabold px-2.5 py-1 rounded uppercase">HIGH PRIORITY</span>
+          <span class="text-[10px] bg-red-100 text-red-800 font-extrabold px-2.5 py-1 rounded-full uppercase badge-3d">
+            HIGH PRIORITY
+          </span>
         </div>
 
         <div id="most-important-list" class="space-y-4">
@@ -231,7 +401,9 @@
               LESS IMPORTANT NEWS
             </h2>
           </div>
-          <span class="text-[10px] bg-gray-200 text-gray-700 font-extrabold px-2.5 py-1 rounded uppercase">COMMUNITY NOTES</span>
+          <span class="text-[10px] bg-gray-200 text-gray-700 font-extrabold px-2.5 py-1 rounded-full uppercase badge-3d">
+            COMMUNITY NOTES
+          </span>
         </div>
 
         <div id="less-important-list" class="space-y-4">
@@ -245,9 +417,9 @@
     <div class="space-y-8">
 
       <!-- ========================================================= -->
-      <!-- SECTION: IMPORTANT NOTICES ABOUT BAKANDIYA FAMILY         -->
+      <!-- REQUIREMENT 3: NOTICES (ADMIN & MEMBERS CAN ADD)          -->
       <!-- ========================================================= -->
-      <section id="notices-section" class="bg-white rounded-xl shadow border-t-4 border-amber-600 p-5">
+      <section id="notices-section" class="card-3d rounded-2xl border-t-4 border-amber-600 p-5">
         <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-bullhorn text-amber-600 text-lg"></i>
@@ -255,7 +427,7 @@
               IMPORTANT NOTICES ABOUT BAKANDIYA FAMILY
             </h2>
           </div>
-          <button id="admin-add-notice-btn" onclick="openNoticeModal()" class="hidden text-[11px] bg-amber-600 hover:bg-amber-700 text-white px-2 py-1 rounded font-bold uppercase">
+          <button id="add-notice-btn" onclick="openNoticeModal()" class="text-[11px] bg-amber-600 hover:bg-amber-700 text-white px-2.5 py-1 rounded-lg font-bold uppercase shadow-sm">
             <i class="fa-solid fa-plus"></i> ADD
           </button>
         </div>
@@ -266,9 +438,9 @@
       </section>
 
       <!-- ========================================================= -->
-      <!-- SECTION: VILLAGE EVENTS                                   -->
+      <!-- REQUIREMENT 3: VILLAGE EVENTS (ADMIN & MEMBERS CAN ADD)   -->
       <!-- ========================================================= -->
-      <section id="events-section" class="bg-white rounded-xl shadow border-t-4 border-emerald-600 p-5">
+      <section id="events-section" class="card-3d rounded-2xl border-t-4 border-emerald-600 p-5">
         <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-calendar-check text-emerald-700 text-lg"></i>
@@ -276,7 +448,7 @@
               VILLAGE EVENTS
             </h2>
           </div>
-          <button id="admin-add-event-btn" onclick="openEventModal()" class="hidden text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-2 py-1 rounded font-bold uppercase">
+          <button id="add-event-btn" onclick="openEventModal()" class="text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-2.5 py-1 rounded-lg font-bold uppercase shadow-sm">
             <i class="fa-solid fa-plus"></i> ADD
           </button>
         </div>
@@ -287,24 +459,33 @@
       </section>
 
       <!-- ========================================================= -->
-      <!-- SECTION: TEMPLE DONATIONS                                 -->
+      <!-- REQUIREMENT 4 & 7: TEMPLE DONATIONS + CHAIRMAN HEADER     -->
       <!-- ========================================================= -->
-      <section id="donations-section" class="bg-white rounded-xl shadow border-t-4 border-brand-primary p-5">
-        <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-3">
+      <section id="donations-section" class="card-3d rounded-2xl border-t-4 border-brand-primary p-5">
+        
+        <!-- HEADER WITH REQUIREMENT 7: CHAIRMAN NAME -->
+        <div class="flex flex-wrap items-center justify-between border-b border-gray-200 pb-3 mb-3 gap-2">
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-hands-praying text-brand-primary text-lg"></i>
             <h2 class="text-xs sm:text-sm font-black text-gray-900 uppercase tracking-wider">
               TEMPLE DONATIONS
             </h2>
           </div>
-          <button id="admin-add-donation-btn" onclick="openDonationModal()" class="hidden text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-2 py-1 rounded font-bold uppercase">
+          <button id="add-donation-btn" onclick="openDonationModal()" class="text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-2.5 py-1 rounded-lg font-bold uppercase shadow-sm">
             <i class="fa-solid fa-plus"></i> RECORD
           </button>
         </div>
 
-        <p class="text-[11px] text-gray-600 mb-4 bg-brand-light/50 p-2.5 rounded border border-brand-accent">
+        <!-- REQUIREMENT 7: SMALL RIGHT-ALIGNED CHAIRMAN DISPLAY -->
+        <div class="text-right pb-2">
+          <span class="inline-block bg-amber-50 border border-amber-300/80 text-amber-900 text-[11px] font-black uppercase px-2.5 py-1 rounded-md shadow-xs">
+            <i class="fa-solid fa-user-tie text-amber-700 mr-1"></i> TEMPLE COMMITTEE CHAIRMAN — BITU CHAUHAN
+          </span>
+        </div>
+
+        <p class="text-[11px] text-gray-600 mb-4 bg-brand-light/50 p-2.5 rounded-xl border border-brand-accent">
           <i class="fa-solid fa-shield-halved text-brand-medium mr-1"></i>
-          Verified temple contributions are published openly. Bank account numbers and private UPI keys are hidden.
+          Members & Admin can record donations. Only verified donations are public. Bank/UPI private details remain hidden.
         </p>
 
         <div id="donations-list" class="space-y-3">
@@ -317,58 +498,147 @@
   </main>
 
   <!-- ========================================================= -->
-  <!-- MODALS: AUTH & MANAGEMENT                                 -->
+  <!-- MODAL 1: MEMBER PHONE + OTP LOGIN (REQUIREMENT 1)         -->
   <!-- ========================================================= -->
+  <div id="member-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
+    <div class="card-3d rounded-2xl max-w-sm w-full p-6 relative">
+      <button onclick="closeMemberModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
 
-  <!-- ADMIN AUTH MODAL -->
-  <div id="admin-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
+      <!-- LOGGED OUT VIEW: PHONE NUMBER & OTP -->
+      <div id="member-login-view" class="space-y-4">
+        <div class="text-center">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center mx-auto mb-2 text-2xl shadow-inner">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </div>
+          <h3 class="text-lg font-black uppercase text-brand-dark">MEMBER LOGIN</h3>
+          <p class="text-[11px] text-gray-500 font-medium">LOGIN WITH MOBILE NUMBER & OTP</p>
+        </div>
+
+        <!-- STEP 1: PHONE NUMBER -->
+        <div id="phone-step-box" class="space-y-3">
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">MEMBER NAME</label>
+            <input type="text" id="member-name-input" required placeholder="Aapka Naam (e.g. Rahul Chauhan)" class="w-full px-3 py-2 border rounded-xl text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">MOBILE NUMBER (10 DIGITS)</label>
+            <div class="flex">
+              <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-gray-300 bg-gray-50 text-gray-600 text-xs font-bold">+91</span>
+              <input type="tel" id="member-phone-input" maxlength="10" required placeholder="9876543210" class="w-full px-3 py-2 border rounded-r-xl text-sm font-semibold" />
+            </div>
+          </div>
+          
+          <!-- Invisible Recaptcha Container -->
+          <div id="recaptcha-container" class="flex justify-center my-2"></div>
+
+          <button type="button" id="send-otp-btn" onclick="handleSendOtp()" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2.5 rounded-xl uppercase text-xs btn-3d">
+            SEND OTP
+          </button>
+        </div>
+
+        <!-- STEP 2: ENTER OTP -->
+        <div id="otp-step-box" class="space-y-3 hidden">
+          <div class="p-2.5 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-900 font-medium text-center">
+            OTP sent to: <span id="display-otp-phone" class="font-bold"></span>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">ENTER 6-DIGIT OTP</label>
+            <input type="number" id="otp-code-input" maxlength="6" placeholder="123456" class="w-full px-3 py-2 border rounded-xl text-center text-lg tracking-widest font-black" />
+          </div>
+          <button type="button" id="verify-otp-btn" onclick="handleVerifyOtp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl uppercase text-xs btn-3d">
+            VERIFY & LOGIN
+          </button>
+          <button type="button" onclick="resetMemberLoginUi()" class="w-full text-xs text-gray-500 hover:underline uppercase text-center block">
+            Change Mobile Number
+          </button>
+        </div>
+      </div>
+
+      <!-- LOGGED IN MEMBER VIEW -->
+      <div id="member-active-view" class="space-y-4 hidden text-center">
+        <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto text-2xl">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase">VERIFIED MEMBER</span>
+          <h4 id="active-member-name" class="text-base font-black uppercase text-brand-dark mt-1"></h4>
+          <p id="active-member-phone" class="text-xs text-gray-500 font-mono"></p>
+        </div>
+        <p class="text-xs text-emerald-900 bg-emerald-50 p-2.5 rounded-lg border border-emerald-200">
+          Aap Events, Important Notices aur Temple Donation records add kar sakte hain.
+        </p>
+        <button onclick="handleMemberLogout()" class="w-full bg-red-100 hover:bg-red-200 text-red-700 font-bold py-2 rounded-xl uppercase text-xs">
+          LOGOUT MEMBER
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- MODAL 2: ADMIN LOGIN + REQUIREMENT 6 (FORGOT PASSWORD)    -->
+  <!-- ========================================================= -->
+  <div id="admin-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
+    <div class="card-3d rounded-2xl max-w-sm w-full p-6 relative">
       <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
         <i class="fa-solid fa-xmark text-lg"></i>
       </button>
 
       <div id="admin-login-view">
         <div class="text-center mb-5">
-          <i class="fa-solid fa-shield-halved text-3xl text-brand-primary mb-2"></i>
+          <div class="w-12 h-12 bg-brand-dark text-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-2 text-2xl shadow">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
           <h3 class="text-lg font-black uppercase text-brand-dark">ADMIN AUTHENTICATION</h3>
-          <p class="text-xs text-gray-500 uppercase">FIREBASE AUTH EMAIL/PASSWORD</p>
+          <p class="text-[11px] text-gray-500 uppercase">AUTHORIZED PERSONNEL ONLY</p>
         </div>
 
         <form id="admin-login-form" class="space-y-3">
           <div>
             <label class="block text-xs font-bold uppercase text-gray-700 mb-1">ADMIN EMAIL</label>
-            <input type="email" id="admin-email" required class="w-full px-3 py-2 border rounded-lg text-sm" placeholder="admin@example.com" />
+            <input type="email" id="admin-email" required class="w-full px-3 py-2 border rounded-xl text-sm" placeholder="admin@example.com" />
           </div>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-700 mb-1">ADMIN PASSWORD</label>
-            <input type="password" id="admin-password" required class="w-full px-3 py-2 border rounded-lg text-sm" placeholder="••••••••" />
+            <input type="password" id="admin-password" required class="w-full px-3 py-2 border rounded-xl text-sm" placeholder="••••••••" />
           </div>
-          <button type="submit" id="admin-login-submit" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2.5 rounded-lg uppercase text-xs">
+
+          <!-- REQUIREMENT 6: FORGOT PASSWORD BUTTON -->
+          <div class="text-right">
+            <button type="button" onclick="handleAdminForgotPassword()" class="text-[11px] text-emerald-800 hover:text-emerald-950 font-bold uppercase hover:underline">
+              Forgot Password? (Reset via Gmail)
+            </button>
+          </div>
+
+          <button type="submit" id="admin-login-submit" class="w-full bg-brand-dark hover:bg-black text-white font-bold py-2.5 rounded-xl uppercase text-xs btn-3d">
             LOG IN AS ADMIN
           </button>
         </form>
       </div>
 
+      <!-- ADMIN ACTIVE DASHBOARD -->
       <div id="admin-panel-view" class="hidden space-y-4">
         <div class="border-b pb-3 flex justify-between items-center">
           <div>
-            <span class="text-[10px] bg-green-100 text-green-800 font-black px-2 py-0.5 rounded uppercase">LOGGED IN</span>
+            <span class="text-[10px] bg-green-100 text-green-800 font-black px-2 py-0.5 rounded uppercase">ADMIN ACTIVE</span>
             <p id="admin-user-email" class="text-xs text-gray-700 font-mono mt-1 font-semibold truncate max-w-[180px]"></p>
           </div>
-          <button onclick="adminLogout()" class="text-xs bg-red-100 hover:bg-red-200 text-red-700 px-2.5 py-1 rounded font-bold uppercase">
+          <button onclick="adminLogout()" class="text-xs bg-red-100 hover:bg-red-200 text-red-700 px-2.5 py-1 rounded-lg font-bold uppercase">
             LOGOUT
           </button>
         </div>
         <div class="space-y-2">
-          <button onclick="openNoticeModal()" class="w-full py-2 px-3 bg-amber-50 hover:bg-amber-100 border border-amber-300 rounded text-left font-bold text-xs uppercase flex items-center justify-between text-amber-900">
+          <button onclick="openNoticeModal()" class="w-full py-2 px-3 bg-amber-50 hover:bg-amber-100 border border-amber-300 rounded-lg text-left font-bold text-xs uppercase flex items-center justify-between text-amber-900">
             <span><i class="fa-solid fa-plus-circle mr-2"></i> POST IMPORTANT NOTICE</span>
             <i class="fa-solid fa-angle-right"></i>
           </button>
-          <button onclick="openEventModal()" class="w-full py-2 px-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded text-left font-bold text-xs uppercase flex items-center justify-between text-emerald-900">
+          <button onclick="openEventModal()" class="w-full py-2 px-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-lg text-left font-bold text-xs uppercase flex items-center justify-between text-emerald-900">
             <span><i class="fa-solid fa-calendar-plus mr-2"></i> POST VILLAGE EVENT</span>
             <i class="fa-solid fa-angle-right"></i>
           </button>
-          <button onclick="openDonationModal()" class="w-full py-2 px-3 bg-brand-light hover:bg-emerald-200 border border-brand-accent rounded text-left font-bold text-xs uppercase flex items-center justify-between text-brand-dark">
+          <button onclick="openDonationModal()" class="w-full py-2 px-3 bg-brand-light hover:bg-emerald-200 border border-brand-accent rounded-lg text-left font-bold text-xs uppercase flex items-center justify-between text-brand-dark">
             <span><i class="fa-solid fa-hand-holding-dollar mr-2"></i> RECORD TEMPLE DONATION</span>
             <i class="fa-solid fa-angle-right"></i>
           </button>
@@ -377,52 +647,55 @@
     </div>
   </div>
 
-  <!-- NOTICE MODAL -->
-  <div id="notice-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+  <!-- NOTICE MODAL (FOR ADMIN AND MEMBERS) -->
+  <div id="notice-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
+    <div class="card-3d rounded-2xl max-w-md w-full p-6 relative">
       <button onclick="closeNoticeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
       <h3 class="text-base font-black uppercase text-amber-800 mb-3">POST IMPORTANT NOTICE</h3>
       <form id="notice-form" class="space-y-3">
-        <input type="text" id="notice-title" required minlength="3" maxlength="150" placeholder="NOTICE TITLE (3 - 150 CHARS)" class="w-full px-3 py-2 border rounded-lg text-sm uppercase font-semibold" />
-        <textarea id="notice-content" rows="4" required minlength="5" maxlength="2000" placeholder="Full notice details (5 - 2,000 chars)..." class="w-full px-3 py-2 border rounded-lg text-sm"></textarea>
-        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 rounded-lg uppercase text-xs">SAVE TO FIRESTORE</button>
+        <input type="text" id="notice-title" required minlength="3" maxlength="150" placeholder="NOTICE TITLE (3 - 150 CHARS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase font-semibold" />
+        <textarea id="notice-content" rows="4" required minlength="5" maxlength="2000" placeholder="Full notice details (5 - 2,000 chars)..." class="w-full px-3 py-2 border rounded-xl text-sm"></textarea>
+        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 rounded-xl uppercase text-xs btn-3d">SAVE TO FIRESTORE</button>
       </form>
     </div>
   </div>
 
-  <!-- EVENT MODAL -->
-  <div id="event-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+  <!-- EVENT MODAL (FOR ADMIN AND MEMBERS) -->
+  <div id="event-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
+    <div class="card-3d rounded-2xl max-w-md w-full p-6 relative">
       <button onclick="closeEventModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
       <h3 class="text-base font-black uppercase text-brand-dark mb-3">POST VILLAGE EVENT</h3>
       <form id="event-form" class="space-y-3">
-        <input type="text" id="event-title" required minlength="3" maxlength="150" placeholder="EVENT NAME (3 - 150 CHARS)" class="w-full px-3 py-2 border rounded-lg text-sm uppercase font-semibold" />
-        <input type="date" id="event-date" required class="w-full px-3 py-2 border rounded-lg text-sm" />
-        <input type="text" id="event-location" required minlength="2" maxlength="100" placeholder="LOCATION / VENUE (2 - 100 CHARS)" class="w-full px-3 py-2 border rounded-lg text-sm uppercase" />
-        <textarea id="event-desc" rows="3" required minlength="5" maxlength="2000" placeholder="Event description (5 - 2,000 chars)..." class="w-full px-3 py-2 border rounded-lg text-sm"></textarea>
-        <button type="submit" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2 rounded-lg uppercase text-xs">SAVE TO FIRESTORE</button>
+        <input type="text" id="event-title" required minlength="3" maxlength="150" placeholder="EVENT NAME (3 - 150 CHARS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase font-semibold" />
+        <input type="date" id="event-date" required class="w-full px-3 py-2 border rounded-xl text-sm" />
+        <input type="text" id="event-location" required minlength="2" maxlength="100" placeholder="LOCATION / VENUE (2 - 100 CHARS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase" />
+        <textarea id="event-desc" rows="3" maxlength="2000" placeholder="Event description..." class="w-full px-3 py-2 border rounded-xl text-sm"></textarea>
+        <button type="submit" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2 rounded-xl uppercase text-xs btn-3d">SAVE TO FIRESTORE</button>
       </form>
     </div>
   </div>
 
-  <!-- DONATION MODAL -->
-  <div id="donation-modal" class="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+  <!-- DONATION MODAL (FOR ADMIN AND MEMBERS) -->
+  <div id="donation-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
+    <div class="card-3d rounded-2xl max-w-md w-full p-6 relative">
       <button onclick="closeDonationModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
       <h3 class="text-base font-black uppercase text-brand-dark mb-3">RECORD TEMPLE DONATION</h3>
       <form id="donation-form" class="space-y-3">
-        <input type="text" id="donation-donor" maxlength="100" placeholder="DONOR NAME (OR ANONYMOUS)" class="w-full px-3 py-2 border rounded-lg text-sm uppercase font-semibold" />
-        <input type="number" min="1" max="10000000" id="donation-amount" required placeholder="DONATION AMOUNT IN INR (₹)" class="w-full px-3 py-2 border rounded-lg text-sm font-bold text-emerald-800" />
-        <input type="date" id="donation-date" required class="w-full px-3 py-2 border rounded-lg text-sm" />
+        <input type="text" id="donation-donor" maxlength="100" placeholder="DONOR NAME (OR ANONYMOUS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase font-semibold" />
+        <input type="number" min="1" max="10000000" id="donation-amount" required placeholder="DONATION AMOUNT IN INR (₹)" class="w-full px-3 py-2 border rounded-xl text-sm font-bold text-emerald-800" />
+        <input type="date" id="donation-date" required class="w-full px-3 py-2 border rounded-xl text-sm" />
         <div>
           <label class="block text-[11px] font-bold uppercase text-gray-700 mb-1">PAYMENT SCREENSHOT PROOF (AUTO-COMPRESSED)</label>
-          <input type="file" id="donation-file" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark" />
+          <input type="file" id="donation-file" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark" />
         </div>
-        <div class="flex items-center gap-2">
+        
+        <!-- Only Admin can mark as Verified directly -->
+        <div id="donation-verified-toggle" class="hidden flex items-center gap-2">
           <input type="checkbox" id="donation-verified" checked class="w-4 h-4 text-brand-primary rounded" />
           <label for="donation-verified" class="text-xs font-bold uppercase text-gray-800">MARK AS VERIFIED RECORD</label>
         </div>
-        <button type="submit" id="donation-submit-btn" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2.5 rounded-lg uppercase text-xs">
+
+        <button type="submit" id="donation-submit-btn" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2.5 rounded-xl uppercase text-xs btn-3d">
           UPLOAD & RECORD DONATION
         </button>
       </form>
@@ -430,33 +703,36 @@
   </div>
 
   <!-- IMAGE VIEWER MODAL -->
-  <div id="image-viewer-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden" onclick="closeImageViewer()">
+  <div id="image-viewer-modal" class="fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4 hidden" onclick="closeImageViewer()">
     <div class="relative max-w-2xl w-full" onclick="event.stopPropagation()">
       <button onclick="closeImageViewer()" class="absolute -top-9 right-0 text-white text-xl hover:text-gray-300">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <img id="image-viewer-target" src="" alt="Proof Preview" class="w-full max-h-[80vh] object-contain rounded-lg bg-black/40" />
-      <p id="image-viewer-caption" class="text-center text-white text-xs mt-2 font-bold uppercase"></p>
+      <img id="image-viewer-target" src="" alt="Proof Preview" class="w-full max-h-[80vh] object-contain rounded-xl bg-black/50 shadow-2xl" />
+      <p id="image-viewer-caption" class="text-center text-white text-xs mt-2 font-bold uppercase tracking-wider"></p>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <footer class="bg-brand-dark text-white border-t border-emerald-800 mt-16 py-8 px-4 text-center">
-    <div class="max-w-7xl mx-auto space-y-3">
+  <footer class="bg-brand-darkest text-white border-t border-emerald-900 mt-16 py-10 px-4 text-center shadow-inner">
+    <div class="max-w-7xl mx-auto space-y-4">
       <div class="font-black text-xl uppercase tracking-widest text-emerald-400">
         BAKANDIYA FAMILY | बकंडिया परिवार
       </div>
-      <p class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-300">
-        FOUNDER: JAYANT CHAUHAN
+      
+      <!-- FOUNDERS HONORARY CREDITS -->
+      <p class="text-xs text-gray-300 font-semibold uppercase tracking-wider max-w-3xl mx-auto leading-relaxed">
+        FOUNDERS: Anoop Kumar Chauhan • Peeyush Chauhan • Rahul Chauhan (Muttiah Ji) • Mohit Chauhan (Eng.) • Vikas Chauhan (Kapasiya)
       </p>
-      <p class="text-[11px] text-gray-400">
-        &copy; 2026 BAKANDIYA FAMILY. REAL-TIME GOOGLE CLOUD FIRESTORE ACTIVE (100% FREE SPARK TIER).
-      </p>
+
+      <div class="text-[11px] text-gray-500 font-medium">
+        &copy; 2026 BAKANDIYA FAMILY. REAL-TIME COMMUNITY PORTAL • ALL RIGHTS RESERVED.
+      </div>
     </div>
   </footer>
 
   <!-- ========================================================= -->
-  <!-- SINGLE APPLICATION MODULE (NO STORAGE DEPENDENCY)         -->
+  <!-- SINGLE APPLICATION MODULE (ES6)                           -->
   <!-- ========================================================= -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
@@ -465,7 +741,8 @@
       query, orderBy, where, serverTimestamp, onSnapshot 
     } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
     import { 
-      getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged 
+      getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged,
+      sendPasswordResetEmail, RecaptchaVerifier, signInWithPhoneNumber
     } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 
     // Master Admin UID
@@ -484,13 +761,15 @@
 
     let app, db, auth;
     let activeAdminUser = null;
+    let activeMemberUser = null;
+    let confirmationResultGlobal = null;
 
     try {
       app = initializeApp(firebaseConfig);
       db = getFirestore(app);
       auth = getAuth(app);
     } catch (err) {
-      console.error("Firebase Initialization Failure:", err);
+      console.error("Firebase Init Error:", err);
       const statusBar = document.getElementById('connection-status-bar');
       const statusMsg = document.getElementById('connection-status-msg');
       statusBar.className = "bg-red-700 text-white px-4 py-2 text-center text-xs font-bold uppercase tracking-wider";
@@ -498,7 +777,6 @@
     }
 
     // 100% Free Client-Side Image Compressor -> Base64 Converter
-    // Converts photos to ultra-light WebP Base64 string (< 100 KB)
     async function fileToBase64(file, maxWidth = 800, quality = 0.6) {
       if (!file) return "";
       return new Promise((resolve) => {
@@ -522,7 +800,6 @@
             const ctx = canvas.getContext('2d');
             ctx.drawImage(img, 0, 0, width, height);
 
-            // Export as lightweight WebP Data URL
             const base64Data = canvas.toDataURL('image/webp', quality);
             resolve(base64Data);
           };
@@ -532,14 +809,38 @@
       });
     }
 
-    // Window Modal Bindings for HTML onclick attributes
+    // Modal Helpers attached to window
+    window.openMemberModal = () => document.getElementById('member-modal').classList.remove('hidden');
+    window.closeMemberModal = () => document.getElementById('member-modal').classList.add('hidden');
     window.openAdminModal = () => document.getElementById('admin-modal').classList.remove('hidden');
     window.closeAdminModal = () => document.getElementById('admin-modal').classList.add('hidden');
-    window.openNoticeModal = () => { document.getElementById('notice-modal').classList.remove('hidden'); window.closeAdminModal(); };
+    window.openNoticeModal = () => {
+      if (!activeAdminUser && !activeMemberUser) {
+        alert("Notices add karne ke liye Member ya Admin Login zaroori hai.");
+        window.openMemberModal();
+        return;
+      }
+      document.getElementById('notice-modal').classList.remove('hidden');
+    };
     window.closeNoticeModal = () => document.getElementById('notice-modal').classList.add('hidden');
-    window.openEventModal = () => { document.getElementById('event-modal').classList.remove('hidden'); window.closeAdminModal(); };
+    window.openEventModal = () => {
+      if (!activeAdminUser && !activeMemberUser) {
+        alert("Events add karne ke liye Member ya Admin Login zaroori hai.");
+        window.openMemberModal();
+        return;
+      }
+      document.getElementById('event-modal').classList.remove('hidden');
+    };
     window.closeEventModal = () => document.getElementById('event-modal').classList.add('hidden');
-    window.openDonationModal = () => { document.getElementById('donation-modal').classList.remove('hidden'); window.closeAdminModal(); };
+    window.openDonationModal = () => {
+      if (!activeAdminUser && !activeMemberUser) {
+        alert("Donation record add karne ke liye Member ya Admin Login zaroori hai.");
+        window.openMemberModal();
+        return;
+      }
+      document.getElementById('donation-verified-toggle').classList.toggle('hidden', !activeAdminUser);
+      document.getElementById('donation-modal').classList.remove('hidden');
+    };
     window.closeDonationModal = () => document.getElementById('donation-modal').classList.add('hidden');
     window.openImageViewer = (url, caption) => {
       document.getElementById('image-viewer-target').src = url;
@@ -550,7 +851,7 @@
 
     function getWhatsAppLink(title, tag) {
       const pageUrl = window.location.href.split('#')[0];
-      const message = `*BAKANDIYA FAMILY (${tag})*\n\n📌 *${title}*\n\n🔗 View live update: ${pageUrl}\n\n*FOUNDER: JAYANT CHAUHAN*`;
+      const message = `*BAKANDIYA FAMILY (${tag})*\n\n📌 *${title}*\n\n🔗 View live update: ${pageUrl}\n\n*BAKANDIYA FAMILY COMMUNITY PORTAL*`;
       return `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
     }
 
@@ -558,48 +859,146 @@
     const statusMsg = document.getElementById('connection-status-msg');
 
     // -------------------------------------------------------------
-    // AUTHENTICATION & STRICT ADMIN UID BINDING
+    // AUTH STATE LISTENER (ADMIN & PHONE MEMBERS)
     // -------------------------------------------------------------
     onAuthStateChanged(auth, (user) => {
-      const loginView = document.getElementById('admin-login-view');
-      const panelView = document.getElementById('admin-panel-view');
-      const userEmail = document.getElementById('admin-user-email');
-      const statusText = document.getElementById('admin-status-text');
-      const noticeBtn = document.getElementById('admin-add-notice-btn');
-      const eventBtn = document.getElementById('admin-add-event-btn');
-      const donationBtn = document.getElementById('admin-add-donation-btn');
+      const adminLoginView = document.getElementById('admin-login-view');
+      const adminPanelView = document.getElementById('admin-panel-view');
+      const adminUserEmail = document.getElementById('admin-user-email');
+      const adminStatusText = document.getElementById('admin-status-text');
 
-      if (user && user.uid === ADMIN_UID) {
-        activeAdminUser = user;
-        loginView.classList.add('hidden');
-        panelView.classList.remove('hidden');
-        userEmail.textContent = user.email;
-        statusText.textContent = "ADMIN ACTIVE";
-        noticeBtn.classList.remove('hidden');
-        eventBtn.classList.remove('hidden');
-        donationBtn.classList.remove('hidden');
+      const memberLoginView = document.getElementById('member-login-view');
+      const memberActiveView = document.getElementById('member-active-view');
+      const memberBtnLabel = document.getElementById('member-btn-label');
+      const activeMemberName = document.getElementById('active-member-name');
+      const activeMemberPhone = document.getElementById('active-member-phone');
+
+      if (user) {
+        // CASE 1: Master Admin Login
+        if (user.uid === ADMIN_UID) {
+          activeAdminUser = user;
+          activeMemberUser = null;
+
+          adminLoginView.classList.add('hidden');
+          adminPanelView.classList.remove('hidden');
+          adminUserEmail.textContent = user.email || "Admin";
+          adminStatusText.textContent = "ADMIN ACTIVE";
+        } 
+        // CASE 2: Phone Member Login
+        else if (user.phoneNumber) {
+          activeMemberUser = user;
+          activeAdminUser = null;
+
+          const savedName = localStorage.getItem("bakandiya_member_name") || "Member";
+          memberLoginView.classList.add('hidden');
+          memberActiveView.classList.remove('hidden');
+          memberBtnLabel.textContent = "MEMBER: " + savedName.split(" ")[0].toUpperCase();
+          activeMemberName.textContent = savedName;
+          activeMemberPhone.textContent = user.phoneNumber;
+
+          adminLoginView.classList.remove('hidden');
+          adminPanelView.classList.add('hidden');
+          adminStatusText.textContent = "ADMIN LOGIN";
+        }
       } else {
         activeAdminUser = null;
-        loginView.classList.remove('hidden');
-        panelView.classList.add('hidden');
-        statusText.textContent = "ADMIN LOGIN";
-        noticeBtn.classList.add('hidden');
-        eventBtn.classList.add('hidden');
-        donationBtn.classList.add('hidden');
+        activeMemberUser = null;
 
-        if (user && user.uid !== ADMIN_UID) {
-          alert("Unauthorized Account: Only UID " + ADMIN_UID + " has administrator privileges.");
-          signOut(auth);
-        }
+        adminLoginView.classList.remove('hidden');
+        adminPanelView.classList.add('hidden');
+        adminStatusText.textContent = "ADMIN LOGIN";
+
+        memberLoginView.classList.remove('hidden');
+        memberActiveView.classList.add('hidden');
+        memberBtnLabel.textContent = "MEMBER LOGIN";
       }
 
+      // Toggle Admin specific controls (e.g. Delete, Verify)
       document.querySelectorAll('.admin-ctrl').forEach(el => el.classList.toggle('hidden', !activeAdminUser));
       listenToDonations();
     });
 
+    // -------------------------------------------------------------
+    // REQUIREMENT 1: MEMBER PHONE + OTP LOGIN HANDLERS
+    // -------------------------------------------------------------
+    window.setupRecaptcha = function() {
+      if (!window.recaptchaVerifier) {
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+          'size': 'invisible'
+        });
+      }
+    };
+
+    window.handleSendOtp = async function() {
+      const name = document.getElementById('member-name-input').value.trim();
+      const phoneDigits = document.getElementById('member-phone-input').value.trim();
+
+      if (!name) return alert("Kripya apna naam likhein.");
+      if (phoneDigits.length !== 10) return alert("Kripya 10 anko ka sahi mobile number daalein.");
+
+      const fullPhoneNumber = "+91" + phoneDigits;
+      const sendOtpBtn = document.getElementById('send-otp-btn');
+      sendOtpBtn.disabled = true;
+      sendOtpBtn.textContent = "SENDING OTP...";
+
+      try {
+        window.setupRecaptcha();
+        const confirmationResult = await signInWithPhoneNumber(auth, fullPhoneNumber, window.recaptchaVerifier);
+        confirmationResultGlobal = confirmationResult;
+        localStorage.setItem("bakandiya_member_name", name);
+
+        document.getElementById('display-otp-phone').textContent = fullPhoneNumber;
+        document.getElementById('phone-step-box').classList.add('hidden');
+        document.getElementById('otp-step-box').classList.remove('hidden');
+        alert("OTP successfully sent to " + fullPhoneNumber);
+      } catch (err) {
+        console.error("Phone Auth Error:", err);
+        alert("OTP bhejne mein samasya aayi: " + err.message);
+        if (window.recaptchaVerifier) window.recaptchaVerifier.clear();
+      } finally {
+        sendOtpBtn.disabled = false;
+        sendOtpBtn.textContent = "SEND OTP";
+      }
+    };
+
+    window.handleVerifyOtp = async function() {
+      const code = document.getElementById('otp-code-input').value.trim();
+      if (code.length !== 6) return alert("Kripya 6 anko ka OTP daalein.");
+
+      const verifyBtn = document.getElementById('verify-otp-btn');
+      verifyBtn.disabled = true;
+      verifyBtn.textContent = "VERIFYING...";
+
+      try {
+        await confirmationResultGlobal.confirm(code);
+        alert("Member Login Successful!");
+        window.closeMemberModal();
+      } catch (err) {
+        alert("Galat OTP: " + err.message);
+      } finally {
+        verifyBtn.disabled = false;
+        verifyBtn.textContent = "VERIFY & LOGIN";
+      }
+    };
+
+    window.resetMemberLoginUi = function() {
+      document.getElementById('phone-step-box').classList.remove('hidden');
+      document.getElementById('otp-step-box').classList.add('hidden');
+    };
+
+    window.handleMemberLogout = async function() {
+      await signOut(auth);
+      localStorage.removeItem("bakandiya_member_name");
+      alert("Member logged out successfully.");
+      window.closeMemberModal();
+    };
+
+    // -------------------------------------------------------------
+    // REQUIREMENT 6: ADMIN LOGIN & FORGOT PASSWORD (GMAIL CODE)
+    // -------------------------------------------------------------
     document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = document.getElementById('admin-email').value;
+      const email = document.getElementById('admin-email').value.trim();
       const pass = document.getElementById('admin-password').value;
       try {
         const userCredential = await signInWithEmailAndPassword(auth, email, pass);
@@ -614,59 +1013,66 @@
       }
     });
 
+    window.handleAdminForgotPassword = async function() {
+      const email = document.getElementById('admin-email').value.trim();
+      if (!email) {
+        return alert("Kripya pehle upar apna Admin Email daalein jisme password reset link bhejna hai.");
+      }
+      try {
+        await sendPasswordResetEmail(auth, email);
+        alert("Password reset link aapke Gmail (" + email + ") par bhej diya gaya hai. Kripya apna inbox/spam check karein.");
+      } catch (err) {
+        alert("Password reset error: " + err.message);
+      }
+    };
+
     window.adminLogout = async () => {
       await signOut(auth);
-      alert("Logged out successfully.");
+      alert("Admin logged out successfully.");
     };
 
     // -------------------------------------------------------------
-    // 1. PUBLIC NEWS PUBLISHING (100% FREE FIRESTORE PHOTO STORAGE)
+    // REQUIREMENT 2: PUBLIC NEWS (DESCRIPTION NOT MANDATORY)
     // -------------------------------------------------------------
     const newsForm = document.getElementById('public-news-form');
     newsForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const title = document.getElementById('news-title').value.trim();
       const category = document.getElementById('news-category').value;
-      const description = document.getElementById('news-description').value.trim();
+      const description = document.getElementById('news-description').value.trim(); // Optional!
       const imageFileInput = document.getElementById('news-image').files[0];
       const submitBtn = document.getElementById('publish-submit-btn');
       const submitText = document.getElementById('publish-btn-text');
 
       if (title.length < 3 || title.length > 150) {
-        alert("Title must be between 3 and 150 characters.");
-        return;
-      }
-      if (description.length < 5 || description.length > 3000) {
-        alert("Description must be between 5 and 3,000 characters.");
+        alert("News title must be between 3 and 150 characters.");
         return;
       }
 
       submitBtn.disabled = true;
-      submitText.textContent = "COMPRESSING PHOTO & SAVING...";
+      submitText.textContent = "SAVING NEWS...";
 
       try {
         let imageUrl = "";
-
-        // Compress and convert image to lightweight Base64 string directly
         if (imageFileInput) {
+          submitText.textContent = "COMPRESSING PHOTO...";
           imageUrl = await fileToBase64(imageFileInput, 800, 0.6);
         }
 
-        // Direct write matching the exact 6 keys permitted in firestore.rules
         await addDoc(collection(db, "news"), {
           title,
           category,
-          description,
+          description: description || "", // Optional, defaults to empty string
           imageUrl: imageUrl || "",
           createdAt: serverTimestamp(),
           formattedDate: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
         });
 
         newsForm.reset();
-        alert("News published permanently to Cloud Firestore (100% Free)!");
+        alert("News published permanently to Cloud Firestore!");
       } catch (err) {
         console.error("News write error:", err);
-        alert("Permission Denied / Firestore Write Error: " + err.message);
+        alert("Firestore Write Error: " + err.message);
       } finally {
         submitBtn.disabled = false;
         submitText.textContent = "PUBLISH NEWS BUTTON";
@@ -674,7 +1080,7 @@
     });
 
     // -------------------------------------------------------------
-    // 2. LIVE NEWS LISTENER
+    // LIVE NEWS LISTENER
     // -------------------------------------------------------------
     let isFirstHandshake = true;
     const newsQuery = query(collection(db, "news"), orderBy("createdAt", "desc"));
@@ -682,7 +1088,7 @@
     onSnapshot(newsQuery, (snapshot) => {
       if (isFirstHandshake) {
         isFirstHandshake = false;
-        statusBar.className = "bg-emerald-700 text-white px-4 py-1.5 text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2";
+        statusBar.className = "bg-emerald-800 text-white px-4 py-1.5 text-center text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow";
         statusMsg.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-300"></i> LIVE FIRESTORE CONNECTION VERIFIED (SPARK PLAN ACTIVE)`;
       }
 
@@ -715,20 +1121,20 @@
         }
       });
 
-      if (cLatest === 0) latestContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase">NO VILLAGE NEWS PUBLISHED YET.</p>`;
-      if (cMost === 0) mostContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase">NO MOST IMPORTANT NEWS RECORDED.</p>`;
-      if (cLess === 0) lessContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase">NO ROUTINE NOTES RECORDED.</p>`;
+      if (cLatest === 0) latestContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase font-bold">NO VILLAGE NEWS PUBLISHED YET.</p>`;
+      if (cMost === 0) mostContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase font-bold">NO MOST IMPORTANT NEWS RECORDED.</p>`;
+      if (cLess === 0) lessContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase font-bold">NO ROUTINE NOTES RECORDED.</p>`;
 
       attachNewsAdminHandlers();
     }, (error) => {
-      console.error("Firestore News Listener Error:", error);
+      console.error("News Listener Error:", error);
       statusBar.className = "bg-red-700 text-white px-4 py-2 text-center text-xs font-bold uppercase tracking-wider";
       statusMsg.innerHTML = `<i class="fa-solid fa-circle-xmark mr-2"></i> FIRESTORE PERMISSION DENIED ON NEWS: ${error.message}`;
     });
 
     function renderNewsCard(id, data, sectionKey) {
       const card = document.createElement('article');
-      card.className = "bg-white rounded-xl shadow border border-gray-200 overflow-hidden";
+      card.className = "card-3d rounded-2xl overflow-hidden";
       card.id = `${sectionKey}-post-${id}`;
       
       const isMost = data.category === "MOST IMPORTANT NEWS";
@@ -754,12 +1160,12 @@
           <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase mb-2 post-title-text"></h3>
           <p class="text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line mb-4 post-desc-text"></p>
           <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-            <a href="${waLink}" target="_blank" class="whatsapp-btn text-white text-xs font-bold uppercase py-1.5 px-3 rounded flex items-center gap-1.5 shadow">
+            <a href="${waLink}" target="_blank" class="whatsapp-btn text-white text-xs font-bold uppercase py-1.5 px-3 rounded-lg flex items-center gap-1.5 shadow">
               <i class="fa-brands fa-whatsapp text-sm"></i>
               <span>SHARE ON WHATSAPP</span>
             </a>
             <div class="admin-ctrl ${activeAdminUser ? '' : 'hidden'}">
-              <button data-del-news="${id}" class="text-xs bg-red-100 hover:bg-red-200 text-red-700 px-2.5 py-1 rounded font-bold uppercase">
+              <button data-del-news="${id}" class="text-xs bg-red-100 hover:bg-red-200 text-red-700 px-2.5 py-1 rounded-lg font-bold uppercase">
                 DELETE
               </button>
             </div>
@@ -768,7 +1174,7 @@
       `;
 
       card.querySelector('.post-title-text').textContent = data.title;
-      card.querySelector('.post-desc-text').textContent = data.description;
+      card.querySelector('.post-desc-text').textContent = data.description || '';
 
       if (data.imageUrl) {
         card.querySelector('.news-img-trigger').onclick = () => window.openImageViewer(data.imageUrl, data.title);
@@ -781,7 +1187,7 @@
       document.querySelectorAll('[data-del-news]').forEach(btn => {
         btn.onclick = async () => {
           if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) {
-            return alert("Unauthorized. Only administrator (UID: " + ADMIN_UID + ") can delete news.");
+            return alert("Unauthorized: Only the admin can delete news.");
           }
           if (confirm("ADMIN ACTION: Permanently delete this news article from Firestore?")) {
             try {
@@ -795,16 +1201,17 @@
     }
 
     // -------------------------------------------------------------
-    // 3. IMPORTANT NOTICES (ADMIN CONTROLLED)
+    // REQUIREMENT 3: IMPORTANT NOTICES (ADMIN & MEMBERS CAN ADD)
     // -------------------------------------------------------------
     document.getElementById('notice-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) {
-        return alert("Admin authentication required.");
+      if (!activeAdminUser && !activeMemberUser) {
+        return alert("Only Admin or logged-in Members can post notices.");
       }
 
       const title = document.getElementById('notice-title').value.trim();
       const content = document.getElementById('notice-content').value.trim();
+      const authorName = activeAdminUser ? "Admin" : (localStorage.getItem("bakandiya_member_name") || "Member");
 
       if (title.length < 3 || title.length > 150) return alert("Title must be 3-150 characters.");
       if (content.length < 5 || content.length > 2000) return alert("Content must be 5-2000 characters.");
@@ -813,11 +1220,13 @@
         await addDoc(collection(db, "notices"), {
           title,
           content,
+          authorName,
           createdAt: serverTimestamp(),
           date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
         });
         document.getElementById('notice-form').reset();
         window.closeNoticeModal();
+        alert("Notice published successfully!");
       } catch (err) {
         alert("Notice save error: " + err.message);
       }
@@ -827,7 +1236,7 @@
       const list = document.getElementById('notices-list');
       list.innerHTML = "";
       if (snap.empty) {
-        list.innerHTML = `<p class="text-xs text-gray-400 text-center py-2 uppercase">NO ACTIVE NOTICES</p>`;
+        list.innerHTML = `<p class="text-xs text-gray-400 text-center py-2 uppercase font-bold">NO ACTIVE NOTICES</p>`;
         return;
       }
       snap.forEach(dSnap => {
@@ -835,15 +1244,16 @@
         const id = dSnap.id;
         const wa = getWhatsAppLink(item.title, 'Notice');
         const div = document.createElement('div');
-        div.className = "p-3 bg-amber-50/80 border-l-4 border-amber-600 rounded-r space-y-1.5";
+        div.className = "p-3.5 bg-amber-50/90 border-l-4 border-amber-600 rounded-r-xl space-y-1.5 shadow-sm";
         div.innerHTML = `
           <div class="flex justify-between items-center">
             <h4 class="text-xs font-black uppercase text-amber-950 notice-title-text"></h4>
             <span class="text-[10px] text-gray-500 font-bold">${item.date || ''}</span>
           </div>
+          <p class="text-[11px] text-amber-800 font-semibold uppercase">By: ${item.authorName || 'Member'}</p>
           <p class="text-xs text-gray-800 leading-normal notice-content-text"></p>
           <div class="flex justify-between items-center pt-1">
-            <a href="${wa}" target="_blank" class="text-[11px] text-emerald-800 font-bold uppercase flex items-center gap-1">
+            <a href="${wa}" target="_blank" class="text-[11px] text-emerald-800 font-bold uppercase flex items-center gap-1 hover:underline">
               <i class="fa-brands fa-whatsapp text-emerald-600"></i> SHARE
             </a>
             <button data-del-notice="${id}" class="admin-ctrl ${activeAdminUser ? '' : 'hidden'} text-[11px] text-red-600 font-bold uppercase hover:underline">
@@ -867,33 +1277,35 @@
     }, (err) => console.error("Notices listener error:", err));
 
     // -------------------------------------------------------------
-    // 4. VILLAGE EVENTS (ADMIN CONTROLLED)
+    // REQUIREMENT 3: VILLAGE EVENTS (ADMIN & MEMBERS CAN ADD)
     // -------------------------------------------------------------
     document.getElementById('event-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) {
-        return alert("Admin authentication required.");
+      if (!activeAdminUser && !activeMemberUser) {
+        return alert("Only Admin or logged-in Members can post events.");
       }
 
       const title = document.getElementById('event-title').value.trim();
       const eventDate = document.getElementById('event-date').value;
       const location = document.getElementById('event-location').value.trim();
       const description = document.getElementById('event-desc').value.trim();
+      const authorName = activeAdminUser ? "Admin" : (localStorage.getItem("bakandiya_member_name") || "Member");
 
       if (title.length < 3 || title.length > 150) return alert("Title must be 3-150 characters.");
       if (location.length < 2 || location.length > 100) return alert("Location must be 2-100 characters.");
-      if (description.length < 5 || description.length > 2000) return alert("Description must be 5-2000 characters.");
 
       try {
         await addDoc(collection(db, "events"), {
           title,
           eventDate: String(eventDate).slice(0, 20),
           location,
-          description,
+          description: description || "",
+          authorName,
           createdAt: serverTimestamp()
         });
         document.getElementById('event-form').reset();
         window.closeEventModal();
+        alert("Village Event published successfully!");
       } catch (err) {
         alert("Event save error: " + err.message);
       }
@@ -903,7 +1315,7 @@
       const list = document.getElementById('events-list');
       list.innerHTML = "";
       if (snap.empty) {
-        list.innerHTML = `<p class="text-xs text-gray-400 text-center py-2 uppercase">NO UPCOMING EVENTS</p>`;
+        list.innerHTML = `<p class="text-xs text-gray-400 text-center py-2 uppercase font-bold">NO UPCOMING EVENTS</p>`;
         return;
       }
       snap.forEach(dSnap => {
@@ -911,16 +1323,17 @@
         const id = dSnap.id;
         const wa = getWhatsAppLink(`${item.title} at ${item.location} on ${item.eventDate}`, 'Event');
         const div = document.createElement('div');
-        div.className = "p-3 bg-emerald-50/80 border-l-4 border-emerald-600 rounded-r space-y-1.5";
+        div.className = "p-3.5 bg-emerald-50/90 border-l-4 border-emerald-600 rounded-r-xl space-y-1.5 shadow-sm";
         div.innerHTML = `
           <div class="flex justify-between items-center">
             <h4 class="text-xs font-black uppercase text-emerald-950 event-title-text"></h4>
             <span class="text-[10px] bg-emerald-200 text-emerald-900 font-bold px-1.5 py-0.5 rounded uppercase">${item.eventDate}</span>
           </div>
           <p class="text-[11px] text-gray-600 uppercase font-semibold"><i class="fa-solid fa-location-dot text-emerald-700 mr-1"></i><span class="event-loc-text"></span></p>
+          <p class="text-[10px] text-emerald-800 font-bold uppercase">Added by: ${item.authorName || 'Member'}</p>
           <p class="text-xs text-gray-800 leading-normal event-desc-text"></p>
           <div class="flex justify-between items-center pt-1">
-            <a href="${wa}" target="_blank" class="text-[11px] text-emerald-800 font-bold uppercase flex items-center gap-1">
+            <a href="${wa}" target="_blank" class="text-[11px] text-emerald-800 font-bold uppercase flex items-center gap-1 hover:underline">
               <i class="fa-brands fa-whatsapp text-emerald-600"></i> SHARE
             </a>
             <button data-del-event="${id}" class="admin-ctrl ${activeAdminUser ? '' : 'hidden'} text-[11px] text-red-600 font-bold uppercase hover:underline">
@@ -930,7 +1343,7 @@
         `;
         div.querySelector('.event-title-text').textContent = item.title;
         div.querySelector('.event-loc-text').textContent = item.location;
-        div.querySelector('.event-desc-text').textContent = item.description;
+        div.querySelector('.event-desc-text').textContent = item.description || '';
         list.appendChild(div);
       });
 
@@ -945,29 +1358,31 @@
     }, (err) => console.error("Events listener error:", err));
 
     // -------------------------------------------------------------
-    // 5. TEMPLE DONATIONS (100% FREE FIRESTORE SCREENSHOT PROOF)
+    // REQUIREMENT 4: TEMPLE DONATIONS (MEMBERS CAN RECORD, ADMIN VERIFIES)
     // -------------------------------------------------------------
     document.getElementById('donation-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!activeAdminUser || activeAdminUser.uid !== ADMIN_UID) {
-        return alert("Admin authentication required.");
+      if (!activeAdminUser && !activeMemberUser) {
+        return alert("Only Admin or Members can record temple donations.");
       }
       
       const donor = document.getElementById('donation-donor').value.trim() || "Anonymous Devotee";
       const amount = Number(document.getElementById('donation-amount').value);
       const date = document.getElementById('donation-date').value;
-      const verified = document.getElementById('donation-verified').checked;
       const fileInput = document.getElementById('donation-file').files[0];
       const submitBtn = document.getElementById('donation-submit-btn');
+
+      // Admin can set verified true directly; Members always submit as false (Pending)
+      const verified = activeAdminUser ? document.getElementById('donation-verified').checked : false;
+      const submittedBy = activeAdminUser ? "Admin" : (localStorage.getItem("bakandiya_member_name") || "Member");
 
       if (!fileInput) return alert("Please select payment screenshot proof.");
       if (amount <= 0 || amount > 10000000) return alert("Please enter a valid donation amount.");
 
       submitBtn.disabled = true;
-      submitBtn.textContent = "COMPRESSING RECEIPT & SAVING...";
+      submitBtn.textContent = "COMPRESSING PROOF & SAVING...";
 
       try {
-        // Compress and convert screenshot to lightweight Base64 string directly
         const screenshotUrl = await fileToBase64(fileInput, 800, 0.6);
 
         await addDoc(collection(db, "donations"), {
@@ -976,12 +1391,17 @@
           date: String(date).slice(0, 30),
           verified: Boolean(verified),
           screenshotUrl: screenshotUrl || "",
+          submittedBy,
           createdAt: serverTimestamp()
         });
 
         document.getElementById('donation-form').reset();
         window.closeDonationModal();
-        alert("Temple donation record saved permanently (100% Free)!");
+        if (activeAdminUser) {
+          alert("Donation record saved and verified!");
+        } else {
+          alert("Donation record submitted successfully! Admin verification pending.");
+        }
       } catch (err) {
         alert("Donation upload failed: " + err.message);
       } finally {
@@ -995,7 +1415,6 @@
     function listenToDonations() {
       if (unsubscribeDonations) unsubscribeDonations();
 
-      // Public users query ONLY verified donations. Admin queries all donations.
       const donationQuery = (activeAdminUser && activeAdminUser.uid === ADMIN_UID)
         ? query(collection(db, "donations"), orderBy("createdAt", "desc"))
         : query(collection(db, "donations"), where("verified", "==", true));
@@ -1005,21 +1424,20 @@
         list.innerHTML = "";
 
         if (snap.empty) {
-          list.innerHTML = `<p class="text-xs text-gray-400 text-center py-2 uppercase">NO VERIFIED DONATION RECORDS</p>`;
+          list.innerHTML = `<p class="text-xs text-gray-400 text-center py-2 uppercase font-bold">NO VERIFIED DONATION RECORDS</p>`;
           return;
         }
 
         const records = [];
         snap.forEach(dSnap => records.push({ id: dSnap.id, ...dSnap.data() }));
 
-        // Client-side sort prevents composite index requirement on Spark free tier
         if (!activeAdminUser) {
           records.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
         }
 
         records.forEach(record => {
           const div = document.createElement('div');
-          div.className = "p-3 bg-gray-50 border border-gray-200 rounded-lg space-y-2";
+          div.className = "p-3.5 bg-white border border-emerald-100 rounded-xl space-y-2 shadow-sm";
           div.innerHTML = `
             <div class="flex justify-between items-center">
               <span class="text-xs font-black uppercase text-gray-900 donor-name-text"></span>
@@ -1027,11 +1445,11 @@
             </div>
             <div class="flex justify-between items-center text-[10px] text-gray-500 font-semibold">
               <span><i class="fa-regular fa-calendar mr-1"></i>${record.date}</span>
-              <span class="px-2 py-0.5 rounded uppercase font-bold ${record.verified ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
-                ${record.verified ? 'VERIFIED RECORD' : 'PENDING APPROVAL'}
+              <span class="px-2 py-0.5 rounded-full uppercase font-bold ${record.verified ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                ${record.verified ? 'VERIFIED' : 'PENDING APPROVAL'}
               </span>
             </div>
-            <div class="flex justify-between items-center pt-1 border-t border-gray-200">
+            <div class="flex justify-between items-center pt-1 border-t border-gray-100">
               <button class="view-proof-btn text-[11px] text-brand-medium font-bold uppercase hover:underline flex items-center gap-1">
                 <i class="fa-solid fa-receipt"></i> VIEW PROOF
               </button>
