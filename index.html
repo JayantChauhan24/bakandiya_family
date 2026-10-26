@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BAKANDIYA FAMILY | बकांदिया परिवार</title>
 
-  <!-- PWA & APP ICON SETTINGS (MANDIR ICON) -->
+  <!-- PWA & APP ICON SETTINGS -->
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" type="image/png" href="Screenshot_2026-10-26-16-42-44-99.png" />
   <link rel="apple-touch-icon" href="Screenshot_2026-10-26-16-42-44-99.png" />
@@ -56,8 +56,8 @@
       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .card-3d:hover {
-      transform: translateY(-5px) scale(1.008);
-      box-shadow: 0 22px 35px -10px rgba(5, 27, 17, 0.2), 0 12px 20px -8px rgba(16, 185, 129, 0.18);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 32px -8px rgba(5, 27, 17, 0.18);
     }
     .btn-3d {
       box-shadow: 0 4px 0 rgba(5, 27, 17, 0.4), 0 8px 15px rgba(16, 185, 129, 0.2);
@@ -73,6 +73,23 @@
     }
     .whatsapp-btn:hover { background-color: #22bf5b; }
     .whatsapp-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #1b9c4b; }
+    
+    /* WhatsApp Chat Styles */
+    .chat-bg {
+      background-color: #efeae2;
+      background-image: radial-gradient(#d5cebe 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .msg-in {
+      background: #ffffff;
+      border-radius: 0px 16px 16px 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+    .msg-out {
+      background: #d9fdd3;
+      border-radius: 16px 0px 16px 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
   </style>
 </head>
 
@@ -88,7 +105,7 @@
   <header class="bg-gradient-to-r from-brand-darkest via-brand-dark to-brand-primary text-white border-b-4 border-emerald-500 sticky top-0 z-40 shadow-2xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-3">
       
-      <!-- LOGO WITH TEMPLE ICON -->
+      <!-- LOGO -->
       <a href="#" class="flex items-center gap-3 group">
         <img src="Screenshot_2026-10-26-16-42-44-99.png" alt="Mandir Icon" class="w-12 h-12 rounded-2xl object-cover shadow-lg border-2 border-emerald-300 transform group-hover:rotate-3 transition" />
         <div>
@@ -101,28 +118,23 @@
         </div>
       </a>
 
-      <!-- RIGHT SIDE BUTTONS (INCLUDES DIRECT INSTALL APP BUTTON) -->
+      <!-- RIGHT BUTTONS -->
       <div class="flex items-center flex-wrap gap-2">
-        
-        <!-- PWA INSTALL BUTTON (HEADER) -->
-        <button id="nav-install-btn" onclick="installPwaApp()" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-darkest border border-amber-300 font-black py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 btn-3d shadow">
+        <button id="nav-install-btn" onclick="installPwaApp()" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-darkest border border-amber-300 font-black py-2 px-3 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 btn-3d shadow">
           <i class="fa-solid fa-download"></i>
           <span>INSTALL APP</span>
         </button>
 
-        <!-- PUBLISH NEWS -->
         <a href="#publish-section" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 btn-3d shadow">
           <i class="fa-solid fa-bullhorn"></i>
           <span>PUBLISH NEWS</span>
         </a>
 
-        <!-- MEMBER LOGIN -->
         <button id="member-header-btn" onclick="openMemberModal()" class="bg-gradient-to-r from-teal-700 to-emerald-800 hover:from-teal-600 hover:to-emerald-700 text-white border border-emerald-400/50 font-bold py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md btn-3d">
           <i class="fa-solid fa-user-check text-emerald-300"></i>
           <span id="member-btn-label">MEMBER LOGIN</span>
         </button>
 
-        <!-- ADMIN LOGIN -->
         <button id="admin-header-btn" onclick="openAdminModal()" class="bg-gray-900/90 hover:bg-black text-emerald-300 border border-emerald-500/60 font-bold py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md transition">
           <i class="fa-solid fa-shield-halved"></i>
           <span id="admin-status-text">ADMIN LOGIN</span>
@@ -137,17 +149,19 @@
         <a href="#about-us-section" class="text-amber-300 hover:text-white transition flex items-center gap-1">
           <i class="fa-solid fa-address-card"></i> ABOUT US
         </a>
+        <a href="#village-chat-section" class="text-emerald-300 hover:text-white transition flex items-center gap-1">
+          <i class="fa-brands fa-whatsapp text-emerald-400"></i> VILLAGE CHAT (चौपाल)
+        </a>
         <a href="#latest-news" class="hover:text-white transition">LATEST VILLAGE NEWS</a>
         <a href="#events-section" class="hover:text-white transition">VILLAGE EVENTS</a>
         <a href="#notices-section" class="hover:text-white transition">IMPORTANT NOTICES</a>
         <a href="#most-important" class="hover:text-white transition">MOST IMPORTANT NEWS</a>
-        <a href="#less-important" class="hover:text-white transition">LESS IMPORTANT NEWS</a>
         <a href="#donations-section" class="hover:text-white transition">TEMPLE DONATIONS</a>
       </div>
     </nav>
   </header>
 
-  <!-- FLOATING PWA INSTALL BANNER (POPUP FOR MOBILE USERS) -->
+  <!-- FLOATING PWA INSTALL BANNER -->
   <div id="pwa-install-banner" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-md bg-gradient-to-r from-brand-darkest via-brand-dark to-brand-primary border-2 border-emerald-400 p-3.5 rounded-2xl shadow-2xl flex items-center justify-between gap-3 hidden">
     <div class="flex items-center gap-3">
       <img src="Screenshot_2026-10-26-16-42-44-99.png" alt="App Icon" class="w-12 h-12 rounded-xl object-cover border border-emerald-300 shadow">
@@ -166,43 +180,82 @@
     </div>
   </div>
 
-  <!-- HERO SECTION WITH 5 FOUNDERS (बकांदिया परिवार) -->
-  <section class="bg-gradient-to-b from-brand-dark via-brand-primary to-brand-darkest text-white py-12 px-4 text-center relative overflow-hidden shadow-2xl border-b-4 border-emerald-600">
-    <div class="max-w-5xl mx-auto relative z-10 space-y-4">
-      <span class="inline-block bg-emerald-950/90 border border-emerald-400 text-emerald-300 text-[11px] sm:text-xs uppercase px-4 py-1.5 rounded-full font-black tracking-widest shadow-md">
-        ★ OFFICIAL COMMUNITY PORTAL OF BAKANDIYA FAMILY ★
-      </span>
+  <!-- HERO SECTION WITH 7 FOUNDERS & YOGI ADITYANATH JI BANNER -->
+  <section class="bg-gradient-to-b from-brand-dark via-brand-primary to-brand-darkest text-white py-12 px-4 relative overflow-hidden shadow-2xl border-b-4 border-emerald-600">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- LEFT HERO TEXT & 7 FOUNDERS -->
+      <div class="lg:col-span-7 text-center lg:text-left space-y-4">
+        <span class="inline-block bg-emerald-950/90 border border-emerald-400 text-emerald-300 text-[11px] sm:text-xs uppercase px-4 py-1.5 rounded-full font-black tracking-widest shadow-md">
+          ★ OFFICIAL COMMUNITY PORTAL OF BAKANDIYA FAMILY ★
+        </span>
 
-      <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white drop-shadow-lg">
-        BAKANDIYA FAMILY COMMUNITY PORTAL
-      </h2>
-      <p class="text-xs sm:text-sm text-emerald-200 font-semibold tracking-wide uppercase">
-        बकांदिया परिवार • एकता, पारदर्शिता एवं सेवा
-      </p>
-
-      <!-- FIVE FOUNDER NAMES -->
-      <div class="pt-3">
-        <p class="text-xs font-black uppercase text-amber-300 tracking-widest mb-2 flex items-center justify-center gap-2">
-          <i class="fa-solid fa-award"></i> FOUNDERS OF BAKANDIYA FAMILY | बकांदिया परिवार के संस्थापक <i class="fa-solid fa-award"></i>
+        <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white drop-shadow-lg leading-tight">
+          BAKANDIYA FAMILY COMMUNITY PORTAL
+        </h2>
+        <p class="text-sm sm:text-base text-emerald-200 font-semibold tracking-wide uppercase">
+          बकांदिया परिवार • एकता, पारदर्शिता एवं सेवा
         </p>
-        <div class="flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto">
-          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
-            1. Anoop Kumar Chauhan
-          </span>
-          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
-            2. Peeyush Chauhan
-          </span>
-          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
-            3. Rahul Chauhan (Muttiah Ji)
-          </span>
-          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
-            4. Mohit Chauhan (Eng.)
-          </span>
-          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
-            5. Vikas Chauhan (Kapasiya)
-          </span>
+
+        <!-- 7 FOUNDERS LIST -->
+        <div class="pt-3">
+          <p class="text-xs font-black uppercase text-amber-300 tracking-widest mb-2 flex items-center justify-center lg:justify-start gap-2">
+            <i class="fa-solid fa-award"></i> FOUNDERS OF BAKANDIYA FAMILY | बकांदिया परिवार के संस्थापक <i class="fa-solid fa-award"></i>
+          </p>
+          <div class="flex flex-wrap justify-center lg:justify-start gap-2">
+            <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3 py-1 rounded-xl font-bold shadow-md">
+              1. Anoop Kumar Chauhan
+            </span>
+            <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3 py-1 rounded-xl font-bold shadow-md">
+              2. Peeyush Chauhan
+            </span>
+            <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3 py-1 rounded-xl font-bold shadow-md">
+              3. Rahul Chauhan (Muttiah Ji)
+            </span>
+            <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3 py-1 rounded-xl font-bold shadow-md">
+              4. Mohit Chauhan (Eng.)
+            </span>
+            <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3 py-1 rounded-xl font-bold shadow-md">
+              5. Vikas Chauhan (Kapasiya)
+            </span>
+            <span class="bg-amber-900/90 border border-amber-400 text-amber-200 text-xs px-3 py-1 rounded-xl font-bold shadow-md">
+              6. Kurakraj Singh Chauhan
+            </span>
+            <span class="bg-amber-900/90 border border-amber-400 text-amber-200 text-xs px-3 py-1 rounded-xl font-bold shadow-md">
+              7. Rajkumar Chauhan
+            </span>
+          </div>
         </div>
       </div>
+
+      <!-- RIGHT HERO: 3D YOGI ADITYANATH JI QUOTE & PHOTO -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="card-3d bg-gradient-to-br from-amber-500/20 via-brand-darkest to-black p-5 rounded-3xl border-2 border-amber-400 shadow-2xl max-w-md w-full relative overflow-hidden backdrop-blur-md">
+          <div class="flex items-center gap-4">
+            <div class="relative flex-shrink-0">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Yogi_Adityanath_official_portrait.jpg/480px-Yogi_Adityanath_official_portrait.jpg" 
+                   alt="Shri Yogi Adityanath Ji" 
+                   class="w-20 h-24 sm:w-24 sm:h-28 rounded-2xl object-cover object-top border-2 border-amber-300 shadow-xl" />
+              <div class="absolute -bottom-2 -right-2 bg-amber-500 text-brand-darkest text-[10px] font-black px-2 py-0.5 rounded-md shadow">
+                HON'BLE CM
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="bg-amber-500/20 text-amber-300 border border-amber-400/40 text-[10px] font-black uppercase px-2 py-0.5 rounded-full inline-block">
+                प्रेरणादायक संदेश • INSPIRATIONAL MESSAGE
+              </div>
+              <h3 class="text-base sm:text-lg font-black text-amber-300 leading-snug drop-shadow-md">
+                श्री योगी आदित्यनाथ: <span class="text-white text-lg sm:text-xl font-black">"बटोगे तो कटोगे।"</span>
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-200 font-bold leading-normal italic border-l-2 border-amber-400 pl-2">
+                "Mr. Yogi Adityanath: If you get divided, you will be destroyed."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -229,9 +282,7 @@
         </span>
       </div>
 
-      <!-- 3 CONTACT CARDS -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
         <!-- 1. JAYANT CHAUHAN -->
         <div class="card-3d bg-white p-5 rounded-2xl border border-emerald-200 flex flex-col justify-between space-y-4">
           <div>
@@ -288,19 +339,59 @@
             </a>
           </div>
         </div>
-
       </div>
 
     </div>
   </section>
 
+  <!-- WHATSAPP-STYLE VILLAGE CHAT SECTION -->
+  <section id="village-chat-section" class="max-w-7xl mx-auto px-4 sm:px-6 pt-10">
+    <div class="card-3d rounded-3xl overflow-hidden border-2 border-emerald-400/70 shadow-2xl">
+      
+      <div class="bg-gradient-to-r from-brand-darkest via-brand-dark to-brand-primary p-4 text-white flex items-center justify-between border-b-2 border-emerald-500">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xl shadow">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-black uppercase tracking-wider">
+              VILLAGE CHAT | गाँव चौपाल
+            </h3>
+            <p class="text-[11px] text-emerald-300 font-medium">
+              Real-Time Community Messages • व्हाट्सएप की तरह लाइव संदेश
+            </p>
+          </div>
+        </div>
+        <span class="bg-emerald-800 border border-emerald-400 text-emerald-200 text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-xs">
+          LIVE CHAT
+        </span>
+      </div>
+
+      <div id="chat-messages-container" class="chat-bg h-96 overflow-y-auto p-4 space-y-3">
+        <div class="text-center py-8 text-gray-500 text-xs font-bold">
+          <i class="fa-solid fa-spinner fa-spin text-xl mb-2 text-brand-primary"></i>
+          <p>LOADING VILLAGE CHAT MESSAGES...</p>
+        </div>
+      </div>
+
+      <form id="chat-send-form" class="bg-white p-3 border-t border-gray-200 flex items-center gap-2">
+        <input type="text" id="chat-input-text" maxlength="1000" required placeholder="Type a message / यहाँ अपना संदेश लिखें..."
+          class="flex-1 px-4 py-2.5 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm font-medium shadow-inner" />
+        <button type="submit" id="chat-send-btn" class="w-11 h-11 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full flex items-center justify-center text-lg shadow-md transition flex-shrink-0">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+
+    </div>
+  </section>
+
   <!-- MAIN TWO-COLUMN CONTENT AREA -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
     <!-- LEFT 2 COLUMNS: NEWS FEEDS & PUBLIC PUBLISHING -->
     <div class="lg:col-span-2 space-y-10">
 
-      <!-- PUBLIC NEWS (DESCRIPTION IS OPTIONAL) -->
+      <!-- PUBLIC NEWS (TITLE & DESCRIPTION BOTH OPTIONAL) -->
       <section id="publish-section" class="card-3d rounded-3xl p-6 sm:p-8 border-2 border-brand-light">
         <div class="flex items-center gap-3 border-b-2 border-brand-primary pb-3 mb-5">
           <div class="w-10 h-10 rounded-xl bg-emerald-100 text-brand-primary flex items-center justify-center text-xl shadow-inner">
@@ -317,14 +408,21 @@
         </div>
 
         <form id="public-news-form" class="space-y-4">
+          <!-- TITLE (OPTIONAL) -->
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
-              NEWS TITLE <span class="text-red-500">*</span>
-            </label>
-            <input type="text" id="news-title" required minlength="3" maxlength="150" placeholder="Enter news headline (3 - 150 characters)..."
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700">
+                NEWS TITLE
+              </label>
+              <span class="text-[11px] font-bold text-gray-400 uppercase bg-gray-100 px-2 py-0.5 rounded-md">
+                OPTIONAL (वैकल्पिक - लिखना जरूरी नहीं)
+              </span>
+            </div>
+            <input type="text" id="news-title" maxlength="150" placeholder="News headline (अगर लिखना चाहें तो लिखें, वरना खाली छोड़ सकते हैं)..."
               class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner" />
           </div>
 
+          <!-- CATEGORY -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
               NEWS CATEGORY <span class="text-red-500">*</span>
@@ -336,6 +434,7 @@
             </select>
           </div>
 
+          <!-- DESCRIPTION (OPTIONAL) -->
           <div>
             <div class="flex justify-between items-center mb-1">
               <label class="block text-xs font-bold uppercase tracking-wider text-gray-700">
@@ -349,6 +448,7 @@
               class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner"></textarea>
           </div>
 
+          <!-- OPTIONAL PHOTO -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
               OPTIONAL PHOTO (AUTO-COMPRESSED • 100% FREE STORAGE)
@@ -402,24 +502,6 @@
         </div>
         <div id="most-important-list" class="space-y-4">
           <div class="text-center py-6 text-gray-400 text-xs font-medium uppercase">No high priority news recorded.</div>
-        </div>
-      </section>
-
-      <!-- LESS IMPORTANT NEWS -->
-      <section id="less-important">
-        <div class="flex items-center justify-between border-b-2 border-gray-400 pb-2 mb-4">
-          <div class="flex items-center gap-2">
-            <i class="fa-solid fa-clipboard-list text-gray-600 text-xl"></i>
-            <h2 class="text-lg sm:text-xl font-black text-gray-700 uppercase tracking-wider">
-              LESS IMPORTANT NEWS
-            </h2>
-          </div>
-          <span class="text-[10px] bg-gray-200 text-gray-700 font-extrabold px-3 py-1 rounded-full uppercase shadow-xs">
-            COMMUNITY NOTES
-          </span>
-        </div>
-        <div id="less-important-list" class="space-y-4">
-          <div class="text-center py-6 text-gray-400 text-xs font-medium uppercase">No routine notes recorded.</div>
         </div>
       </section>
 
@@ -552,7 +634,7 @@
           <p id="active-member-phone" class="text-xs text-gray-500 font-mono font-semibold"></p>
         </div>
         <p class="text-xs text-emerald-950 bg-emerald-50 p-3 rounded-xl border border-emerald-200 leading-relaxed font-medium">
-          आप Events, Important Notices और Temple Donation records add कर सकते हैं।
+          आप Events, Important Notices, WhatsApp Chat और Temple Donations में भाग ले सकते हैं।
         </p>
         <button onclick="handleMemberLogout()" class="w-full bg-red-100 hover:bg-red-200 text-red-700 font-bold py-2.5 rounded-xl uppercase text-xs">
           LOGOUT MEMBER
@@ -755,8 +837,8 @@
         BAKANDIYA FAMILY | बकांदिया परिवार
       </div>
       
-      <p class="text-xs text-gray-300 font-semibold uppercase tracking-wider max-w-3xl mx-auto leading-relaxed">
-        FOUNDERS: Anoop Kumar Chauhan • Peeyush Chauhan • Rahul Chauhan (Muttiah Ji) • Mohit Chauhan (Eng.) • Vikas Chauhan (Kapasiya)
+      <p class="text-xs text-gray-300 font-semibold uppercase tracking-wider max-w-4xl mx-auto leading-relaxed">
+        FOUNDERS: Anoop Kumar Chauhan • Peeyush Chauhan • Rahul Chauhan (Muttiah Ji) • Mohit Chauhan (Eng.) • Vikas Chauhan (Kapasiya) • Kurakraj Singh Chauhan • Rajkumar Chauhan
       </p>
 
       <div class="text-[11px] text-gray-500 font-medium">
@@ -795,6 +877,7 @@
     let app, db, auth;
     let activeAdminUser = null;
     let activeMemberSession = null;
+    window.unsubMemberWatch = null;
 
     try {
       app = initializeApp(firebaseConfig);
@@ -808,9 +891,7 @@
       statusMsg.textContent = "INITIALIZATION ERROR: " + err.message;
     }
 
-    // -------------------------------------------------------------
-    // PWA REGISTRATION & INSTALLATION HANDLERS
-    // -------------------------------------------------------------
+    // PWA Service Worker & Install
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js').catch(err => console.log('SW Registration:', err));
@@ -929,8 +1010,22 @@
     const statusMsg = document.getElementById('connection-status-msg');
 
     // -------------------------------------------------------------
-    // MEMBER SESSION MANAGEMENT
+    // REAL-TIME MEMBER STATUS WATCHER (INSTANT OUT)
     // -------------------------------------------------------------
+    function watchMemberStatusRealtime(phone) {
+      if (window.unsubMemberWatch) window.unsubMemberWatch();
+
+      window.unsubMemberWatch = onSnapshot(doc(db, "members", phone), (snap) => {
+        if (!snap.exists() || snap.data().approved !== true || snap.data().status !== "approved") {
+          localStorage.removeItem("bakandiya_verified_member");
+          activeMemberSession = null;
+          updateMemberUi();
+          alert("⚠️ सूचना: आपको Admin द्वारा सदस्य सूची से हटा (OUT) दिया गया है।");
+          if (window.unsubMemberWatch) window.unsubMemberWatch();
+        }
+      });
+    }
+
     function updateMemberUi() {
       const memberLoginView = document.getElementById('member-login-view');
       const memberActiveView = document.getElementById('member-active-view');
@@ -947,6 +1042,8 @@
           memberBtnLabel.textContent = "MEMBER: " + activeMemberSession.name.split(" ")[0].toUpperCase();
           activeMemberName.textContent = activeMemberSession.name;
           activeMemberPhone.textContent = "+91 " + activeMemberSession.phone;
+
+          watchMemberStatusRealtime(activeMemberSession.phone);
         } catch (e) {
           activeMemberSession = null;
         }
@@ -1059,6 +1156,7 @@
 
     window.handleMemberLogout = () => {
       localStorage.removeItem("bakandiya_verified_member");
+      if (window.unsubMemberWatch) window.unsubMemberWatch();
       updateMemberUi();
       alert("Member logged out successfully.");
       window.closeMemberModal();
@@ -1170,9 +1268,9 @@
           btn.onclick = async () => {
             const p = btn.getAttribute('data-out-phone');
             const n = btn.getAttribute('data-name');
-            if (confirm("Are you sure you want to OUT / REMOVE member " + n + "?")) {
+            if (confirm("Are you sure you want to OUT / REMOVE member " + n + "? (यह सदस्य तुरंत सभी जगह से लॉगआउट हो जाएगा)")) {
               await deleteDoc(doc(db, "members", p));
-              alert("Member " + n + " has been removed!");
+              alert("Member " + n + " has been OUTED & REMOVED completely!");
             }
           };
         });
@@ -1218,7 +1316,106 @@
     };
 
     // -------------------------------------------------------------
-    // PUBLIC NEWS (DESCRIPTION OPTIONAL)
+    // WHATSAPP-STYLE VILLAGE CHAT SYSTEM
+    // -------------------------------------------------------------
+    const chatContainer = document.getElementById('chat-messages-container');
+    const chatForm = document.getElementById('chat-send-form');
+    const chatInput = document.getElementById('chat-input-text');
+
+    onSnapshot(query(collection(db, "messages"), orderBy("createdAt", "asc")), (snapshot) => {
+      chatContainer.innerHTML = "";
+      if (snapshot.empty) {
+        chatContainer.innerHTML = `
+          <div class="text-center py-12 text-gray-400 text-xs font-bold uppercase">
+            <i class="fa-regular fa-comments text-3xl mb-2 text-emerald-600"></i>
+            <p>गाँव चौपाल में अभी कोई संदेश नहीं है। पहला संदेश आप भेजें!</p>
+          </div>
+        `;
+        return;
+      }
+
+      snapshot.forEach((docSnap) => {
+        const msg = docSnap.data();
+        const id = docSnap.id;
+        const isMyMessage = (activeMemberSession && msg.senderPhone === activeMemberSession.phone) || 
+                            (activeAdminUser && msg.role === "admin");
+
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `flex ${isMyMessage ? 'justify-end' : 'justify-start'}`;
+
+        const bubbleClass = isMyMessage ? 'msg-out' : 'msg-in';
+        const senderColor = isMyMessage ? 'text-emerald-800' : 'text-teal-900';
+        const timeText = msg.createdAt ? new Date(msg.createdAt.toDate()).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'Just now';
+
+        msgDiv.innerHTML = `
+          <div class="${bubbleClass} max-w-[85%] sm:max-w-md p-3 relative group">
+            <div class="flex items-center justify-between gap-3 mb-1">
+              <span class="text-[11px] font-black ${senderColor} uppercase flex items-center gap-1">
+                ${msg.role === 'admin' ? '<span class="bg-amber-400 text-brand-darkest text-[9px] px-1.5 py-0.2 rounded font-black">👑 ADMIN</span>' : ''}
+                ${msg.senderName}
+              </span>
+              ${activeAdminUser ? `<button data-del-msg="${id}" class="text-[10px] text-red-500 hover:text-red-700 hidden group-hover:inline uppercase font-bold"><i class="fa-solid fa-trash"></i></button>` : ''}
+            </div>
+            <p class="text-xs sm:text-sm text-gray-900 whitespace-pre-wrap leading-relaxed">${msg.text}</p>
+            <div class="text-[9px] text-gray-400 font-semibold text-right mt-1 flex items-center justify-end gap-1">
+              <span>${timeText}</span>
+              ${isMyMessage ? '<i class="fa-solid fa-check-double text-emerald-600 text-[10px]"></i>' : ''}
+            </div>
+          </div>
+        `;
+        chatContainer.appendChild(msgDiv);
+      });
+
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      document.querySelectorAll('[data-del-msg]').forEach(btn => {
+        btn.onclick = async () => {
+          if (!activeAdminUser) return;
+          if (confirm("Delete this chat message?")) {
+            await deleteDoc(doc(db, "messages", btn.getAttribute('data-del-msg')));
+          }
+        };
+      });
+    });
+
+    chatForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = chatInput.value.trim();
+      if (!text) return;
+
+      let senderName = "Villager";
+      let senderPhone = "";
+      let role = "public";
+
+      if (activeAdminUser) {
+        senderName = "Admin (प्रशासक)";
+        role = "admin";
+      } else if (activeMemberSession) {
+        senderName = activeMemberSession.name;
+        senderPhone = activeMemberSession.phone;
+        role = "member";
+      } else {
+        const guestName = prompt("चौपाल में संदेश भेजने के लिए अपना नाम लिखें:");
+        if (!guestName || !guestName.trim()) return alert("संदेश भेजने के लिए नाम आवश्यक है।");
+        senderName = guestName.trim();
+      }
+
+      chatInput.value = "";
+      try {
+        await addDoc(collection(db, "messages"), {
+          text,
+          senderName,
+          senderPhone,
+          role,
+          createdAt: serverTimestamp()
+        });
+      } catch (err) {
+        alert("संदेश भेजने में त्रुटि: " + err.message);
+      }
+    });
+
+    // -------------------------------------------------------------
+    // PUBLIC NEWS (TITLE & DESCRIPTION BOTH OPTIONAL)
     // -------------------------------------------------------------
     const newsForm = document.getElementById('public-news-form');
     newsForm.addEventListener('submit', async (e) => {
@@ -1230,8 +1427,8 @@
       const submitBtn = document.getElementById('publish-submit-btn');
       const submitText = document.getElementById('publish-btn-text');
 
-      if (title.length < 3 || title.length > 150) {
-        alert("News title must be between 3 and 150 characters.");
+      if (!title && !description && !imageFileInput) {
+        alert("कृपया शीर्षक, विवरण या फोटो में से कम से कम कोई एक जानकारी भरें।");
         return;
       }
 
@@ -1246,7 +1443,7 @@
         }
 
         await addDoc(collection(db, "news"), {
-          title,
+          title: title || "बकांदिया समाचार (News Update)",
           category,
           description: description || "",
           imageUrl: imageUrl || "",
@@ -1280,13 +1477,11 @@
 
       const latestContainer = document.getElementById('latest-news-list');
       const mostContainer = document.getElementById('most-important-list');
-      const lessContainer = document.getElementById('less-important-list');
 
       latestContainer.innerHTML = "";
       mostContainer.innerHTML = "";
-      lessContainer.innerHTML = "";
 
-      let cLatest = 0, cMost = 0, cLess = 0;
+      let cLatest = 0, cMost = 0;
 
       snapshot.forEach((docSnap) => {
         const data = docSnap.data();
@@ -1300,16 +1495,11 @@
           const cardMost = renderNewsCard(id, data, 'most');
           mostContainer.appendChild(cardMost);
           cMost++;
-        } else if (data.category === "LESS IMPORTANT NEWS") {
-          const cardLess = renderNewsCard(id, data, 'less');
-          lessContainer.appendChild(cardLess);
-          cLess++;
         }
       });
 
       if (cLatest === 0) latestContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase font-bold">NO VILLAGE NEWS PUBLISHED YET.</p>`;
       if (cMost === 0) mostContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase font-bold">NO MOST IMPORTANT NEWS RECORDED.</p>`;
-      if (cLess === 0) lessContainer.innerHTML = `<p class="text-xs text-gray-400 text-center py-4 uppercase font-bold">NO ROUTINE NOTES RECORDED.</p>`;
 
       attachNewsAdminHandlers();
     }, (error) => {
