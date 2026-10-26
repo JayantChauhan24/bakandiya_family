@@ -1,0 +1,18 @@
+{
+  "name": "Bakandiya Family",
+  "short_name": "Bakandiya Family",
+  "description": "Official Community Portal of Bakandiya Family (बकांदिया परिवार)",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#051b11",
+  "theme_color": "#0a2e1d",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "Screenshot_2026-10-26-16-42-44-99.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
