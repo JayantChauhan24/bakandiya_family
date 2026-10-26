@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BAKANDIYA FAMILY | बकंडिया परिवार</title>
+  <title>BAKANDIYA FAMILY | बकांदिया परिवार</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,15 +20,15 @@
         extend: {
           colors: {
             brand: {
-              darkest: '#071d13',
-              dark: '#0c2e1f',
-              primary: '#12432d',
-              medium: '#1e6b48',
+              darkest: '#051b11',
+              dark: '#0a2e1d',
+              primary: '#0e442b',
+              medium: '#17633f',
               accent: '#10b981',
               light: '#d1fae5',
               gold: '#f59e0b',
               goldLight: '#fef3c7',
-              bg: '#f4f7f5',
+              bg: '#f1f5f3',
             }
           },
           fontFamily: {
@@ -40,27 +40,24 @@
   </script>
 
   <style>
-    /* 3D Modern Tactile Elevation */
+    /* Ultra 3D Modern Tactile Elevation */
     .card-3d {
       background: #ffffff;
-      border: 1px solid rgba(16, 185, 129, 0.15);
-      box-shadow: 0 10px 25px -5px rgba(7, 29, 19, 0.08), 0 8px 10px -6px rgba(7, 29, 19, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(16, 185, 129, 0.18);
+      box-shadow: 0 12px 28px -6px rgba(5, 27, 17, 0.12), 0 8px 10px -6px rgba(5, 27, 17, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .card-3d:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 30px -10px rgba(7, 29, 19, 0.15), 0 10px 15px -5px rgba(16, 185, 129, 0.1);
+      transform: translateY(-5px) scale(1.008);
+      box-shadow: 0 22px 35px -10px rgba(5, 27, 17, 0.2), 0 12px 20px -8px rgba(16, 185, 129, 0.18);
     }
     .btn-3d {
-      box-shadow: 0 4px 0 rgba(7, 29, 19, 0.3), 0 8px 15px rgba(16, 185, 129, 0.2);
-      transition: all 0.15s ease;
+      box-shadow: 0 4px 0 rgba(5, 27, 17, 0.4), 0 8px 15px rgba(16, 185, 129, 0.2);
+      transition: all 0.12s ease-in-out;
     }
     .btn-3d:active {
       transform: translateY(3px);
-      box-shadow: 0 1px 0 rgba(7, 29, 19, 0.3);
-    }
-    .badge-3d {
-      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 2px 5px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 1px 0 rgba(5, 27, 17, 0.4);
     }
     .whatsapp-btn {
       background-color: #25D366;
@@ -80,12 +77,12 @@
   </div>
 
   <!-- HEADER -->
-  <header class="bg-gradient-to-r from-brand-darkest via-brand-dark to-brand-primary text-white border-b-4 border-emerald-500 sticky top-0 z-40 shadow-xl">
+  <header class="bg-gradient-to-r from-brand-darkest via-brand-dark to-brand-primary text-white border-b-4 border-emerald-500 sticky top-0 z-40 shadow-2xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-3">
       
-      <!-- LOGO & BRAND TITLE -->
+      <!-- LOGO & BRAND TITLE (SPELLED: बकांदिया परिवार) -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-brand-primary flex items-center justify-center font-black text-2xl text-white shadow-lg border-2 border-emerald-300 transform group-hover:scale-105 transition">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-brand-primary flex items-center justify-center font-black text-2xl text-white shadow-lg border-2 border-emerald-300 transform group-hover:rotate-3 transition">
           <i class="fa-solid fa-people-roof"></i>
         </div>
         <div>
@@ -93,23 +90,21 @@
             BAKANDIYA FAMILY
           </h1>
           <p class="text-[11px] sm:text-xs font-bold text-emerald-300 uppercase tracking-widest">
-            बकंडिया परिवार • COMMUNITY NETWORK
+            बकांदिया परिवार • COMMUNITY NETWORK
           </p>
         </div>
       </a>
 
       <!-- RIGHT SIDE: PUBLISH, MEMBER LOGIN & ADMIN LOGIN -->
       <div class="flex items-center flex-wrap gap-2">
-        
-        <!-- PUBLISH NEWS SHORTCUT -->
         <a href="#publish-section" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 btn-3d shadow">
           <i class="fa-solid fa-bullhorn"></i>
           <span>PUBLISH NEWS</span>
         </a>
 
-        <!-- REQUIREMENT 1: MEMBER LOGIN WITH PHONE/OTP -->
-        <button id="member-header-btn" onclick="openMemberModal()" class="bg-gradient-to-r from-teal-700 to-emerald-800 hover:from-teal-600 hover:to-emerald-700 text-white border border-emerald-400/50 font-bold py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md transition">
-          <i class="fa-solid fa-mobile-screen-button text-emerald-300"></i>
+        <!-- MEMBER LOGIN / STATUS BUTTON -->
+        <button id="member-header-btn" onclick="openMemberModal()" class="bg-gradient-to-r from-teal-700 to-emerald-800 hover:from-teal-600 hover:to-emerald-700 text-white border border-emerald-400/50 font-bold py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md btn-3d">
+          <i class="fa-solid fa-user-check text-emerald-300"></i>
           <span id="member-btn-label">MEMBER LOGIN</span>
         </button>
 
@@ -123,7 +118,7 @@
     </div>
 
     <!-- NAVIGATION MENU -->
-    <nav class="bg-brand-darkest/90 border-t border-emerald-900/50 text-emerald-100 text-xs sm:text-sm font-bold uppercase tracking-wider overflow-x-auto shadow-inner">
+    <nav class="bg-brand-darkest/95 border-t border-emerald-900/50 text-emerald-100 text-xs sm:text-sm font-bold uppercase tracking-wider overflow-x-auto shadow-inner">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 flex space-x-6 py-2.5 whitespace-nowrap">
         <a href="#about-us-section" class="text-amber-300 hover:text-white transition flex items-center gap-1">
           <i class="fa-solid fa-address-card"></i> ABOUT US
@@ -138,37 +133,39 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION WITH REQUIREMENT 8: FIVE FOUNDERS -->
-  <section class="bg-gradient-to-b from-brand-dark via-brand-primary to-brand-darkest text-white py-10 px-4 text-center relative overflow-hidden shadow-2xl">
+  <!-- HERO SECTION WITH 5 FOUNDERS (बकांदिया परिवार) -->
+  <section class="bg-gradient-to-b from-brand-dark via-brand-primary to-brand-darkest text-white py-12 px-4 text-center relative overflow-hidden shadow-2xl border-b-4 border-emerald-600">
     <div class="max-w-5xl mx-auto relative z-10 space-y-4">
-      
-      <span class="inline-block bg-emerald-950/80 border border-emerald-400 text-emerald-300 text-[11px] sm:text-xs uppercase px-4 py-1.5 rounded-full font-black tracking-widest shadow-md">
+      <span class="inline-block bg-emerald-950/90 border border-emerald-400 text-emerald-300 text-[11px] sm:text-xs uppercase px-4 py-1.5 rounded-full font-black tracking-widest shadow-md">
         ★ OFFICIAL COMMUNITY PORTAL OF BAKANDIYA FAMILY ★
       </span>
 
-      <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tight text-white drop-shadow-md">
+      <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white drop-shadow-lg">
         BAKANDIYA FAMILY COMMUNITY PORTAL
       </h2>
+      <p class="text-xs sm:text-sm text-emerald-200 font-semibold tracking-wide uppercase">
+        बकांदिया परिवार • एकता, पारदर्शिता एवं सेवा
+      </p>
 
-      <!-- REQUIREMENT 8: FIVE FOUNDER NAMES DISPLAY -->
-      <div class="pt-2">
+      <!-- FIVE FOUNDER NAMES -->
+      <div class="pt-3">
         <p class="text-xs font-black uppercase text-amber-300 tracking-widest mb-2 flex items-center justify-center gap-2">
-          <i class="fa-solid fa-award"></i> FOUNDERS OF BAKANDIYA FAMILY <i class="fa-solid fa-award"></i>
+          <i class="fa-solid fa-award"></i> FOUNDERS OF BAKANDIYA FAMILY | बकांदिया परिवार के संस्थापक <i class="fa-solid fa-award"></i>
         </p>
-        <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
-          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+        <div class="flex flex-wrap justify-center gap-2.5 max-w-4xl mx-auto">
+          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
             1. Anoop Kumar Chauhan
           </span>
-          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
             2. Peeyush Chauhan
           </span>
-          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
             3. Rahul Chauhan (Muttiah Ji)
           </span>
-          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
             4. Mohit Chauhan (Eng.)
           </span>
-          <span class="bg-emerald-900/80 border border-emerald-400/60 text-white text-xs px-3.5 py-1.5 rounded-lg font-bold shadow-sm">
+          <span class="bg-emerald-900/90 border border-emerald-400/70 text-white text-xs px-3.5 py-1.5 rounded-xl font-bold shadow-md">
             5. Vikas Chauhan (Kapasiya)
           </span>
         </div>
@@ -177,14 +174,14 @@
   </section>
 
   <!-- ========================================================= -->
-  <!-- REQUIREMENT 5: ABOUT US SECTION (3 CONTACTS WITH PHONES)  -->
+  <!-- ABOUT US SECTION (3 DEDICATED 3D CONTACT CARDS)           -->
   <!-- ========================================================= -->
-  <section id="about-us-section" class="max-w-7xl mx-auto px-4 sm:px-6 pt-8">
-    <div class="card-3d rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-white via-emerald-50/40 to-white border-2 border-emerald-200">
+  <section id="about-us-section" class="max-w-7xl mx-auto px-4 sm:px-6 pt-10">
+    <div class="card-3d rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-white via-emerald-50/40 to-white border-2 border-emerald-300/60">
       
       <div class="flex flex-wrap items-center justify-between border-b-2 border-brand-primary/20 pb-4 mb-6 gap-3">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-brand-primary text-white flex items-center justify-center text-xl shadow">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-primary to-emerald-600 text-white flex items-center justify-center text-2xl shadow-md">
             <i class="fa-solid fa-id-card"></i>
           </div>
           <div>
@@ -192,70 +189,70 @@
               ABOUT US | हमारे बारे में
             </h2>
             <p class="text-xs text-gray-500 font-medium">
-              CORE COMMITTEE & CONTACT INFORMATION • संपर्क सूत्र
+              CORE COMMITTEE & CONTACT INFORMATION • मुख्य संपर्क सूत्र
             </p>
           </div>
         </div>
-        <span class="text-xs bg-amber-100 text-amber-900 font-black px-3 py-1 rounded-full border border-amber-300 uppercase tracking-wider">
+        <span class="text-xs bg-amber-100 text-amber-900 font-black px-3 py-1 rounded-full border border-amber-300 uppercase tracking-wider shadow-sm">
           OFFICIAL CONTACTS
         </span>
       </div>
 
-      <!-- 3 DEDICATED CONTACT CARDS -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <!-- 3 CONTACT CARDS WITH 3D HOVER -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <!-- 1. JAYANT CHAUHAN -->
-        <div class="card-3d bg-white p-5 rounded-xl border border-emerald-200/80 flex flex-col justify-between space-y-3">
+        <div class="card-3d bg-white p-5 rounded-2xl border border-emerald-200 flex flex-col justify-between space-y-4">
           <div>
-            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2 py-0.5 rounded uppercase">MEMBER 1</span>
-            <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase mt-1">1. JAYANT CHAUHAN</h3>
-            <p class="text-xs text-emerald-800 font-bold mt-0.5 flex items-center gap-1.5">
-              <i class="fa-solid fa-phone"></i> +91 9634093751
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase">MEMBER 1</span>
+            <h3 class="text-lg font-black text-gray-900 uppercase mt-1">1. JAYANT CHAUHAN</h3>
+            <p class="text-xs text-emerald-800 font-bold mt-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-phone text-emerald-600"></i> +91 9634093751
             </p>
           </div>
-          <div class="flex items-center gap-2 pt-2 border-t border-gray-100">
-            <a href="tel:9634093751" class="flex-1 text-center bg-brand-primary hover:bg-brand-medium text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+          <div class="flex items-center gap-2 pt-3 border-t border-gray-100">
+            <a href="tel:9634093751" class="flex-1 text-center bg-brand-primary hover:bg-brand-medium text-white text-xs font-bold py-2.5 rounded-xl transition shadow btn-3d uppercase">
               <i class="fa-solid fa-phone-flip mr-1"></i> CALL
             </a>
-            <a href="https://wa.me/919634093751" target="_blank" class="flex-1 text-center whatsapp-btn text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+            <a href="https://wa.me/919634093751" target="_blank" class="flex-1 text-center whatsapp-btn text-white text-xs font-bold py-2.5 rounded-xl transition shadow uppercase">
               <i class="fa-brands fa-whatsapp mr-1"></i> WHATSAPP
             </a>
           </div>
         </div>
 
         <!-- 2. ANOOP KUMAR CHAUHAN -->
-        <div class="card-3d bg-white p-5 rounded-xl border border-emerald-200/80 flex flex-col justify-between space-y-3">
+        <div class="card-3d bg-white p-5 rounded-2xl border border-emerald-200 flex flex-col justify-between space-y-4">
           <div>
-            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2 py-0.5 rounded uppercase">MEMBER 2</span>
-            <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase mt-1">2. ANOOP KUMAR CHAUHAN</h3>
-            <p class="text-xs text-emerald-800 font-bold mt-0.5 flex items-center gap-1.5">
-              <i class="fa-solid fa-phone"></i> +91 9719911284
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase">MEMBER 2</span>
+            <h3 class="text-lg font-black text-gray-900 uppercase mt-1">2. ANOOP KUMAR CHAUHAN</h3>
+            <p class="text-xs text-emerald-800 font-bold mt-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-phone text-emerald-600"></i> +91 9719911284
             </p>
           </div>
-          <div class="flex items-center gap-2 pt-2 border-t border-gray-100">
-            <a href="tel:9719911284" class="flex-1 text-center bg-brand-primary hover:bg-brand-medium text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+          <div class="flex items-center gap-2 pt-3 border-t border-gray-100">
+            <a href="tel:9719911284" class="flex-1 text-center bg-brand-primary hover:bg-brand-medium text-white text-xs font-bold py-2.5 rounded-xl transition shadow btn-3d uppercase">
               <i class="fa-solid fa-phone-flip mr-1"></i> CALL
             </a>
-            <a href="https://wa.me/919719911284" target="_blank" class="flex-1 text-center whatsapp-btn text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+            <a href="https://wa.me/919719911284" target="_blank" class="flex-1 text-center whatsapp-btn text-white text-xs font-bold py-2.5 rounded-xl transition shadow uppercase">
               <i class="fa-brands fa-whatsapp mr-1"></i> WHATSAPP
             </a>
           </div>
         </div>
 
         <!-- 3. PEEYUSH CHAUHAN -->
-        <div class="card-3d bg-white p-5 rounded-xl border border-emerald-200/80 flex flex-col justify-between space-y-3">
+        <div class="card-3d bg-white p-5 rounded-2xl border border-emerald-200 flex flex-col justify-between space-y-4">
           <div>
-            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2 py-0.5 rounded uppercase">MEMBER 3</span>
-            <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase mt-1">3. PEEYUSH CHAUHAN</h3>
-            <p class="text-xs text-emerald-800 font-bold mt-0.5 flex items-center gap-1.5">
-              <i class="fa-solid fa-phone"></i> +91 9136807774
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase">MEMBER 3</span>
+            <h3 class="text-lg font-black text-gray-900 uppercase mt-1">3. PEEYUSH CHAUHAN</h3>
+            <p class="text-xs text-emerald-800 font-bold mt-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-phone text-emerald-600"></i> +91 9136807774
             </p>
           </div>
-          <div class="flex items-center gap-2 pt-2 border-t border-gray-100">
-            <a href="tel:9136807774" class="flex-1 text-center bg-brand-primary hover:bg-brand-medium text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+          <div class="flex items-center gap-2 pt-3 border-t border-gray-100">
+            <a href="tel:9136807774" class="flex-1 text-center bg-brand-primary hover:bg-brand-medium text-white text-xs font-bold py-2.5 rounded-xl transition shadow btn-3d uppercase">
               <i class="fa-solid fa-phone-flip mr-1"></i> CALL
             </a>
-            <a href="https://wa.me/919136807774" target="_blank" class="flex-1 text-center whatsapp-btn text-white text-xs font-bold py-2 rounded-lg transition shadow-sm uppercase">
+            <a href="https://wa.me/919136807774" target="_blank" class="flex-1 text-center whatsapp-btn text-white text-xs font-bold py-2.5 rounded-xl transition shadow uppercase">
               <i class="fa-brands fa-whatsapp mr-1"></i> WHATSAPP
             </a>
           </div>
@@ -266,18 +263,16 @@
     </div>
   </section>
 
-  <!-- MAIN TWO-COLUMN CONTAINER -->
+  <!-- MAIN TWO-COLUMN CONTENT AREA -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
     <!-- LEFT 2 COLUMNS: NEWS FEEDS & PUBLIC PUBLISHING -->
     <div class="lg:col-span-2 space-y-10">
 
-      <!-- ========================================================= -->
-      <!-- REQUIREMENT 2: PUBLIC NEWS (DESCRIPTION NOT MANDATORY)    -->
-      <!-- ========================================================= -->
-      <section id="publish-section" class="card-3d rounded-2xl p-6 sm:p-7 border-2 border-brand-light">
+      <!-- PUBLIC NEWS (DESCRIPTION IS OPTIONAL) -->
+      <section id="publish-section" class="card-3d rounded-3xl p-6 sm:p-8 border-2 border-brand-light">
         <div class="flex items-center gap-3 border-b-2 border-brand-primary pb-3 mb-5">
-          <div class="w-10 h-10 rounded-lg bg-emerald-100 text-brand-primary flex items-center justify-center text-xl">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-brand-primary flex items-center justify-center text-xl shadow-inner">
             <i class="fa-solid fa-feather-pointed"></i>
           </div>
           <div>
@@ -291,51 +286,51 @@
         </div>
 
         <form id="public-news-form" class="space-y-4">
-          <!-- NEWS TITLE (MANDATORY) -->
+          <!-- TITLE -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
               NEWS TITLE <span class="text-red-500">*</span>
             </label>
             <input type="text" id="news-title" required minlength="3" maxlength="150" placeholder="Enter news headline (3 - 150 characters)..."
-              class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner" />
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner" />
           </div>
 
-          <!-- NEWS CATEGORY -->
+          <!-- CATEGORY -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
               NEWS CATEGORY <span class="text-red-500">*</span>
             </label>
-            <select id="news-category" required class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium bg-white shadow-inner">
+            <select id="news-category" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium bg-white shadow-inner">
               <option value="LATEST VILLAGE NEWS">LATEST VILLAGE NEWS</option>
               <option value="MOST IMPORTANT NEWS">MOST IMPORTANT NEWS</option>
               <option value="LESS IMPORTANT NEWS">LESS IMPORTANT NEWS</option>
             </select>
           </div>
 
-          <!-- REQUIREMENT 2: NEWS DESCRIPTION (NOT MANDATORY / OPTIONAL) -->
+          <!-- DESCRIPTION (OPTIONAL) -->
           <div>
             <div class="flex justify-between items-center mb-1">
               <label class="block text-xs font-bold uppercase tracking-wider text-gray-700">
                 NEWS DESCRIPTION
               </label>
-              <span class="text-[11px] font-bold text-gray-400 uppercase bg-gray-100 px-2 py-0.5 rounded">
+              <span class="text-[11px] font-bold text-gray-400 uppercase bg-gray-100 px-2 py-0.5 rounded-md">
                 OPTIONAL (वैकल्पिक - लिखना जरूरी नहीं)
               </span>
             </div>
-            <textarea id="news-description" rows="3" maxlength="3000" placeholder="Write news details if you wish (अगर आप लिखना चाहें तो लिखें, वरना खाली छोड़ सकते हैं)..."
-              class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner"></textarea>
+            <textarea id="news-description" rows="3" maxlength="3000" placeholder="Write details if you wish (अगर आप लिखना चाहें तो लिखें, वरना खाली छोड़ सकते हैं)..."
+              class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner"></textarea>
           </div>
 
           <!-- OPTIONAL PHOTO -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
-              OPTIONAL PHOTO (AUTO-COMPRESSED • FREE STORAGE)
+              OPTIONAL PHOTO (AUTO-COMPRESSED • 100% FREE STORAGE)
             </label>
             <input type="file" id="news-image" accept="image/*"
               class="w-full text-xs text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark cursor-pointer" />
           </div>
 
-          <!-- PUBLISH NEWS BUTTON -->
+          <!-- SUBMIT BUTTON -->
           <div class="pt-2">
             <button type="submit" id="publish-submit-btn" class="w-full bg-gradient-to-r from-brand-primary to-brand-medium hover:from-brand-medium hover:to-brand-primary text-white font-black py-3 px-6 rounded-xl uppercase tracking-wider text-sm btn-3d flex items-center justify-center gap-2">
               <i class="fa-solid fa-paper-plane"></i>
@@ -345,9 +340,7 @@
         </form>
       </section>
 
-      <!-- ========================================================= -->
-      <!-- SECTION: LATEST VILLAGE NEWS                              -->
-      <!-- ========================================================= -->
+      <!-- LATEST VILLAGE NEWS -->
       <section id="latest-news">
         <div class="flex items-center justify-between border-b-2 border-brand-primary pb-2 mb-4">
           <div class="flex items-center gap-2">
@@ -356,11 +349,10 @@
               LATEST VILLAGE NEWS
             </h2>
           </div>
-          <span class="text-[10px] bg-emerald-100 text-brand-dark font-extrabold px-2.5 py-1 rounded-full uppercase badge-3d">
+          <span class="text-[10px] bg-emerald-100 text-brand-dark font-extrabold px-3 py-1 rounded-full uppercase shadow-xs">
             FIRESTORE LIVE
           </span>
         </div>
-
         <div id="latest-news-list" class="space-y-4">
           <div class="text-center py-6 text-gray-400 font-medium text-xs">
             <i class="fa-solid fa-spinner fa-spin text-xl mb-2 text-brand-primary"></i>
@@ -369,9 +361,7 @@
         </div>
       </section>
 
-      <!-- ========================================================= -->
-      <!-- SECTION: MOST IMPORTANT NEWS                              -->
-      <!-- ========================================================= -->
+      <!-- MOST IMPORTANT NEWS -->
       <section id="most-important">
         <div class="flex items-center justify-between border-b-2 border-red-600 pb-2 mb-4">
           <div class="flex items-center gap-2">
@@ -380,19 +370,16 @@
               MOST IMPORTANT NEWS
             </h2>
           </div>
-          <span class="text-[10px] bg-red-100 text-red-800 font-extrabold px-2.5 py-1 rounded-full uppercase badge-3d">
+          <span class="text-[10px] bg-red-100 text-red-800 font-extrabold px-3 py-1 rounded-full uppercase shadow-xs">
             HIGH PRIORITY
           </span>
         </div>
-
         <div id="most-important-list" class="space-y-4">
           <div class="text-center py-6 text-gray-400 text-xs font-medium uppercase">No high priority news recorded.</div>
         </div>
       </section>
 
-      <!-- ========================================================= -->
-      <!-- SECTION: LESS IMPORTANT NEWS                              -->
-      <!-- ========================================================= -->
+      <!-- LESS IMPORTANT NEWS -->
       <section id="less-important">
         <div class="flex items-center justify-between border-b-2 border-gray-400 pb-2 mb-4">
           <div class="flex items-center gap-2">
@@ -401,11 +388,10 @@
               LESS IMPORTANT NEWS
             </h2>
           </div>
-          <span class="text-[10px] bg-gray-200 text-gray-700 font-extrabold px-2.5 py-1 rounded-full uppercase badge-3d">
+          <span class="text-[10px] bg-gray-200 text-gray-700 font-extrabold px-3 py-1 rounded-full uppercase shadow-xs">
             COMMUNITY NOTES
           </span>
         </div>
-
         <div id="less-important-list" class="space-y-4">
           <div class="text-center py-6 text-gray-400 text-xs font-medium uppercase">No routine notes recorded.</div>
         </div>
@@ -416,10 +402,8 @@
     <!-- RIGHT 1 COLUMN: NOTICES, EVENTS, DONATIONS -->
     <div class="space-y-8">
 
-      <!-- ========================================================= -->
-      <!-- REQUIREMENT 3: NOTICES (ADMIN & MEMBERS CAN ADD)          -->
-      <!-- ========================================================= -->
-      <section id="notices-section" class="card-3d rounded-2xl border-t-4 border-amber-600 p-5">
+      <!-- IMPORTANT NOTICES (ADMIN & APPROVED MEMBERS CAN ADD) -->
+      <section id="notices-section" class="card-3d rounded-3xl border-t-4 border-amber-600 p-5">
         <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-bullhorn text-amber-600 text-lg"></i>
@@ -427,20 +411,17 @@
               IMPORTANT NOTICES ABOUT BAKANDIYA FAMILY
             </h2>
           </div>
-          <button id="add-notice-btn" onclick="openNoticeModal()" class="text-[11px] bg-amber-600 hover:bg-amber-700 text-white px-2.5 py-1 rounded-lg font-bold uppercase shadow-sm">
+          <button id="add-notice-btn" onclick="openNoticeModal()" class="text-[11px] bg-amber-600 hover:bg-amber-700 text-white px-3 py-1.5 rounded-xl font-bold uppercase btn-3d">
             <i class="fa-solid fa-plus"></i> ADD
           </button>
         </div>
-
         <div id="notices-list" class="space-y-3">
           <div class="text-center py-4 text-gray-400 text-xs">Syncing notices from Firestore...</div>
         </div>
       </section>
 
-      <!-- ========================================================= -->
-      <!-- REQUIREMENT 3: VILLAGE EVENTS (ADMIN & MEMBERS CAN ADD)   -->
-      <!-- ========================================================= -->
-      <section id="events-section" class="card-3d rounded-2xl border-t-4 border-emerald-600 p-5">
+      <!-- VILLAGE EVENTS (ADMIN & APPROVED MEMBERS CAN ADD) -->
+      <section id="events-section" class="card-3d rounded-3xl border-t-4 border-emerald-600 p-5">
         <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-calendar-check text-emerald-700 text-lg"></i>
@@ -448,22 +429,17 @@
               VILLAGE EVENTS
             </h2>
           </div>
-          <button id="add-event-btn" onclick="openEventModal()" class="text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-2.5 py-1 rounded-lg font-bold uppercase shadow-sm">
+          <button id="add-event-btn" onclick="openEventModal()" class="text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-3 py-1.5 rounded-xl font-bold uppercase btn-3d">
             <i class="fa-solid fa-plus"></i> ADD
           </button>
         </div>
-
         <div id="events-list" class="space-y-3">
           <div class="text-center py-4 text-gray-400 text-xs">Syncing events from Firestore...</div>
         </div>
       </section>
 
-      <!-- ========================================================= -->
-      <!-- REQUIREMENT 4 & 7: TEMPLE DONATIONS + CHAIRMAN HEADER     -->
-      <!-- ========================================================= -->
-      <section id="donations-section" class="card-3d rounded-2xl border-t-4 border-brand-primary p-5">
-        
-        <!-- HEADER WITH REQUIREMENT 7: CHAIRMAN NAME -->
+      <!-- TEMPLE DONATIONS + CHAIRMAN HEADER -->
+      <section id="donations-section" class="card-3d rounded-3xl border-t-4 border-brand-primary p-5">
         <div class="flex flex-wrap items-center justify-between border-b border-gray-200 pb-3 mb-3 gap-2">
           <div class="flex items-center gap-2">
             <i class="fa-solid fa-hands-praying text-brand-primary text-lg"></i>
@@ -471,14 +447,14 @@
               TEMPLE DONATIONS
             </h2>
           </div>
-          <button id="add-donation-btn" onclick="openDonationModal()" class="text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-2.5 py-1 rounded-lg font-bold uppercase shadow-sm">
+          <button id="add-donation-btn" onclick="openDonationModal()" class="text-[11px] bg-brand-primary hover:bg-brand-medium text-white px-3 py-1.5 rounded-xl font-bold uppercase btn-3d">
             <i class="fa-solid fa-plus"></i> RECORD
           </button>
         </div>
 
-        <!-- REQUIREMENT 7: SMALL RIGHT-ALIGNED CHAIRMAN DISPLAY -->
+        <!-- CHAIRMAN DISPLAY -->
         <div class="text-right pb-2">
-          <span class="inline-block bg-amber-50 border border-amber-300/80 text-amber-900 text-[11px] font-black uppercase px-2.5 py-1 rounded-md shadow-xs">
+          <span class="inline-block bg-amber-50 border border-amber-300 text-amber-950 text-[11px] font-black uppercase px-3 py-1 rounded-lg shadow-xs">
             <i class="fa-solid fa-user-tie text-amber-700 mr-1"></i> TEMPLE COMMITTEE CHAIRMAN — BITU CHAUHAN
           </span>
         </div>
@@ -498,29 +474,28 @@
   </main>
 
   <!-- ========================================================= -->
-  <!-- MODAL 1: MEMBER PHONE + OTP LOGIN (REQUIREMENT 1)         -->
+  <!-- MODAL 1: MEMBER LOGIN & VERIFICATION REQUEST              -->
   <!-- ========================================================= -->
   <div id="member-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
-    <div class="card-3d rounded-2xl max-w-sm w-full p-6 relative">
+    <div class="card-3d rounded-3xl max-w-sm w-full p-6 relative">
       <button onclick="closeMemberModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
-      <!-- LOGGED OUT VIEW: PHONE NUMBER & OTP -->
+      <!-- LOGGED OUT: PHONE & PIN LOGIN / REGISTRATION -->
       <div id="member-login-view" class="space-y-4">
         <div class="text-center">
-          <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center mx-auto mb-2 text-2xl shadow-inner">
-            <i class="fa-solid fa-mobile-screen"></i>
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-2xl flex items-center justify-center mx-auto mb-2 text-2xl shadow-inner">
+            <i class="fa-solid fa-users-viewfinder"></i>
           </div>
-          <h3 class="text-lg font-black uppercase text-brand-dark">MEMBER LOGIN</h3>
-          <p class="text-[11px] text-gray-500 font-medium">LOGIN WITH MOBILE NUMBER & OTP</p>
+          <h3 class="text-lg font-black uppercase text-brand-dark">MEMBER ACCESS</h3>
+          <p class="text-[11px] text-gray-500 font-medium">बकांदिया परिवार सदस्य लॉगिन / अनुरोध</p>
         </div>
 
-        <!-- STEP 1: PHONE NUMBER -->
-        <div id="phone-step-box" class="space-y-3">
+        <form id="member-login-form" class="space-y-3">
           <div>
-            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">MEMBER NAME</label>
-            <input type="text" id="member-name-input" required placeholder="Aapka Naam (e.g. Rahul Chauhan)" class="w-full px-3 py-2 border rounded-xl text-sm" />
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">MEMBER NAME (आपका नाम)</label>
+            <input type="text" id="member-name-input" required placeholder="e.g. Rahul Chauhan" class="w-full px-3 py-2 border rounded-xl text-sm" />
           </div>
           <div>
             <label class="block text-xs font-bold uppercase text-gray-700 mb-1">MOBILE NUMBER (10 DIGITS)</label>
@@ -529,47 +504,36 @@
               <input type="tel" id="member-phone-input" maxlength="10" required placeholder="9876543210" class="w-full px-3 py-2 border rounded-r-xl text-sm font-semibold" />
             </div>
           </div>
-          
-          <!-- Invisible Recaptcha Container -->
-          <div id="recaptcha-container" class="flex justify-center my-2"></div>
-
-          <button type="button" id="send-otp-btn" onclick="handleSendOtp()" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2.5 rounded-xl uppercase text-xs btn-3d">
-            SEND OTP
-          </button>
-        </div>
-
-        <!-- STEP 2: ENTER OTP -->
-        <div id="otp-step-box" class="space-y-3 hidden">
-          <div class="p-2.5 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-900 font-medium text-center">
-            OTP sent to: <span id="display-otp-phone" class="font-bold"></span>
-          </div>
           <div>
-            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">ENTER 6-DIGIT OTP</label>
-            <input type="number" id="otp-code-input" maxlength="6" placeholder="123456" class="w-full px-3 py-2 border rounded-xl text-center text-lg tracking-widest font-black" />
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-1">4-DIGIT SECURITY PIN (4 अंकों का पिन)</label>
+            <input type="password" id="member-pin-input" maxlength="4" required placeholder="••••" class="w-full px-3 py-2 border rounded-xl text-center text-base tracking-widest font-black" />
           </div>
-          <button type="button" id="verify-otp-btn" onclick="handleVerifyOtp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl uppercase text-xs btn-3d">
-            VERIFY & LOGIN
+
+          <p class="text-[11px] text-amber-900 bg-amber-50 p-2 rounded-lg border border-amber-200">
+            <i class="fa-solid fa-circle-info text-amber-700 mr-1"></i>
+            अगर आप पहली बार जुड़ रहे हैं, तो अनुरोध दर्ज होगा और <b>Admin के Verify/Approve करने के बाद ही</b> लॉगिन हो सकेगा।
+          </p>
+
+          <button type="submit" id="member-submit-btn" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2.5 rounded-xl uppercase text-xs btn-3d">
+            LOGIN / REQUEST ACCESS
           </button>
-          <button type="button" onclick="resetMemberLoginUi()" class="w-full text-xs text-gray-500 hover:underline uppercase text-center block">
-            Change Mobile Number
-          </button>
-        </div>
+        </form>
       </div>
 
-      <!-- LOGGED IN MEMBER VIEW -->
+      <!-- LOGGED IN VIEW -->
       <div id="member-active-view" class="space-y-4 hidden text-center">
-        <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto text-2xl">
+        <div class="w-14 h-14 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner">
           <i class="fa-solid fa-circle-check"></i>
         </div>
         <div>
-          <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase">VERIFIED MEMBER</span>
-          <h4 id="active-member-name" class="text-base font-black uppercase text-brand-dark mt-1"></h4>
-          <p id="active-member-phone" class="text-xs text-gray-500 font-mono"></p>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 font-black px-3 py-1 rounded-full uppercase shadow-xs">VERIFIED MEMBER</span>
+          <h4 id="active-member-name" class="text-lg font-black uppercase text-brand-dark mt-2"></h4>
+          <p id="active-member-phone" class="text-xs text-gray-500 font-mono font-semibold"></p>
         </div>
-        <p class="text-xs text-emerald-900 bg-emerald-50 p-2.5 rounded-lg border border-emerald-200">
-          Aap Events, Important Notices aur Temple Donation records add kar sakte hain.
+        <p class="text-xs text-emerald-950 bg-emerald-50 p-3 rounded-xl border border-emerald-200 leading-relaxed font-medium">
+          आप Events, Important Notices और Temple Donation records add कर सकते हैं।
         </p>
-        <button onclick="handleMemberLogout()" class="w-full bg-red-100 hover:bg-red-200 text-red-700 font-bold py-2 rounded-xl uppercase text-xs">
+        <button onclick="handleMemberLogout()" class="w-full bg-red-100 hover:bg-red-200 text-red-700 font-bold py-2.5 rounded-xl uppercase text-xs">
           LOGOUT MEMBER
         </button>
       </div>
@@ -578,17 +542,17 @@
   </div>
 
   <!-- ========================================================= -->
-  <!-- MODAL 2: ADMIN LOGIN + REQUIREMENT 6 (FORGOT PASSWORD)    -->
+  <!-- MODAL 2: ADMIN LOGIN + FORGOT PASSWORD                    -->
   <!-- ========================================================= -->
   <div id="admin-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
-    <div class="card-3d rounded-2xl max-w-sm w-full p-6 relative">
+    <div class="card-3d rounded-3xl max-w-sm w-full p-6 relative">
       <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
         <i class="fa-solid fa-xmark text-lg"></i>
       </button>
 
       <div id="admin-login-view">
         <div class="text-center mb-5">
-          <div class="w-12 h-12 bg-brand-dark text-emerald-400 rounded-xl flex items-center justify-center mx-auto mb-2 text-2xl shadow">
+          <div class="w-12 h-12 bg-brand-dark text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-2 text-2xl shadow">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
           <h3 class="text-lg font-black uppercase text-brand-dark">ADMIN AUTHENTICATION</h3>
@@ -605,7 +569,6 @@
             <input type="password" id="admin-password" required class="w-full px-3 py-2 border rounded-xl text-sm" placeholder="••••••••" />
           </div>
 
-          <!-- REQUIREMENT 6: FORGOT PASSWORD BUTTON -->
           <div class="text-right">
             <button type="button" onclick="handleAdminForgotPassword()" class="text-[11px] text-emerald-800 hover:text-emerald-950 font-bold uppercase hover:underline">
               Forgot Password? (Reset via Gmail)
@@ -618,7 +581,7 @@
         </form>
       </div>
 
-      <!-- ADMIN ACTIVE DASHBOARD -->
+      <!-- ADMIN ACTIVE PANEL -->
       <div id="admin-panel-view" class="hidden space-y-4">
         <div class="border-b pb-3 flex justify-between items-center">
           <div>
@@ -630,15 +593,21 @@
           </button>
         </div>
         <div class="space-y-2">
-          <button onclick="openNoticeModal()" class="w-full py-2 px-3 bg-amber-50 hover:bg-amber-100 border border-amber-300 rounded-lg text-left font-bold text-xs uppercase flex items-center justify-between text-amber-900">
+          <!-- ADMIN MEMBER MANAGEMENT BUTTON -->
+          <button onclick="openMemberManagementModal()" class="w-full py-2.5 px-3 bg-blue-50 hover:bg-blue-100 border border-blue-300 rounded-xl text-left font-bold text-xs uppercase flex items-center justify-between text-blue-950">
+            <span><i class="fa-solid fa-users-gear mr-2 text-blue-700"></i> MEMBER MANAGEMENT (सदस्य प्रबंधन)</span>
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+
+          <button onclick="openNoticeModal()" class="w-full py-2 px-3 bg-amber-50 hover:bg-amber-100 border border-amber-300 rounded-xl text-left font-bold text-xs uppercase flex items-center justify-between text-amber-900">
             <span><i class="fa-solid fa-plus-circle mr-2"></i> POST IMPORTANT NOTICE</span>
             <i class="fa-solid fa-angle-right"></i>
           </button>
-          <button onclick="openEventModal()" class="w-full py-2 px-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-lg text-left font-bold text-xs uppercase flex items-center justify-between text-emerald-900">
+          <button onclick="openEventModal()" class="w-full py-2 px-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-xl text-left font-bold text-xs uppercase flex items-center justify-between text-emerald-900">
             <span><i class="fa-solid fa-calendar-plus mr-2"></i> POST VILLAGE EVENT</span>
             <i class="fa-solid fa-angle-right"></i>
           </button>
-          <button onclick="openDonationModal()" class="w-full py-2 px-3 bg-brand-light hover:bg-emerald-200 border border-brand-accent rounded-lg text-left font-bold text-xs uppercase flex items-center justify-between text-brand-dark">
+          <button onclick="openDonationModal()" class="w-full py-2 px-3 bg-brand-light hover:bg-emerald-200 border border-brand-accent rounded-xl text-left font-bold text-xs uppercase flex items-center justify-between text-brand-dark">
             <span><i class="fa-solid fa-hand-holding-dollar mr-2"></i> RECORD TEMPLE DONATION</span>
             <i class="fa-solid fa-angle-right"></i>
           </button>
@@ -647,49 +616,104 @@
     </div>
   </div>
 
-  <!-- NOTICE MODAL (FOR ADMIN AND MEMBERS) -->
+  <!-- ========================================================= -->
+  <!-- MODAL 3: ADMIN MEMBER MANAGEMENT (APPROVE, ADD, OUT)     -->
+  <!-- ========================================================= -->
+  <div id="member-management-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
+    <div class="card-3d rounded-3xl max-w-lg w-full p-6 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeMemberManagementModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="border-b pb-3 mb-4">
+        <h3 class="text-lg font-black uppercase text-brand-dark flex items-center gap-2">
+          <i class="fa-solid fa-users-gear text-emerald-600"></i> MEMBER MANAGEMENT (सदस्य प्रबंधन)
+        </h3>
+        <p class="text-xs text-gray-500 font-medium">Verify requests, add members, or out/remove members.</p>
+      </div>
+
+      <!-- ADD NEW MEMBER MANUALLY FORM -->
+      <form id="admin-add-member-form" class="p-3.5 bg-gray-50 rounded-2xl border border-gray-200 space-y-2 mb-5">
+        <h4 class="text-xs font-black uppercase text-gray-800">ADD PRE-APPROVED MEMBER DIRECTLY</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <input type="text" id="admin-new-member-name" required placeholder="Member Name" class="px-3 py-1.5 border rounded-lg text-xs" />
+          <input type="tel" id="admin-new-member-phone" maxlength="10" required placeholder="10 Digit Phone" class="px-3 py-1.5 border rounded-lg text-xs" />
+        </div>
+        <div class="flex gap-2">
+          <input type="password" id="admin-new-member-pin" maxlength="4" required placeholder="4 Digit PIN" class="px-3 py-1.5 border rounded-lg text-xs w-1/2" />
+          <button type="submit" class="w-1/2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-1.5 rounded-lg text-xs uppercase btn-3d">
+            + ADD MEMBER
+          </button>
+        </div>
+      </form>
+
+      <!-- MEMBER LISTS -->
+      <div class="space-y-4">
+        <!-- PENDING REQUESTS -->
+        <div>
+          <h4 class="text-xs font-black uppercase text-amber-800 mb-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-clock-rotate-left"></i> PENDING APPROVAL REQUESTS (सत्यापन बाकी)
+          </h4>
+          <div id="admin-pending-members-list" class="space-y-2">
+            <p class="text-xs text-gray-400 py-1">No pending verification requests.</p>
+          </div>
+        </div>
+
+        <!-- ACTIVE MEMBERS -->
+        <div class="pt-2 border-t">
+          <h4 class="text-xs font-black uppercase text-emerald-800 mb-2 flex items-center gap-1.5">
+            <i class="fa-solid fa-circle-check"></i> ACTIVE APPROVED MEMBERS (सक्रिय सदस्य)
+          </h4>
+          <div id="admin-approved-members-list" class="space-y-2">
+            <p class="text-xs text-gray-400 py-1">Loading members...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTICE MODAL -->
   <div id="notice-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
-    <div class="card-3d rounded-2xl max-w-md w-full p-6 relative">
+    <div class="card-3d rounded-3xl max-w-md w-full p-6 relative">
       <button onclick="closeNoticeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
       <h3 class="text-base font-black uppercase text-amber-800 mb-3">POST IMPORTANT NOTICE</h3>
       <form id="notice-form" class="space-y-3">
-        <input type="text" id="notice-title" required minlength="3" maxlength="150" placeholder="NOTICE TITLE (3 - 150 CHARS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase font-semibold" />
-        <textarea id="notice-content" rows="4" required minlength="5" maxlength="2000" placeholder="Full notice details (5 - 2,000 chars)..." class="w-full px-3 py-2 border rounded-xl text-sm"></textarea>
+        <input type="text" id="notice-title" required minlength="3" maxlength="150" placeholder="NOTICE TITLE (3 - 150 CHARS)" class="w-full px-4 py-2 border rounded-xl text-sm uppercase font-semibold" />
+        <textarea id="notice-content" rows="4" required minlength="5" maxlength="2000" placeholder="Full notice details (5 - 2,000 chars)..." class="w-full px-4 py-2 border rounded-xl text-sm"></textarea>
         <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 rounded-xl uppercase text-xs btn-3d">SAVE TO FIRESTORE</button>
       </form>
     </div>
   </div>
 
-  <!-- EVENT MODAL (FOR ADMIN AND MEMBERS) -->
+  <!-- EVENT MODAL -->
   <div id="event-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
-    <div class="card-3d rounded-2xl max-w-md w-full p-6 relative">
+    <div class="card-3d rounded-3xl max-w-md w-full p-6 relative">
       <button onclick="closeEventModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
       <h3 class="text-base font-black uppercase text-brand-dark mb-3">POST VILLAGE EVENT</h3>
       <form id="event-form" class="space-y-3">
-        <input type="text" id="event-title" required minlength="3" maxlength="150" placeholder="EVENT NAME (3 - 150 CHARS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase font-semibold" />
-        <input type="date" id="event-date" required class="w-full px-3 py-2 border rounded-xl text-sm" />
-        <input type="text" id="event-location" required minlength="2" maxlength="100" placeholder="LOCATION / VENUE (2 - 100 CHARS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase" />
-        <textarea id="event-desc" rows="3" maxlength="2000" placeholder="Event description..." class="w-full px-3 py-2 border rounded-xl text-sm"></textarea>
+        <input type="text" id="event-title" required minlength="3" maxlength="150" placeholder="EVENT NAME (3 - 150 CHARS)" class="w-full px-4 py-2 border rounded-xl text-sm uppercase font-semibold" />
+        <input type="date" id="event-date" required class="w-full px-4 py-2 border rounded-xl text-sm" />
+        <input type="text" id="event-location" required minlength="2" maxlength="100" placeholder="LOCATION / VENUE (2 - 100 CHARS)" class="w-full px-4 py-2 border rounded-xl text-sm uppercase" />
+        <textarea id="event-desc" rows="3" maxlength="2000" placeholder="Event description..." class="w-full px-4 py-2 border rounded-xl text-sm"></textarea>
         <button type="submit" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2 rounded-xl uppercase text-xs btn-3d">SAVE TO FIRESTORE</button>
       </form>
     </div>
   </div>
 
-  <!-- DONATION MODAL (FOR ADMIN AND MEMBERS) -->
+  <!-- DONATION MODAL -->
   <div id="donation-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
-    <div class="card-3d rounded-2xl max-w-md w-full p-6 relative">
+    <div class="card-3d rounded-3xl max-w-md w-full p-6 relative">
       <button onclick="closeDonationModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
       <h3 class="text-base font-black uppercase text-brand-dark mb-3">RECORD TEMPLE DONATION</h3>
       <form id="donation-form" class="space-y-3">
-        <input type="text" id="donation-donor" maxlength="100" placeholder="DONOR NAME (OR ANONYMOUS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase font-semibold" />
-        <input type="number" min="1" max="10000000" id="donation-amount" required placeholder="DONATION AMOUNT IN INR (₹)" class="w-full px-3 py-2 border rounded-xl text-sm font-bold text-emerald-800" />
-        <input type="date" id="donation-date" required class="w-full px-3 py-2 border rounded-xl text-sm" />
+        <input type="text" id="donation-donor" maxlength="100" placeholder="DONOR NAME (OR ANONYMOUS)" class="w-full px-4 py-2 border rounded-xl text-sm uppercase font-semibold" />
+        <input type="number" min="1" max="10000000" id="donation-amount" required placeholder="DONATION AMOUNT IN INR (₹)" class="w-full px-4 py-2 border rounded-xl text-sm font-bold text-emerald-800" />
+        <input type="date" id="donation-date" required class="w-full px-4 py-2 border rounded-xl text-sm" />
         <div>
           <label class="block text-[11px] font-bold uppercase text-gray-700 mb-1">PAYMENT SCREENSHOT PROOF (AUTO-COMPRESSED)</label>
-          <input type="file" id="donation-file" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark" />
+          <input type="file" id="donation-file" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark" />
         </div>
         
-        <!-- Only Admin can mark as Verified directly -->
         <div id="donation-verified-toggle" class="hidden flex items-center gap-2">
           <input type="checkbox" id="donation-verified" checked class="w-4 h-4 text-brand-primary rounded" />
           <label for="donation-verified" class="text-xs font-bold uppercase text-gray-800">MARK AS VERIFIED RECORD</label>
@@ -708,19 +732,18 @@
       <button onclick="closeImageViewer()" class="absolute -top-9 right-0 text-white text-xl hover:text-gray-300">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <img id="image-viewer-target" src="" alt="Proof Preview" class="w-full max-h-[80vh] object-contain rounded-xl bg-black/50 shadow-2xl" />
+      <img id="image-viewer-target" src="" alt="Proof Preview" class="w-full max-h-[80vh] object-contain rounded-2xl bg-black/50 shadow-2xl" />
       <p id="image-viewer-caption" class="text-center text-white text-xs mt-2 font-bold uppercase tracking-wider"></p>
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (SPELLED: बकांदिया परिवार) -->
   <footer class="bg-brand-darkest text-white border-t border-emerald-900 mt-16 py-10 px-4 text-center shadow-inner">
     <div class="max-w-7xl mx-auto space-y-4">
       <div class="font-black text-xl uppercase tracking-widest text-emerald-400">
-        BAKANDIYA FAMILY | बकंडिया परिवार
+        BAKANDIYA FAMILY | बकांदिया परिवार
       </div>
       
-      <!-- FOUNDERS HONORARY CREDITS -->
       <p class="text-xs text-gray-300 font-semibold uppercase tracking-wider max-w-3xl mx-auto leading-relaxed">
         FOUNDERS: Anoop Kumar Chauhan • Peeyush Chauhan • Rahul Chauhan (Muttiah Ji) • Mohit Chauhan (Eng.) • Vikas Chauhan (Kapasiya)
       </p>
@@ -737,18 +760,17 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
     import { 
-      getFirestore, collection, addDoc, doc, updateDoc, deleteDoc, 
+      getFirestore, collection, addDoc, doc, getDoc, setDoc, updateDoc, deleteDoc, 
       query, orderBy, where, serverTimestamp, onSnapshot 
     } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
     import { 
       getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged,
-      sendPasswordResetEmail, RecaptchaVerifier, signInWithPhoneNumber
+      sendPasswordResetEmail
     } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
 
     // Master Admin UID
     const ADMIN_UID = "27R0TzvPhId35rwxGqLxvy0vFcw2";
 
-    // Actual Firebase Project Config
     const firebaseConfig = {
       apiKey: "AIzaSyAvEaDzEhtquMEkmDzpgK9mxCTsGZoVXkg",
       authDomain: "bakandiya-family.firebaseapp.com",
@@ -761,8 +783,7 @@
 
     let app, db, auth;
     let activeAdminUser = null;
-    let activeMemberUser = null;
-    let confirmationResultGlobal = null;
+    let activeMemberSession = null; // Verified Member via Firestore approval
 
     try {
       app = initializeApp(firebaseConfig);
@@ -776,7 +797,7 @@
       statusMsg.textContent = "INITIALIZATION ERROR: " + err.message;
     }
 
-    // 100% Free Client-Side Image Compressor -> Base64 Converter
+    // Client-Side Image Compressor -> Base64
     async function fileToBase64(file, maxWidth = 800, quality = 0.6) {
       if (!file) return "";
       return new Promise((resolve) => {
@@ -809,32 +830,40 @@
       });
     }
 
-    // Modal Helpers attached to window
+    // Modal Helpers
     window.openMemberModal = () => document.getElementById('member-modal').classList.remove('hidden');
     window.closeMemberModal = () => document.getElementById('member-modal').classList.add('hidden');
     window.openAdminModal = () => document.getElementById('admin-modal').classList.remove('hidden');
     window.closeAdminModal = () => document.getElementById('admin-modal').classList.add('hidden');
+    window.openMemberManagementModal = () => {
+      document.getElementById('member-management-modal').classList.remove('hidden');
+      listenToMembersForAdmin();
+    };
+    window.closeMemberManagementModal = () => document.getElementById('member-management-modal').classList.add('hidden');
+
     window.openNoticeModal = () => {
-      if (!activeAdminUser && !activeMemberUser) {
-        alert("Notices add karne ke liye Member ya Admin Login zaroori hai.");
+      if (!activeAdminUser && !activeMemberSession) {
+        alert("Notices add karne ke liye Member ya Admin Access zaroori hai.");
         window.openMemberModal();
         return;
       }
       document.getElementById('notice-modal').classList.remove('hidden');
     };
     window.closeNoticeModal = () => document.getElementById('notice-modal').classList.add('hidden');
+
     window.openEventModal = () => {
-      if (!activeAdminUser && !activeMemberUser) {
-        alert("Events add karne ke liye Member ya Admin Login zaroori hai.");
+      if (!activeAdminUser && !activeMemberSession) {
+        alert("Events add karne ke liye Member ya Admin Access zaroori hai.");
         window.openMemberModal();
         return;
       }
       document.getElementById('event-modal').classList.remove('hidden');
     };
     window.closeEventModal = () => document.getElementById('event-modal').classList.add('hidden');
+
     window.openDonationModal = () => {
-      if (!activeAdminUser && !activeMemberUser) {
-        alert("Donation record add karne ke liye Member ya Admin Login zaroori hai.");
+      if (!activeAdminUser && !activeMemberSession) {
+        alert("Donation record add karne ke liye Member ya Admin Access zaroori hai.");
         window.openMemberModal();
         return;
       }
@@ -842,6 +871,7 @@
       document.getElementById('donation-modal').classList.remove('hidden');
     };
     window.closeDonationModal = () => document.getElementById('donation-modal').classList.add('hidden');
+
     window.openImageViewer = (url, caption) => {
       document.getElementById('image-viewer-target').src = url;
       document.getElementById('image-viewer-caption').textContent = caption || '';
@@ -851,7 +881,7 @@
 
     function getWhatsAppLink(title, tag) {
       const pageUrl = window.location.href.split('#')[0];
-      const message = `*BAKANDIYA FAMILY (${tag})*\n\n📌 *${title}*\n\n🔗 View live update: ${pageUrl}\n\n*BAKANDIYA FAMILY COMMUNITY PORTAL*`;
+      const message = `*BAKANDIYA FAMILY (${tag})*\n\n📌 *${title}*\n\n🔗 View live update: ${pageUrl}\n\n*बकांदिया परिवार - COMMUNITY NETWORK*`;
       return `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
     }
 
@@ -859,7 +889,38 @@
     const statusMsg = document.getElementById('connection-status-msg');
 
     // -------------------------------------------------------------
-    // AUTH STATE LISTENER (ADMIN & PHONE MEMBERS)
+    // MEMBER SESSION MANAGEMENT (FROM LOCAL STORAGE)
+    // -------------------------------------------------------------
+    function updateMemberUi() {
+      const memberLoginView = document.getElementById('member-login-view');
+      const memberActiveView = document.getElementById('member-active-view');
+      const memberBtnLabel = document.getElementById('member-btn-label');
+      const activeMemberName = document.getElementById('active-member-name');
+      const activeMemberPhone = document.getElementById('active-member-phone');
+
+      const storedMember = localStorage.getItem("bakandiya_verified_member");
+      if (storedMember) {
+        try {
+          activeMemberSession = JSON.parse(storedMember);
+          memberLoginView.classList.add('hidden');
+          memberActiveView.classList.remove('hidden');
+          memberBtnLabel.textContent = "MEMBER: " + activeMemberSession.name.split(" ")[0].toUpperCase();
+          activeMemberName.textContent = activeMemberSession.name;
+          activeMemberPhone.textContent = "+91 " + activeMemberSession.phone;
+        } catch (e) {
+          activeMemberSession = null;
+        }
+      } else {
+        activeMemberSession = null;
+        memberLoginView.classList.remove('hidden');
+        memberActiveView.classList.add('hidden');
+        memberBtnLabel.textContent = "MEMBER LOGIN";
+      }
+    }
+    updateMemberUi();
+
+    // -------------------------------------------------------------
+    // AUTH STATE LISTENER (ADMIN)
     // -------------------------------------------------------------
     onAuthStateChanged(auth, (user) => {
       const adminLoginView = document.getElementById('admin-login-view');
@@ -867,134 +928,224 @@
       const adminUserEmail = document.getElementById('admin-user-email');
       const adminStatusText = document.getElementById('admin-status-text');
 
-      const memberLoginView = document.getElementById('member-login-view');
-      const memberActiveView = document.getElementById('member-active-view');
-      const memberBtnLabel = document.getElementById('member-btn-label');
-      const activeMemberName = document.getElementById('active-member-name');
-      const activeMemberPhone = document.getElementById('active-member-phone');
-
-      if (user) {
-        // CASE 1: Master Admin Login
-        if (user.uid === ADMIN_UID) {
-          activeAdminUser = user;
-          activeMemberUser = null;
-
-          adminLoginView.classList.add('hidden');
-          adminPanelView.classList.remove('hidden');
-          adminUserEmail.textContent = user.email || "Admin";
-          adminStatusText.textContent = "ADMIN ACTIVE";
-        } 
-        // CASE 2: Phone Member Login
-        else if (user.phoneNumber) {
-          activeMemberUser = user;
-          activeAdminUser = null;
-
-          const savedName = localStorage.getItem("bakandiya_member_name") || "Member";
-          memberLoginView.classList.add('hidden');
-          memberActiveView.classList.remove('hidden');
-          memberBtnLabel.textContent = "MEMBER: " + savedName.split(" ")[0].toUpperCase();
-          activeMemberName.textContent = savedName;
-          activeMemberPhone.textContent = user.phoneNumber;
-
-          adminLoginView.classList.remove('hidden');
-          adminPanelView.classList.add('hidden');
-          adminStatusText.textContent = "ADMIN LOGIN";
-        }
+      if (user && user.uid === ADMIN_UID) {
+        activeAdminUser = user;
+        adminLoginView.classList.add('hidden');
+        adminPanelView.classList.remove('hidden');
+        adminUserEmail.textContent = user.email || "Admin";
+        adminStatusText.textContent = "ADMIN ACTIVE";
       } else {
         activeAdminUser = null;
-        activeMemberUser = null;
-
         adminLoginView.classList.remove('hidden');
         adminPanelView.classList.add('hidden');
         adminStatusText.textContent = "ADMIN LOGIN";
 
-        memberLoginView.classList.remove('hidden');
-        memberActiveView.classList.add('hidden');
-        memberBtnLabel.textContent = "MEMBER LOGIN";
+        if (user && user.uid !== ADMIN_UID) {
+          alert("Unauthorized: Only UID " + ADMIN_UID + " has administrator privileges.");
+          signOut(auth);
+        }
       }
 
-      // Toggle Admin specific controls (e.g. Delete, Verify)
       document.querySelectorAll('.admin-ctrl').forEach(el => el.classList.toggle('hidden', !activeAdminUser));
       listenToDonations();
     });
 
     // -------------------------------------------------------------
-    // REQUIREMENT 1: MEMBER PHONE + OTP LOGIN HANDLERS
+    // MEMBER LOGIN & VERIFICATION REQUEST SUBMISSION
     // -------------------------------------------------------------
-    window.setupRecaptcha = function() {
-      if (!window.recaptchaVerifier) {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-          'size': 'invisible'
-        });
-      }
-    };
-
-    window.handleSendOtp = async function() {
+    document.getElementById('member-login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
       const name = document.getElementById('member-name-input').value.trim();
-      const phoneDigits = document.getElementById('member-phone-input').value.trim();
+      const phone = document.getElementById('member-phone-input').value.trim();
+      const pin = document.getElementById('member-pin-input').value.trim();
+      const submitBtn = document.getElementById('member-submit-btn');
 
       if (!name) return alert("Kripya apna naam likhein.");
-      if (phoneDigits.length !== 10) return alert("Kripya 10 anko ka sahi mobile number daalein.");
+      if (phone.length !== 10) return alert("Kripya 10 anko ka mobile number daalein.");
+      if (pin.length !== 4) return alert("Kripya 4 anko ka PIN daalein.");
 
-      const fullPhoneNumber = "+91" + phoneDigits;
-      const sendOtpBtn = document.getElementById('send-otp-btn');
-      sendOtpBtn.disabled = true;
-      sendOtpBtn.textContent = "SENDING OTP...";
-
-      try {
-        window.setupRecaptcha();
-        const confirmationResult = await signInWithPhoneNumber(auth, fullPhoneNumber, window.recaptchaVerifier);
-        confirmationResultGlobal = confirmationResult;
-        localStorage.setItem("bakandiya_member_name", name);
-
-        document.getElementById('display-otp-phone').textContent = fullPhoneNumber;
-        document.getElementById('phone-step-box').classList.add('hidden');
-        document.getElementById('otp-step-box').classList.remove('hidden');
-        alert("OTP successfully sent to " + fullPhoneNumber);
-      } catch (err) {
-        console.error("Phone Auth Error:", err);
-        alert("OTP bhejne mein samasya aayi: " + err.message);
-        if (window.recaptchaVerifier) window.recaptchaVerifier.clear();
-      } finally {
-        sendOtpBtn.disabled = false;
-        sendOtpBtn.textContent = "SEND OTP";
-      }
-    };
-
-    window.handleVerifyOtp = async function() {
-      const code = document.getElementById('otp-code-input').value.trim();
-      if (code.length !== 6) return alert("Kripya 6 anko ka OTP daalein.");
-
-      const verifyBtn = document.getElementById('verify-otp-btn');
-      verifyBtn.disabled = true;
-      verifyBtn.textContent = "VERIFYING...";
+      submitBtn.disabled = true;
+      submitBtn.textContent = "VERIFYING WITH DATABASE...";
 
       try {
-        await confirmationResultGlobal.confirm(code);
-        alert("Member Login Successful!");
-        window.closeMemberModal();
+        const memberRef = doc(db, "members", phone);
+        const memberSnap = await getDoc(memberRef);
+
+        if (memberSnap.exists()) {
+          const mData = memberSnap.data();
+
+          if (mData.status === "blocked") {
+            alert("Admin ne aapka account disable/out kar diya hai.");
+            return;
+          }
+
+          if (mData.pin !== pin) {
+            alert("Galat PIN! Kripya sahi 4-digit PIN daalein.");
+            return;
+          }
+
+          if (mData.approved === true) {
+            // Member is verified by Admin! Log them in!
+            localStorage.setItem("bakandiya_verified_member", JSON.stringify({
+              name: mData.name,
+              phone: mData.phone
+            }));
+            updateMemberUi();
+            alert("Swagat hai " + mData.name + "! Aapka Member Login safal raha.");
+            window.closeMemberModal();
+          } else {
+            alert("Aapka account Admin verification ke liye PENDING hai. Admin ke verify karne ke baad hi aap login kar sakenge.");
+          }
+        } else {
+          // New Member Request -> Save with approved: false, status: 'pending'
+          await setDoc(memberRef, {
+            name,
+            phone,
+            pin,
+            status: "pending",
+            approved: false,
+            createdAt: serverTimestamp()
+          });
+
+          alert("Aapka registration anurodh (Request) Admin ke paas bhej diya gaya hai! Admin ke APPROVE karne ke baad aap is mobile number aur PIN se login kar sakenge.");
+          document.getElementById('member-login-form').reset();
+          window.closeMemberModal();
+        }
       } catch (err) {
-        alert("Galat OTP: " + err.message);
+        console.error("Member access error:", err);
+        alert("Error: " + err.message);
       } finally {
-        verifyBtn.disabled = false;
-        verifyBtn.textContent = "VERIFY & LOGIN";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "LOGIN / REQUEST ACCESS";
       }
-    };
+    });
 
-    window.resetMemberLoginUi = function() {
-      document.getElementById('phone-step-box').classList.remove('hidden');
-      document.getElementById('otp-step-box').classList.add('hidden');
-    };
-
-    window.handleMemberLogout = async function() {
-      await signOut(auth);
-      localStorage.removeItem("bakandiya_member_name");
+    window.handleMemberLogout = () => {
+      localStorage.removeItem("bakandiya_verified_member");
+      updateMemberUi();
       alert("Member logged out successfully.");
       window.closeMemberModal();
     };
 
     // -------------------------------------------------------------
-    // REQUIREMENT 6: ADMIN LOGIN & FORGOT PASSWORD (GMAIL CODE)
+    // ADMIN MEMBER MANAGEMENT (APPROVE, ADD, OUT/DELETE)
+    // -------------------------------------------------------------
+    // Add Pre-Approved Member directly by Admin
+    document.getElementById('admin-add-member-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!activeAdminUser) return alert("Admin only action.");
+
+      const name = document.getElementById('admin-new-member-name').value.trim();
+      const phone = document.getElementById('admin-new-member-phone').value.trim();
+      const pin = document.getElementById('admin-new-member-pin').value.trim();
+
+      if (phone.length !== 10 || pin.length !== 4) return alert("Sahi Phone (10 digits) aur PIN (4 digits) daalein.");
+
+      try {
+        await setDoc(doc(db, "members", phone), {
+          name,
+          phone,
+          pin,
+          status: "approved",
+          approved: true,
+          createdAt: serverTimestamp()
+        });
+        document.getElementById('admin-add-member-form').reset();
+        alert("Member " + name + " successfully added and approved!");
+      } catch (err) {
+        alert("Error adding member: " + err.message);
+      }
+    });
+
+    let unsubscribeMembers = null;
+    function listenToMembersForAdmin() {
+      if (unsubscribeMembers) unsubscribeMembers();
+
+      unsubscribeMembers = onSnapshot(collection(db, "members"), (snap) => {
+        const pendingList = document.getElementById('admin-pending-members-list');
+        const approvedList = document.getElementById('admin-approved-members-list');
+        pendingList.innerHTML = "";
+        approvedList.innerHTML = "";
+
+        let pendingCount = 0;
+        let approvedCount = 0;
+
+        snap.forEach(dSnap => {
+          const m = dSnap.data();
+          const phone = dSnap.id;
+
+          if (m.approved === false && m.status === "pending") {
+            pendingCount++;
+            const div = document.createElement('div');
+            div.className = "p-2.5 bg-amber-50 border border-amber-200 rounded-xl flex items-center justify-between";
+            div.innerHTML = `
+              <div>
+                <p class="text-xs font-bold text-gray-900 uppercase">${m.name}</p>
+                <p class="text-[11px] text-gray-500 font-mono">+91 ${m.phone} | PIN: ${m.pin}</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button data-approve-phone="${phone}" class="bg-emerald-600 hover:bg-emerald-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase">
+                  APPROVE
+                </button>
+                <button data-reject-phone="${phone}" class="bg-red-100 hover:bg-red-200 text-red-700 text-[10px] font-bold px-2 py-1 rounded-lg uppercase">
+                  REJECT
+                </button>
+              </div>
+            `;
+            pendingList.appendChild(div);
+          } else if (m.approved === true) {
+            approvedCount++;
+            const div = document.createElement('div');
+            div.className = "p-2.5 bg-white border border-gray-200 rounded-xl flex items-center justify-between";
+            div.innerHTML = `
+              <div>
+                <p class="text-xs font-bold text-gray-900 uppercase">${m.name}</p>
+                <p class="text-[11px] text-gray-500 font-mono">+91 ${m.phone}</p>
+              </div>
+              <button data-out-phone="${phone}" data-name="${m.name}" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase">
+                <i class="fa-solid fa-user-xmark mr-1"></i> OUT (हटाएं)
+              </button>
+            `;
+            approvedList.appendChild(div);
+          }
+        });
+
+        if (pendingCount === 0) pendingList.innerHTML = `<p class="text-xs text-gray-400 py-1">No pending verification requests.</p>`;
+        if (approvedCount === 0) approvedList.innerHTML = `<p class="text-xs text-gray-400 py-1">No active members.</p>`;
+
+        // Bind Admin Action Buttons
+        document.querySelectorAll('[data-approve-phone]').forEach(btn => {
+          btn.onclick = async () => {
+            const p = btn.getAttribute('data-approve-phone');
+            await updateDoc(doc(db, "members", p), { approved: true, status: "approved" });
+            alert("Member approved!");
+          };
+        });
+
+        document.querySelectorAll('[data-reject-phone]').forEach(btn => {
+          btn.onclick = async () => {
+            const p = btn.getAttribute('data-reject-phone');
+            if (confirm("Reject this request?")) {
+              await deleteDoc(doc(db, "members", p));
+            }
+          };
+        });
+
+        document.querySelectorAll('[data-out-phone]').forEach(btn => {
+          btn.onclick = async () => {
+            const p = btn.getAttribute('data-out-phone');
+            const n = btn.getAttribute('data-name');
+            if (confirm("Are you sure you want to OUT / REMOVE member " + n + "?")) {
+              await deleteDoc(doc(db, "members", p));
+              alert("Member " + n + " has been removed!");
+            }
+          };
+        });
+      });
+    }
+
+    // -------------------------------------------------------------
+    // ADMIN AUTH & FORGOT PASSWORD (GMAIL LINK)
     // -------------------------------------------------------------
     document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -1005,7 +1156,7 @@
         if (userCredential.user.uid === ADMIN_UID) {
           alert("Admin authenticated successfully!");
         } else {
-          alert("Unauthorized: This user account does not have administrator privileges.");
+          alert("Unauthorized account.");
           await signOut(auth);
         }
       } catch (err) {
@@ -1020,7 +1171,7 @@
       }
       try {
         await sendPasswordResetEmail(auth, email);
-        alert("Password reset link aapke Gmail (" + email + ") par bhej diya gaya hai. Kripya apna inbox/spam check karein.");
+        alert("Password reset link aapke Gmail (" + email + ") par bhej diya gaya hai. Inbox/Spam check karein.");
       } catch (err) {
         alert("Password reset error: " + err.message);
       }
@@ -1032,7 +1183,7 @@
     };
 
     // -------------------------------------------------------------
-    // REQUIREMENT 2: PUBLIC NEWS (DESCRIPTION NOT MANDATORY)
+    // PUBLIC NEWS (DESCRIPTION OPTIONAL)
     // -------------------------------------------------------------
     const newsForm = document.getElementById('public-news-form');
     newsForm.addEventListener('submit', async (e) => {
@@ -1062,7 +1213,7 @@
         await addDoc(collection(db, "news"), {
           title,
           category,
-          description: description || "", // Optional, defaults to empty string
+          description: description || "",
           imageUrl: imageUrl || "",
           createdAt: serverTimestamp(),
           formattedDate: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
@@ -1134,7 +1285,7 @@
 
     function renderNewsCard(id, data, sectionKey) {
       const card = document.createElement('article');
-      card.className = "card-3d rounded-2xl overflow-hidden";
+      card.className = "card-3d rounded-3xl overflow-hidden";
       card.id = `${sectionKey}-post-${id}`;
       
       const isMost = data.category === "MOST IMPORTANT NEWS";
@@ -1144,7 +1295,7 @@
       let imgHtml = '';
       if (data.imageUrl) {
         imgHtml = `
-          <div class="w-full h-52 bg-gray-100 cursor-pointer overflow-hidden news-img-trigger">
+          <div class="w-full h-56 bg-gray-100 cursor-pointer overflow-hidden news-img-trigger">
             <img src="${data.imageUrl}" alt="News Image" class="w-full h-full object-cover hover:scale-105 transition duration-300" loading="lazy" />
           </div>
         `;
@@ -1152,20 +1303,20 @@
 
       card.innerHTML = `
         ${imgHtml}
-        <div class="p-5">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded ${catBadge}">${data.category}</span>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2.5">
+            <span class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full ${catBadge}">${data.category}</span>
             <span class="text-[11px] text-gray-400 font-medium">${data.formattedDate || 'Recently'}</span>
           </div>
           <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase mb-2 post-title-text"></h3>
           <p class="text-xs sm:text-sm text-gray-700 leading-relaxed whitespace-pre-line mb-4 post-desc-text"></p>
-          <div class="flex items-center justify-between pt-2 border-t border-gray-100">
-            <a href="${waLink}" target="_blank" class="whatsapp-btn text-white text-xs font-bold uppercase py-1.5 px-3 rounded-lg flex items-center gap-1.5 shadow">
+          <div class="flex items-center justify-between pt-2.5 border-t border-gray-100">
+            <a href="${waLink}" target="_blank" class="whatsapp-btn text-white text-xs font-bold uppercase py-1.5 px-3 rounded-xl flex items-center gap-1.5 shadow">
               <i class="fa-brands fa-whatsapp text-sm"></i>
               <span>SHARE ON WHATSAPP</span>
             </a>
             <div class="admin-ctrl ${activeAdminUser ? '' : 'hidden'}">
-              <button data-del-news="${id}" class="text-xs bg-red-100 hover:bg-red-200 text-red-700 px-2.5 py-1 rounded-lg font-bold uppercase">
+              <button data-del-news="${id}" class="text-xs bg-red-100 hover:bg-red-200 text-red-700 px-3 py-1 rounded-xl font-bold uppercase">
                 DELETE
               </button>
             </div>
@@ -1201,17 +1352,17 @@
     }
 
     // -------------------------------------------------------------
-    // REQUIREMENT 3: IMPORTANT NOTICES (ADMIN & MEMBERS CAN ADD)
+    // IMPORTANT NOTICES (ADMIN & APPROVED MEMBERS CAN ADD)
     // -------------------------------------------------------------
     document.getElementById('notice-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!activeAdminUser && !activeMemberUser) {
-        return alert("Only Admin or logged-in Members can post notices.");
+      if (!activeAdminUser && !activeMemberSession) {
+        return alert("Only Admin or approved Members can post notices.");
       }
 
       const title = document.getElementById('notice-title').value.trim();
       const content = document.getElementById('notice-content').value.trim();
-      const authorName = activeAdminUser ? "Admin" : (localStorage.getItem("bakandiya_member_name") || "Member");
+      const authorName = activeAdminUser ? "Admin" : (activeMemberSession.name || "Member");
 
       if (title.length < 3 || title.length > 150) return alert("Title must be 3-150 characters.");
       if (content.length < 5 || content.length > 2000) return alert("Content must be 5-2000 characters.");
@@ -1244,15 +1395,15 @@
         const id = dSnap.id;
         const wa = getWhatsAppLink(item.title, 'Notice');
         const div = document.createElement('div');
-        div.className = "p-3.5 bg-amber-50/90 border-l-4 border-amber-600 rounded-r-xl space-y-1.5 shadow-sm";
+        div.className = "p-4 bg-amber-50/90 border-l-4 border-amber-600 rounded-r-2xl space-y-1.5 shadow-sm";
         div.innerHTML = `
           <div class="flex justify-between items-center">
             <h4 class="text-xs font-black uppercase text-amber-950 notice-title-text"></h4>
             <span class="text-[10px] text-gray-500 font-bold">${item.date || ''}</span>
           </div>
-          <p class="text-[11px] text-amber-800 font-semibold uppercase">By: ${item.authorName || 'Member'}</p>
+          <p class="text-[11px] text-amber-900 font-bold uppercase">By: ${item.authorName || 'Member'}</p>
           <p class="text-xs text-gray-800 leading-normal notice-content-text"></p>
-          <div class="flex justify-between items-center pt-1">
+          <div class="flex justify-between items-center pt-1.5">
             <a href="${wa}" target="_blank" class="text-[11px] text-emerald-800 font-bold uppercase flex items-center gap-1 hover:underline">
               <i class="fa-brands fa-whatsapp text-emerald-600"></i> SHARE
             </a>
@@ -1277,19 +1428,19 @@
     }, (err) => console.error("Notices listener error:", err));
 
     // -------------------------------------------------------------
-    // REQUIREMENT 3: VILLAGE EVENTS (ADMIN & MEMBERS CAN ADD)
+    // VILLAGE EVENTS (ADMIN & APPROVED MEMBERS CAN ADD)
     // -------------------------------------------------------------
     document.getElementById('event-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!activeAdminUser && !activeMemberUser) {
-        return alert("Only Admin or logged-in Members can post events.");
+      if (!activeAdminUser && !activeMemberSession) {
+        return alert("Only Admin or approved Members can post events.");
       }
 
       const title = document.getElementById('event-title').value.trim();
       const eventDate = document.getElementById('event-date').value;
       const location = document.getElementById('event-location').value.trim();
       const description = document.getElementById('event-desc').value.trim();
-      const authorName = activeAdminUser ? "Admin" : (localStorage.getItem("bakandiya_member_name") || "Member");
+      const authorName = activeAdminUser ? "Admin" : (activeMemberSession.name || "Member");
 
       if (title.length < 3 || title.length > 150) return alert("Title must be 3-150 characters.");
       if (location.length < 2 || location.length > 100) return alert("Location must be 2-100 characters.");
@@ -1323,16 +1474,16 @@
         const id = dSnap.id;
         const wa = getWhatsAppLink(`${item.title} at ${item.location} on ${item.eventDate}`, 'Event');
         const div = document.createElement('div');
-        div.className = "p-3.5 bg-emerald-50/90 border-l-4 border-emerald-600 rounded-r-xl space-y-1.5 shadow-sm";
+        div.className = "p-4 bg-emerald-50/90 border-l-4 border-emerald-600 rounded-r-2xl space-y-1.5 shadow-sm";
         div.innerHTML = `
           <div class="flex justify-between items-center">
             <h4 class="text-xs font-black uppercase text-emerald-950 event-title-text"></h4>
-            <span class="text-[10px] bg-emerald-200 text-emerald-900 font-bold px-1.5 py-0.5 rounded uppercase">${item.eventDate}</span>
+            <span class="text-[10px] bg-emerald-200 text-emerald-900 font-bold px-2 py-0.5 rounded-full uppercase">${item.eventDate}</span>
           </div>
           <p class="text-[11px] text-gray-600 uppercase font-semibold"><i class="fa-solid fa-location-dot text-emerald-700 mr-1"></i><span class="event-loc-text"></span></p>
           <p class="text-[10px] text-emerald-800 font-bold uppercase">Added by: ${item.authorName || 'Member'}</p>
           <p class="text-xs text-gray-800 leading-normal event-desc-text"></p>
-          <div class="flex justify-between items-center pt-1">
+          <div class="flex justify-between items-center pt-1.5">
             <a href="${wa}" target="_blank" class="text-[11px] text-emerald-800 font-bold uppercase flex items-center gap-1 hover:underline">
               <i class="fa-brands fa-whatsapp text-emerald-600"></i> SHARE
             </a>
@@ -1358,12 +1509,12 @@
     }, (err) => console.error("Events listener error:", err));
 
     // -------------------------------------------------------------
-    // REQUIREMENT 4: TEMPLE DONATIONS (MEMBERS CAN RECORD, ADMIN VERIFIES)
+    // TEMPLE DONATIONS (MEMBERS RECORD PENDING, ADMIN VERIFIES)
     // -------------------------------------------------------------
     document.getElementById('donation-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!activeAdminUser && !activeMemberUser) {
-        return alert("Only Admin or Members can record temple donations.");
+      if (!activeAdminUser && !activeMemberSession) {
+        return alert("Only Admin or approved Members can record temple donations.");
       }
       
       const donor = document.getElementById('donation-donor').value.trim() || "Anonymous Devotee";
@@ -1372,9 +1523,8 @@
       const fileInput = document.getElementById('donation-file').files[0];
       const submitBtn = document.getElementById('donation-submit-btn');
 
-      // Admin can set verified true directly; Members always submit as false (Pending)
       const verified = activeAdminUser ? document.getElementById('donation-verified').checked : false;
-      const submittedBy = activeAdminUser ? "Admin" : (localStorage.getItem("bakandiya_member_name") || "Member");
+      const submittedBy = activeAdminUser ? "Admin" : (activeMemberSession.name || "Member");
 
       if (!fileInput) return alert("Please select payment screenshot proof.");
       if (amount <= 0 || amount > 10000000) return alert("Please enter a valid donation amount.");
@@ -1437,7 +1587,7 @@
 
         records.forEach(record => {
           const div = document.createElement('div');
-          div.className = "p-3.5 bg-white border border-emerald-100 rounded-xl space-y-2 shadow-sm";
+          div.className = "card-3d p-4 rounded-2xl space-y-2";
           div.innerHTML = `
             <div class="flex justify-between items-center">
               <span class="text-xs font-black uppercase text-gray-900 donor-name-text"></span>
@@ -1445,11 +1595,11 @@
             </div>
             <div class="flex justify-between items-center text-[10px] text-gray-500 font-semibold">
               <span><i class="fa-regular fa-calendar mr-1"></i>${record.date}</span>
-              <span class="px-2 py-0.5 rounded-full uppercase font-bold ${record.verified ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+              <span class="px-2.5 py-0.5 rounded-full uppercase font-bold ${record.verified ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
                 ${record.verified ? 'VERIFIED' : 'PENDING APPROVAL'}
               </span>
             </div>
-            <div class="flex justify-between items-center pt-1 border-t border-gray-100">
+            <div class="flex justify-between items-center pt-1.5 border-t border-gray-100">
               <button class="view-proof-btn text-[11px] text-brand-medium font-bold uppercase hover:underline flex items-center gap-1">
                 <i class="fa-solid fa-receipt"></i> VIEW PROOF
               </button>
