@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BAKANDIYA FAMILY | बकांदिया परिवार</title>
 
+  <!-- PWA & APP ICON SETTINGS (MANDIR ICON) -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="Screenshot_2026-10-26-16-42-44-99.png" />
+  <link rel="apple-touch-icon" href="Screenshot_2026-10-26-16-42-44-99.png" />
+  <meta name="theme-color" content="#0a2e1d" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Bakandiya Family" />
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -40,7 +49,6 @@
   </script>
 
   <style>
-    /* Ultra 3D Modern Tactile Elevation */
     .card-3d {
       background: #ffffff;
       border: 1px solid rgba(16, 185, 129, 0.18);
@@ -80,11 +88,9 @@
   <header class="bg-gradient-to-r from-brand-darkest via-brand-dark to-brand-primary text-white border-b-4 border-emerald-500 sticky top-0 z-40 shadow-2xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap justify-between items-center gap-3">
       
-      <!-- LOGO & BRAND TITLE (SPELLED: बकांदिया परिवार) -->
+      <!-- LOGO WITH TEMPLE ICON -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-brand-primary flex items-center justify-center font-black text-2xl text-white shadow-lg border-2 border-emerald-300 transform group-hover:rotate-3 transition">
-          <i class="fa-solid fa-people-roof"></i>
-        </div>
+        <img src="Screenshot_2026-10-26-16-42-44-99.png" alt="Mandir Icon" class="w-12 h-12 rounded-2xl object-cover shadow-lg border-2 border-emerald-300 transform group-hover:rotate-3 transition" />
         <div>
           <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase text-white drop-shadow">
             BAKANDIYA FAMILY
@@ -95,14 +101,22 @@
         </div>
       </a>
 
-      <!-- RIGHT SIDE: PUBLISH, MEMBER LOGIN & ADMIN LOGIN -->
+      <!-- RIGHT SIDE BUTTONS (INCLUDES DIRECT INSTALL APP BUTTON) -->
       <div class="flex items-center flex-wrap gap-2">
+        
+        <!-- PWA INSTALL BUTTON (HEADER) -->
+        <button id="nav-install-btn" onclick="installPwaApp()" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-brand-darkest border border-amber-300 font-black py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 btn-3d shadow">
+          <i class="fa-solid fa-download"></i>
+          <span>INSTALL APP</span>
+        </button>
+
+        <!-- PUBLISH NEWS -->
         <a href="#publish-section" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 btn-3d shadow">
           <i class="fa-solid fa-bullhorn"></i>
           <span>PUBLISH NEWS</span>
         </a>
 
-        <!-- MEMBER LOGIN / STATUS BUTTON -->
+        <!-- MEMBER LOGIN -->
         <button id="member-header-btn" onclick="openMemberModal()" class="bg-gradient-to-r from-teal-700 to-emerald-800 hover:from-teal-600 hover:to-emerald-700 text-white border border-emerald-400/50 font-bold py-2 px-3 sm:px-4 rounded-xl text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md btn-3d">
           <i class="fa-solid fa-user-check text-emerald-300"></i>
           <span id="member-btn-label">MEMBER LOGIN</span>
@@ -132,6 +146,25 @@
       </div>
     </nav>
   </header>
+
+  <!-- FLOATING PWA INSTALL BANNER (POPUP FOR MOBILE USERS) -->
+  <div id="pwa-install-banner" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-md bg-gradient-to-r from-brand-darkest via-brand-dark to-brand-primary border-2 border-emerald-400 p-3.5 rounded-2xl shadow-2xl flex items-center justify-between gap-3 hidden">
+    <div class="flex items-center gap-3">
+      <img src="Screenshot_2026-10-26-16-42-44-99.png" alt="App Icon" class="w-12 h-12 rounded-xl object-cover border border-emerald-300 shadow">
+      <div>
+        <h4 class="text-xs font-black uppercase text-white">BAKANDIYA FAMILY APP</h4>
+        <p class="text-[10px] text-emerald-300 font-bold">Install on Home Screen (100% Free)</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="installPwaApp()" class="bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-black px-4 py-2 rounded-xl btn-3d uppercase tracking-wider">
+        INSTALL
+      </button>
+      <button onclick="document.getElementById('pwa-install-banner').classList.add('hidden')" class="text-gray-400 hover:text-white text-sm px-1.5">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
 
   <!-- HERO SECTION WITH 5 FOUNDERS (बकांदिया परिवार) -->
   <section class="bg-gradient-to-b from-brand-dark via-brand-primary to-brand-darkest text-white py-12 px-4 text-center relative overflow-hidden shadow-2xl border-b-4 border-emerald-600">
@@ -173,9 +206,7 @@
     </div>
   </section>
 
-  <!-- ========================================================= -->
-  <!-- ABOUT US SECTION (3 DEDICATED 3D CONTACT CARDS)           -->
-  <!-- ========================================================= -->
+  <!-- ABOUT US SECTION -->
   <section id="about-us-section" class="max-w-7xl mx-auto px-4 sm:px-6 pt-10">
     <div class="card-3d rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-white via-emerald-50/40 to-white border-2 border-emerald-300/60">
       
@@ -198,7 +229,7 @@
         </span>
       </div>
 
-      <!-- 3 CONTACT CARDS WITH 3D HOVER -->
+      <!-- 3 CONTACT CARDS -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <!-- 1. JAYANT CHAUHAN -->
@@ -286,7 +317,6 @@
         </div>
 
         <form id="public-news-form" class="space-y-4">
-          <!-- TITLE -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
               NEWS TITLE <span class="text-red-500">*</span>
@@ -295,7 +325,6 @@
               class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner" />
           </div>
 
-          <!-- CATEGORY -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
               NEWS CATEGORY <span class="text-red-500">*</span>
@@ -307,7 +336,6 @@
             </select>
           </div>
 
-          <!-- DESCRIPTION (OPTIONAL) -->
           <div>
             <div class="flex justify-between items-center mb-1">
               <label class="block text-xs font-bold uppercase tracking-wider text-gray-700">
@@ -321,7 +349,6 @@
               class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-primary text-sm font-medium shadow-inner"></textarea>
           </div>
 
-          <!-- OPTIONAL PHOTO -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
               OPTIONAL PHOTO (AUTO-COMPRESSED • 100% FREE STORAGE)
@@ -330,7 +357,6 @@
               class="w-full text-xs text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark cursor-pointer" />
           </div>
 
-          <!-- SUBMIT BUTTON -->
           <div class="pt-2">
             <button type="submit" id="publish-submit-btn" class="w-full bg-gradient-to-r from-brand-primary to-brand-medium hover:from-brand-medium hover:to-brand-primary text-white font-black py-3 px-6 rounded-xl uppercase tracking-wider text-sm btn-3d flex items-center justify-center gap-2">
               <i class="fa-solid fa-paper-plane"></i>
@@ -402,7 +428,7 @@
     <!-- RIGHT 1 COLUMN: NOTICES, EVENTS, DONATIONS -->
     <div class="space-y-8">
 
-      <!-- IMPORTANT NOTICES (ADMIN & APPROVED MEMBERS CAN ADD) -->
+      <!-- IMPORTANT NOTICES -->
       <section id="notices-section" class="card-3d rounded-3xl border-t-4 border-amber-600 p-5">
         <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
           <div class="flex items-center gap-2">
@@ -420,7 +446,7 @@
         </div>
       </section>
 
-      <!-- VILLAGE EVENTS (ADMIN & APPROVED MEMBERS CAN ADD) -->
+      <!-- VILLAGE EVENTS -->
       <section id="events-section" class="card-3d rounded-3xl border-t-4 border-emerald-600 p-5">
         <div class="flex items-center justify-between border-b border-gray-200 pb-3 mb-4">
           <div class="flex items-center gap-2">
@@ -438,7 +464,7 @@
         </div>
       </section>
 
-      <!-- TEMPLE DONATIONS + CHAIRMAN HEADER -->
+      <!-- TEMPLE DONATIONS -->
       <section id="donations-section" class="card-3d rounded-3xl border-t-4 border-brand-primary p-5">
         <div class="flex flex-wrap items-center justify-between border-b border-gray-200 pb-3 mb-3 gap-2">
           <div class="flex items-center gap-2">
@@ -452,7 +478,6 @@
           </button>
         </div>
 
-        <!-- CHAIRMAN DISPLAY -->
         <div class="text-right pb-2">
           <span class="inline-block bg-amber-50 border border-amber-300 text-amber-950 text-[11px] font-black uppercase px-3 py-1 rounded-lg shadow-xs">
             <i class="fa-solid fa-user-tie text-amber-700 mr-1"></i> TEMPLE COMMITTEE CHAIRMAN — BITU CHAUHAN
@@ -473,16 +498,13 @@
 
   </main>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 1: MEMBER LOGIN & VERIFICATION REQUEST              -->
-  <!-- ========================================================= -->
+  <!-- MEMBER ACCESS MODAL -->
   <div id="member-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
     <div class="card-3d rounded-3xl max-w-sm w-full p-6 relative">
       <button onclick="closeMemberModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-lg">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
-      <!-- LOGGED OUT: PHONE & PIN LOGIN / REGISTRATION -->
       <div id="member-login-view" class="space-y-4">
         <div class="text-center">
           <div class="w-12 h-12 bg-emerald-100 text-emerald-800 rounded-2xl flex items-center justify-center mx-auto mb-2 text-2xl shadow-inner">
@@ -520,7 +542,6 @@
         </form>
       </div>
 
-      <!-- LOGGED IN VIEW -->
       <div id="member-active-view" class="space-y-4 hidden text-center">
         <div class="w-14 h-14 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner">
           <i class="fa-solid fa-circle-check"></i>
@@ -541,9 +562,7 @@
     </div>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 2: ADMIN LOGIN + FORGOT PASSWORD                    -->
-  <!-- ========================================================= -->
+  <!-- ADMIN AUTH MODAL -->
   <div id="admin-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
     <div class="card-3d rounded-3xl max-w-sm w-full p-6 relative">
       <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
@@ -581,7 +600,6 @@
         </form>
       </div>
 
-      <!-- ADMIN ACTIVE PANEL -->
       <div id="admin-panel-view" class="hidden space-y-4">
         <div class="border-b pb-3 flex justify-between items-center">
           <div>
@@ -593,7 +611,6 @@
           </button>
         </div>
         <div class="space-y-2">
-          <!-- ADMIN MEMBER MANAGEMENT BUTTON -->
           <button onclick="openMemberManagementModal()" class="w-full py-2.5 px-3 bg-blue-50 hover:bg-blue-100 border border-blue-300 rounded-xl text-left font-bold text-xs uppercase flex items-center justify-between text-blue-950">
             <span><i class="fa-solid fa-users-gear mr-2 text-blue-700"></i> MEMBER MANAGEMENT (सदस्य प्रबंधन)</span>
             <i class="fa-solid fa-angle-right"></i>
@@ -616,9 +633,7 @@
     </div>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- MODAL 3: ADMIN MEMBER MANAGEMENT (APPROVE, ADD, OUT)     -->
-  <!-- ========================================================= -->
+  <!-- ADMIN MEMBER MANAGEMENT MODAL -->
   <div id="member-management-modal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
     <div class="card-3d rounded-3xl max-w-lg w-full p-6 relative max-h-[90vh] overflow-y-auto">
       <button onclick="closeMemberManagementModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-lg">
@@ -632,7 +647,6 @@
         <p class="text-xs text-gray-500 font-medium">Verify requests, add members, or out/remove members.</p>
       </div>
 
-      <!-- ADD NEW MEMBER MANUALLY FORM -->
       <form id="admin-add-member-form" class="p-3.5 bg-gray-50 rounded-2xl border border-gray-200 space-y-2 mb-5">
         <h4 class="text-xs font-black uppercase text-gray-800">ADD PRE-APPROVED MEMBER DIRECTLY</h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -647,9 +661,7 @@
         </div>
       </form>
 
-      <!-- MEMBER LISTS -->
       <div class="space-y-4">
-        <!-- PENDING REQUESTS -->
         <div>
           <h4 class="text-xs font-black uppercase text-amber-800 mb-2 flex items-center gap-1.5">
             <i class="fa-solid fa-clock-rotate-left"></i> PENDING APPROVAL REQUESTS (सत्यापन बाकी)
@@ -659,7 +671,6 @@
           </div>
         </div>
 
-        <!-- ACTIVE MEMBERS -->
         <div class="pt-2 border-t">
           <h4 class="text-xs font-black uppercase text-emerald-800 mb-2 flex items-center gap-1.5">
             <i class="fa-solid fa-circle-check"></i> ACTIVE APPROVED MEMBERS (सक्रिय सदस्य)
@@ -679,7 +690,7 @@
       <h3 class="text-base font-black uppercase text-amber-800 mb-3">POST IMPORTANT NOTICE</h3>
       <form id="notice-form" class="space-y-3">
         <input type="text" id="notice-title" required minlength="3" maxlength="150" placeholder="NOTICE TITLE (3 - 150 CHARS)" class="w-full px-4 py-2 border rounded-xl text-sm uppercase font-semibold" />
-        <textarea id="notice-content" rows="4" required minlength="5" maxlength="2000" placeholder="Full notice details (5 - 2,000 chars)..." class="w-full px-4 py-2 border rounded-xl text-sm"></textarea>
+        <textarea id="notice-content" rows="4" required minlength="5" maxlength="2000" placeholder="Full notice details (5 - 2,000 chars)..." class="w-full px-3 py-2 border rounded-xl text-sm"></textarea>
         <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 rounded-xl uppercase text-xs btn-3d">SAVE TO FIRESTORE</button>
       </form>
     </div>
@@ -691,10 +702,10 @@
       <button onclick="closeEventModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
       <h3 class="text-base font-black uppercase text-brand-dark mb-3">POST VILLAGE EVENT</h3>
       <form id="event-form" class="space-y-3">
-        <input type="text" id="event-title" required minlength="3" maxlength="150" placeholder="EVENT NAME (3 - 150 CHARS)" class="w-full px-4 py-2 border rounded-xl text-sm uppercase font-semibold" />
-        <input type="date" id="event-date" required class="w-full px-4 py-2 border rounded-xl text-sm" />
-        <input type="text" id="event-location" required minlength="2" maxlength="100" placeholder="LOCATION / VENUE (2 - 100 CHARS)" class="w-full px-4 py-2 border rounded-xl text-sm uppercase" />
-        <textarea id="event-desc" rows="3" maxlength="2000" placeholder="Event description..." class="w-full px-4 py-2 border rounded-xl text-sm"></textarea>
+        <input type="text" id="event-title" required minlength="3" maxlength="150" placeholder="EVENT NAME (3 - 150 CHARS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase font-semibold" />
+        <input type="date" id="event-date" required class="w-full px-3 py-2 border rounded-xl text-sm" />
+        <input type="text" id="event-location" required minlength="2" maxlength="100" placeholder="LOCATION / VENUE (2 - 100 CHARS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase" />
+        <textarea id="event-desc" rows="3" maxlength="2000" placeholder="Event description..." class="w-full px-3 py-2 border rounded-xl text-sm"></textarea>
         <button type="submit" class="w-full bg-brand-primary hover:bg-brand-medium text-white font-bold py-2 rounded-xl uppercase text-xs btn-3d">SAVE TO FIRESTORE</button>
       </form>
     </div>
@@ -706,12 +717,12 @@
       <button onclick="closeDonationModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
       <h3 class="text-base font-black uppercase text-brand-dark mb-3">RECORD TEMPLE DONATION</h3>
       <form id="donation-form" class="space-y-3">
-        <input type="text" id="donation-donor" maxlength="100" placeholder="DONOR NAME (OR ANONYMOUS)" class="w-full px-4 py-2 border rounded-xl text-sm uppercase font-semibold" />
-        <input type="number" min="1" max="10000000" id="donation-amount" required placeholder="DONATION AMOUNT IN INR (₹)" class="w-full px-4 py-2 border rounded-xl text-sm font-bold text-emerald-800" />
-        <input type="date" id="donation-date" required class="w-full px-4 py-2 border rounded-xl text-sm" />
+        <input type="text" id="donation-donor" maxlength="100" placeholder="DONOR NAME (OR ANONYMOUS)" class="w-full px-3 py-2 border rounded-xl text-sm uppercase font-semibold" />
+        <input type="number" min="1" max="10000000" id="donation-amount" required placeholder="DONATION AMOUNT IN INR (₹)" class="w-full px-3 py-2 border rounded-xl text-sm font-bold text-emerald-800" />
+        <input type="date" id="donation-date" required class="w-full px-3 py-2 border rounded-xl text-sm" />
         <div>
           <label class="block text-[11px] font-bold uppercase text-gray-700 mb-1">PAYMENT SCREENSHOT PROOF (AUTO-COMPRESSED)</label>
-          <input type="file" id="donation-file" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark" />
+          <input type="file" id="donation-file" accept="image/*" required class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-brand-light file:text-brand-dark" />
         </div>
         
         <div id="donation-verified-toggle" class="hidden flex items-center gap-2">
@@ -737,7 +748,7 @@
     </div>
   </div>
 
-  <!-- FOOTER (SPELLED: बकांदिया परिवार) -->
+  <!-- FOOTER -->
   <footer class="bg-brand-darkest text-white border-t border-emerald-900 mt-16 py-10 px-4 text-center shadow-inner">
     <div class="max-w-7xl mx-auto space-y-4">
       <div class="font-black text-xl uppercase tracking-widest text-emerald-400">
@@ -783,7 +794,7 @@
 
     let app, db, auth;
     let activeAdminUser = null;
-    let activeMemberSession = null; // Verified Member via Firestore approval
+    let activeMemberSession = null;
 
     try {
       app = initializeApp(firebaseConfig);
@@ -796,6 +807,35 @@
       statusBar.className = "bg-red-700 text-white px-4 py-2 text-center text-xs font-bold uppercase tracking-wider";
       statusMsg.textContent = "INITIALIZATION ERROR: " + err.message;
     }
+
+    // -------------------------------------------------------------
+    // PWA REGISTRATION & INSTALLATION HANDLERS
+    // -------------------------------------------------------------
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(err => console.log('SW Registration:', err));
+      });
+    }
+
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const banner = document.getElementById('pwa-install-banner');
+      if (banner) banner.classList.remove('hidden');
+    });
+
+    window.installPwaApp = async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        const banner = document.getElementById('pwa-install-banner');
+        if (banner) banner.classList.add('hidden');
+      } else {
+        alert("App install karne ke liye Chrome ke upar 3 dots (⋮) par tap karein aur 'Install app' ya 'Add to Home screen' par tap karein!");
+      }
+    };
 
     // Client-Side Image Compressor -> Base64
     async function fileToBase64(file, maxWidth = 800, quality = 0.6) {
@@ -889,7 +929,7 @@
     const statusMsg = document.getElementById('connection-status-msg');
 
     // -------------------------------------------------------------
-    // MEMBER SESSION MANAGEMENT (FROM LOCAL STORAGE)
+    // MEMBER SESSION MANAGEMENT
     // -------------------------------------------------------------
     function updateMemberUi() {
       const memberLoginView = document.getElementById('member-login-view');
@@ -951,7 +991,7 @@
     });
 
     // -------------------------------------------------------------
-    // MEMBER LOGIN & VERIFICATION REQUEST SUBMISSION
+    // MEMBER LOGIN & REQUEST
     // -------------------------------------------------------------
     document.getElementById('member-login-form').addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -965,7 +1005,7 @@
       if (pin.length !== 4) return alert("Kripya 4 anko ka PIN daalein.");
 
       submitBtn.disabled = true;
-      submitBtn.textContent = "VERIFYING WITH DATABASE...";
+      submitBtn.textContent = "VERIFYING...";
 
       try {
         const memberRef = doc(db, "members", phone);
@@ -985,7 +1025,6 @@
           }
 
           if (mData.approved === true) {
-            // Member is verified by Admin! Log them in!
             localStorage.setItem("bakandiya_verified_member", JSON.stringify({
               name: mData.name,
               phone: mData.phone
@@ -997,7 +1036,6 @@
             alert("Aapka account Admin verification ke liye PENDING hai. Admin ke verify karne ke baad hi aap login kar sakenge.");
           }
         } else {
-          // New Member Request -> Save with approved: false, status: 'pending'
           await setDoc(memberRef, {
             name,
             phone,
@@ -1012,7 +1050,6 @@
           window.closeMemberModal();
         }
       } catch (err) {
-        console.error("Member access error:", err);
         alert("Error: " + err.message);
       } finally {
         submitBtn.disabled = false;
@@ -1028,9 +1065,8 @@
     };
 
     // -------------------------------------------------------------
-    // ADMIN MEMBER MANAGEMENT (APPROVE, ADD, OUT/DELETE)
+    // ADMIN MEMBER MANAGEMENT (APPROVE, ADD, OUT)
     // -------------------------------------------------------------
-    // Add Pre-Approved Member directly by Admin
     document.getElementById('admin-add-member-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!activeAdminUser) return alert("Admin only action.");
@@ -1087,7 +1123,7 @@
                 <button data-approve-phone="${phone}" class="bg-emerald-600 hover:bg-emerald-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase">
                   APPROVE
                 </button>
-                <button data-reject-phone="${phone}" class="bg-red-100 hover:bg-red-200 text-red-700 text-[10px] font-bold px-2 py-1 rounded-lg uppercase">
+                <button data-reject-phone="${phone}" class="bg-red-100 hover:bg-red-200 text-red-700 text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase">
                   REJECT
                 </button>
               </div>
@@ -1113,7 +1149,6 @@
         if (pendingCount === 0) pendingList.innerHTML = `<p class="text-xs text-gray-400 py-1">No pending verification requests.</p>`;
         if (approvedCount === 0) approvedList.innerHTML = `<p class="text-xs text-gray-400 py-1">No active members.</p>`;
 
-        // Bind Admin Action Buttons
         document.querySelectorAll('[data-approve-phone]').forEach(btn => {
           btn.onclick = async () => {
             const p = btn.getAttribute('data-approve-phone');
@@ -1190,7 +1225,7 @@
       e.preventDefault();
       const title = document.getElementById('news-title').value.trim();
       const category = document.getElementById('news-category').value;
-      const description = document.getElementById('news-description').value.trim(); // Optional!
+      const description = document.getElementById('news-description').value.trim();
       const imageFileInput = document.getElementById('news-image').files[0];
       const submitBtn = document.getElementById('publish-submit-btn');
       const submitText = document.getElementById('publish-btn-text');
@@ -1352,7 +1387,7 @@
     }
 
     // -------------------------------------------------------------
-    // IMPORTANT NOTICES (ADMIN & APPROVED MEMBERS CAN ADD)
+    // IMPORTANT NOTICES
     // -------------------------------------------------------------
     document.getElementById('notice-form').addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -1428,7 +1463,7 @@
     }, (err) => console.error("Notices listener error:", err));
 
     // -------------------------------------------------------------
-    // VILLAGE EVENTS (ADMIN & APPROVED MEMBERS CAN ADD)
+    // VILLAGE EVENTS
     // -------------------------------------------------------------
     document.getElementById('event-form').addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -1509,7 +1544,7 @@
     }, (err) => console.error("Events listener error:", err));
 
     // -------------------------------------------------------------
-    // TEMPLE DONATIONS (MEMBERS RECORD PENDING, ADMIN VERIFIES)
+    // TEMPLE DONATIONS
     // -------------------------------------------------------------
     document.getElementById('donation-form').addEventListener('submit', async (e) => {
       e.preventDefault();
